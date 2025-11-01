@@ -1,0 +1,3914 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>9-сынып — English Fun Grammar</title>
+<style>
+  :root{
+    --bg:#fffaf6;
+    --card:#ffffff;
+    --accent:#ff7aa2;
+    --accent-2:#ffd166;
+    --muted:#6b6b6b;
+    --shadow: 0 8px 24px rgba(17,17,17,0.08);
+    --glass: rgba(255,255,255,0.7);
+    --radius:16px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:
+      radial-gradient(800px 400px at 10% 10%, rgba(255,122,162,0.06), transparent 6%),
+      radial-gradient(700px 350px at 90% 80%, rgba(255,209,102,0.06), transparent 6%),
+      var(--bg);
+    -webkit-font-smoothing:antialiased;
+    color:#222;
+    padding:28px;
+  }
+
+  header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:22px;
+  }
+  .logo{
+    width:64px;height:64px;border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),#ffb4c8);
+    box-shadow: var(--shadow);
+    display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;
+  }
+  h1{margin:0;font-size:20px}
+  p.lead{margin:0;color:var(--muted);font-size:14px}
+
+  /* grid */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap:18px;
+    margin-top:22px;
+  }
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), var(--card));
+    border-radius: var(--radius);
+    padding:16px;
+    box-shadow: var(--shadow);
+    position:relative;
+    overflow:hidden;
+    transition:transform .18s cubic-bezier(.2,.9,.3,1);
+    cursor:pointer;
+  }
+  .card:hover{ transform: translateY(-6px); }
+  .card h3{margin:0 0 8px 0;font-size:16px}
+  .card .meta{ font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center; }
+
+  .badge{
+    background:var(--accent-2);color:#5b3a00;padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+
+  /* cute stickers */
+  .sticker {
+    position:absolute; right:-30px; top:-30px;
+    transform: rotate(18deg);
+    background:linear-gradient(135deg,#fff,#ffdede);
+    padding:10px;border-radius:40px;
+    box-shadow: 0 8px 20px rgba(255,122,162,0.12);
+    font-size:12px;color:#8b2940;font-weight:700;
+  }
+
+  /* modal */
+  .modal {
+    position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+    background:linear-gradient(180deg, rgba(10,10,10,0.25), rgba(10,10,10,0.5));
+    z-index:40;
+  }
+  .modal .panel{
+    width:min(1050px,96%); max-height:90vh; overflow:auto;
+    background:linear-gradient(180deg,#fff, #fffaf2); border-radius:18px; padding:22px; box-shadow: 0 28px 60px rgba(17,17,17,0.25);
+  }
+  .closeBtn{ float:right; background:none;border:0;font-size:20px;cursor:pointer }
+  .topicTitle{ font-size:20px;margin-top:0; display:flex; gap:12px; align-items:center;}
+  .row{ display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; }
+
+  /* interactive elements */
+  .actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .btn{
+    background:var(--accent); color:white; border:0;padding:10px 14px;border-radius:12px; cursor:pointer; font-weight:700;
+    box-shadow:0 8px 20px rgba(255,122,162,0.08);
+  }
+  .btn.alt{ background:transparent;border:2px solid var(--accent); color:var(--accent); font-weight:700; }
+  .small{ padding:6px 10px; font-size:13px; border-radius:10px; }
+
+  textarea{ width:100%; min-height:90px; border-radius:10px; border:1px dashed #e6e6e6; padding:10px; font-size:14px; resize:vertical; }
+
+  .task{
+    background: linear-gradient(180deg,#fffaf0,#fff); padding:12px; border-radius:12px; border:1px solid rgba(0,0,0,0.03);
+    margin-top:12px;
+  }
+  .hint{ font-size:13px;color:var(--muted); margin-top:6px; }
+
+  /* matching drag */
+  .matchArea{ display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; }
+  .matchCol{ flex:1; min-width:160px; background:#fffefc;border-radius:10px;padding:12px;border:1px dashed #f0e6e6; }
+  .draggable{
+    padding:8px 10px; background:#fff; border-radius:10px; margin:8px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    cursor:grab;
+    user-select:none;
+  }
+  .dropHere{ min-height:40px; padding:8px; border-radius:8px; background:linear-gradient(180deg,#fff,#fffaf0); margin-top:8px; }
+
+  footer{ margin-top:26px; color:var(--muted); font-size:13px; text-align:center; }
+
+  /* small screens tweaks */
+  @media (max-width:520px){
+    .row{ flex-direction:column; }
+    .topicTitle{ font-size:18px; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">EFG</div>
+    <div>
+      <h1>English Fun Grammar — 9 сынып</h1>
+      <p class="lead">34 тақырып — әрқайсысы карточкада.</p>
+    </div>
+  </header>
+
+  <section class="grid" id="grid"></section>
+
+  <div class="modal" id="modal">
+    <div class="panel" role="dialog" aria-modal="true">
+      <button class="closeBtn" id="closeModal" title="Close">✕</button>
+      <div id="panelContent">
+        <!-- filled by JS -->
+      </div>
+      <div style="margin-top:12px;">
+        <button class="btn" id="saveNotes">Save my notes</button>
+        <button class="btn alt" id="shareLink">Copy share text</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Сайт — HTML/CSS/JS. Барлық деректер бастапқы құжаттан алынды.</footer>
+
+<script>
+/*
+  Data: тақырыптар (34) — бастапқы docx-тегі "Calendar and thematic plan".
+  Lesson тапсырмалардан алынған нақты мысалдар (бірнеше тақырыпқа) — құжаттан алынған үзінділермен үйлестірілді.
+*/
+const topics = [
+  "1. Compound nouns and complex noun phrases",
+  "2. Quantifiers for countable and uncountable nouns and some noun phrases",
+  "3. Compound adjectives and adjectives as participles & comparatives",
+  "4. Talking about somebody’s qualities using adjectives",
+  "5. Determiners and pre-determiner structures",
+  "6. Questions. Types of questions",
+  "7. Questions including prepositions (at what time, in which direction, from whose)",
+  "8. Pronouns. Creating a story about pronouns",
+  "9. Tenses. Present simple and present continuous",
+  "10. Past tenses",
+  "11. Present perfect and past perfect",
+  "12. Perfect continuous tenses",
+  "13. Active and passive forms",
+  "14. Simple perfect forms incl. some passive forms",
+  "15. Future tenses",
+  "16. Future forms, incl. some passives",
+  "17. Active & passive simple present/past and past perfect in narrative/reported speech",
+  "18. Present continuous & past continuous, incl. passive forms",
+  "19. Reported speech. Ways of forming reported speech",
+  "20. Reported speech forms for statements, questions and commands",
+  "21. Reported speech incl. indirect/embedded questions",
+  "22. Adverbs. Comparative adverb structures",
+  "23. Comparative adverbs: positions and variety",
+  "24. Modals. Possibility, intent, ability, necessity",
+  "25. Modal forms for different functions incl. past modal variants",
+  "26. Prepositions. Types of prepositions",
+  "27. Prepositions before nouns/adjectives & dependent prepositions",
+  "28. Infinitive",
+  "29. Infinitive forms after adjectives/verbs & gerunds, phrasal verbs",
+  "30. Conjunctions: so that, although, while, whereas",
+  "31. Clauses. Types of clauses",
+  "32. Talking about new technologies using relative clauses",
+  "33. If only / wish [that] clauses & relative clauses with prepositions",
+  "34. Perform grammar and vocabulary exercises"
+];
+
+/* A few real tasks / snippets taken from the uploaded lesson plans (examples):
+   - compound nouns / crossword etc.
+   - quantifiers TOMS example
+   - compound adjectives examples
+   - pronouns fill-in exercise
+   These are short excerpts adapted for the interactive cards.
+*/
+const contentByIndex = {
+  0: {
+  desc: `
+🌟 <b>Compound nouns — Құрама зат есімдер</b><br><br>
+Compound noun — бұл екі (кейде үш) сөз бірігіп, бір ғана жаңа мағына беретін зат есім.<br>
+Яғни, екі достың қосылып жаңа “суперсөз” жасағаны сияқты 💪😄<br><br>
+
+<b>Мысалы:</b><br>
+<table border='1' cellspacing='0' cellpadding='6' style='border-collapse:collapse;font-size:14px;'>
+<tr><th>Бірінші сөз</th><th>Екінші сөз</th><th>Бірігіп не болды?</th><th>Мағынасы</th></tr>
+<tr><td>tooth (тіс)</td><td>brush (щетка)</td><td><b>toothbrush</b></td><td>тіс жуатын щетка</td></tr>
+<tr><td>sun (күн)</td><td>flower (гүл)</td><td><b>sunflower</b></td><td>күнбағыс 🌻</td></tr>
+<tr><td>rain (жаңбыр)</td><td>coat (пальто)</td><td><b>raincoat</b></td><td>жаңбырлық пальто</td></tr>
+<tr><td>school (мектеп)</td><td>bag (сөмке)</td><td><b>schoolbag</b></td><td>мектеп сөмкесі 🎒</td></tr>
+</table><br>
+
+🧠 Қарап тұрсаң, бұл сөздер бірге жазылып, жаңа мағына береді.<br>
+Оларды екеуін бөлек айтсаң — жай сөз. Ал бірге айтсаң — жаңа нәрсе туады!<br><br>
+
+🎮 <b>Ойын: “Word Fusion”</b><br>
+Қос сөздерден жаңа зат есім ойлап тап!<br><br>
+Мысалы:<br>
+cake + shop = ? 🍰<br>
+note + book = ? 📒<br>
+snow + man = ? ☃️<br><br>
+
+💫 <b>Complex noun phrases — Күрделі зат есім тіркестері</b><br><br>
+Бұл жерде біз бір зат есімді сипаттап, оның алдына қосымша сөздер (сын есім, сан есім, т.б.) қоямыз.<br>
+Олар бірге тұрып “бір топ” сияқты жүреді. 🎯<br><br>
+
+<b>Мысалы:</b><br>
+a big blue school bag — үлкен көк мектеп сөмкесі<br>
+my favorite English teacher — менің сүйікті ағылшын мұғалімім 👩‍🏫<br>
+the tall boy in the red shirt — қызыл жейде киген ұзын бала<br><br>
+
+🔍 Мұнда басты зат есім — <b>bag</b>, <b>teacher</b>, <b>boy</b>,<br>
+ал қалғандары — оның сипаттамалары (complex parts).<br><br>
+
+🎀 <b>Есте сақтауға лайфхак:</b><br>
+<table border='1' cellspacing='0' cellpadding='6' style='border-collapse:collapse;font-size:14px;'>
+<tr><th>Compound noun</th><th>Complex noun phrase</th></tr>
+<tr><td>Біріккен бір жаңа сөз жасайды</td><td>Бірнеше сөз бір затты сипаттайды</td></tr>
+<tr><td>toothbrush, raincoat</td><td>a big blue bag, the English teacher</td></tr>
+<tr><td>Көбіне бірге жазылады</td><td>Бөлек жазылады</td></tr>
+</table><br>
+
+💡 <b>Мысалмен кішкене күлкілі әңгіме:</b><br><br>
+One morning, the sleepy boy grabbed his schoolbag 🎒<br>
+but forgot his toothbrush 🪥 and raincoat 🌧️<br>
+Then, the funny teacher said,<br>
+“Oh no! You brought your lunchbox, but no brainbox!” 😄<br><br>
+
+Қысқаша айтқанда:<br>
+<b>Compound nouns →</b> екі сөз = бір жаңа зат есім (tooth + brush = toothbrush)<br>
+<b>Complex noun phrases →</b> сипаттамалармен толыққан топ (my big red school bag)<br><br>
+`,
+tasks: [
+  {
+    type: "tts",
+    text: "Let's read some compound nouns aloud! Repeat after me: toothbrush, schoolbag, sunflower, playground, raincoat."
+  },
+  {
+    type: "write",
+    text: "Now write 5 funny sentences using compound nouns! 😊 For example: 'My schoolbag is full of candy!' or 'The snowman is dancing in the playground!'"
+  },
+  {
+    type: "match",
+    text: "Match each compound noun to its meaning. Drag the word to the correct box 👇",
+    pairs: [
+      ["toothbrush", "a small brush used for cleaning your teeth 🪥"],
+      ["schoolbag", "a bag you use to carry books to school 🎒"],
+      ["raincoat", "a jacket you wear when it rains 🌧️"],
+      ["sunflower", "a tall yellow flower that looks like the sun 🌻"],
+      ["snowman", "a person made of snow ☃️"]
+    ]
+  },
+  {
+    type: "fill",
+    text: "Complete the sentence: 'My ___ is full of books and pencils.' (toothbrush / schoolbag / sunflower)",
+    answer: "schoolbag"
+  },
+  {
+    type: "choice",
+    text: "Which group of words is a **complex noun phrase**?",
+    choices: [
+      "rain + coat",
+      "my big blue school bag",
+      "snow + man"
+    ],
+    answer: "my big blue school bag"
+  }
+]
+},
+1: {
+  desc: `
+🌈 <b>Quantifiers — Сан мөлшерін білдіретін сөздер</b><br><br>
+
+Quantifiers — бұл <b>қанша?</b> немесе <b>қаншалықты көп?</b> деген сұрақтарға жауап беретін сөздер.<br>
+Олар зат есімдермен бірге қолданылады — кейде <b>санауға болатын</b> (countable), кейде <b>санауға болмайтын</b> (uncountable) заттармен.<br><br>
+
+🎈 <b>Countable nouns</b> — санауға болатын: <i>apple, car, book, friend</i><br>
+🎈 <b>Uncountable nouns</b> — санауға болмайтын: <i>milk, water, sugar, time</i><br><br>
+
+🧠 <b>Маңызды quantifiers:</b><br><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Quantifier</th><th>Қолданылады</th><th>Мысал</th></tr>
+<tr><td><b>many</b></td><td>countable nouns</td><td>many books 📚</td></tr>
+<tr><td><b>much</b></td><td>uncountable nouns</td><td>much water 💧</td></tr>
+<tr><td><b>a few</b></td><td>countable nouns</td><td>a few apples 🍎</td></tr>
+<tr><td><b>a little</b></td><td>uncountable nouns</td><td>a little sugar 🍬</td></tr>
+<tr><td><b>some</b></td><td>positive sentences (both)</td><td>some people, some juice 🧃</td></tr>
+<tr><td><b>any</b></td><td>questions & negatives</td><td>any friends?, don’t have any milk ❌</td></tr>
+<tr><td><b>a lot of / lots of</b></td><td>both countable & uncountable</td><td>a lot of cars 🚗, a lot of time ⏰</td></tr>
+<tr><td><b>very few / very little</b></td><td>showing “аз” мөлшері</td><td>very few people 😐, very little money 💸</td></tr>
+</table><br>
+
+💬 <b>Мысалдар:</b><br>
+I have <b>a few</b> good friends. 👭<br>
+There isn’t <b>much</b> sugar in the tea. 🍵<br>
+Do you have <b>any</b> free time today? 🕒<br>
+She has <b>a lot of</b> homework! 📚<br><br>
+
+🎯 <b>Қысқаша ереже:</b><br>
+🟢 Countable nouns → many, a few, some, a lot of<br>
+🔵 Uncountable nouns → much, a little, some, a lot of<br><br>
+
+🌟 <b>Tip:</b> “a few” және “a little” — оң мағына (бар дегенді білдіреді), ал “few” және “little” — теріс мағына (өте аз).<br><br>
+
+💡 <i>Example:</i><br>
+I have <b>a little</b> money = менде біраз ақша бар 💵<br>
+I have <b>little</b> money = менде өте аз ақша бар 😟<br><br>
+`,
+  tasks: [
+    {
+      type: "tts",
+      text: "Let’s read some examples aloud! Repeat after me: I have a few apples. She has a little milk. There are many cars. There isn’t much water."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct quantifier: 'When Blake Mycoskie was twenty-nine, he took ___ time off work to go travelling.'",
+      choices: ["a little", "a few"],
+      answer: "a little"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'There are ___ students in the classroom today.' (many / much / a little)",
+      answer: "many"
+    },
+    {
+      type: "match",
+      text: "Match the quantifiers to the correct type 👇",
+      pairs: [
+        ["many", "countable nouns"],
+        ["much", "uncountable nouns"],
+        ["a few", "countable nouns"],
+        ["a little", "uncountable nouns"],
+        ["some", "positive both types"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 sentences using different quantifiers (some, many, a few, much, a lot of). For example: 'I have a few English books.'"
+    }
+  ]
+},
+2: {
+  desc: `
+🌟 <b>Compound adjectives — Құрама сын есімдер және дефис (hyphen)</b><br><br>
+
+Құрама сын есім (compound adjective) — екі немесе одан да көп сөз бірігіп, зат есімді бірге сипаттайтын бір бүтін тіркес болады. Көбіне зат есімнің алдында тұрғанда дефис арқылы (-) біріктіріледі: бұл оқуға және мағынаны түсінуге жеңілдетеді.<br><br>
+
+<b>Негізгі ережелер:</b><br>
+1) Егер екі сөз бірге зат есімді сипаттайтын болса және олар зат есімнің алдында тұрса — әдетте дефис қойылады: <br>
+&nbsp;&nbsp;&nbsp;— a <b>well-known</b> actor (танымал актер)<br>
+&nbsp;&nbsp;&nbsp;— a <b>brand-new</b> phone (жаңа ғана шыққан телефон)<br><br>
+
+2) Егер сол сипаттау сөйлемнің құрамында predicative позицияда тұрса (be + adjective түрінде), дефис қойылмайды: <br>
+&nbsp;&nbsp;&nbsp;— The actor is <b>well known</b>. (actor сөзінен кейін) <br>
+&nbsp;&nbsp;&nbsp;— The phone is <b>brand new</b>.<br><br>
+
+3) Кейде дефис қою мағынаны өзгертеді — бұл маңызды! Мысалы: <br>
+&nbsp;&nbsp;&nbsp;— <b>man-eating shark</b> = адамды жейтін акула (adjective: адамды жейтін) — опасыздықты білдіреді.<br>
+&nbsp;&nbsp;&nbsp;— <b>man eating shark</b> = адам (жеп жатқан) акула — бұл оқудағы тыныс белгілер себебінен түсініксіз көрінуі мүмкін. (Орфографиясыз ол «адам жеу» деген семантика береді.)<br><br>
+
+4) Қысқа ереже: дефис — екі сөз бірге бір идеяны (бір сипаттау) құрағанда, әсіресе зат есімнің алдында қолдан. Егер сөз тіркесі күрделене бастаса немесе first word is an adverb (very, really) — дефис қойылмайды: <br>
+&nbsp;&nbsp;&nbsp;— a <b>fast-moving</b> vehicle ✅ (compound adjective)<br>
+&nbsp;&nbsp;&nbsp;— a <b>very fast moving</b> vehicle ❌ (adverb + adjective — дефис керек емес)<br><br>
+
+<b>Participial adjectives</b> (-ing / -ed) да жиі құрама құрылымда келеді: <br>
+&nbsp;&nbsp;&nbsp;— a <b>heart-warming</b> story (жүректі жылытар) <br>
+&nbsp;&nbsp;&nbsp;— a <b>well-behaved</b> child (тәртіпті бала)<br><br>
+
+🎯 <b>Есепке алатын нәрсе:</b> дефис — тек әдемілік үшін емес, көбінесе мағынаны айқындау үшін қойылады. Сондықтан жазған кезде екі нұсқаның мағынасын ойлап көр: дефиспен және дефиссіз қайсысы дұрыс оқылады?<br><br>
+
+✨ <b>Кішкентай көңілді мысал:</b><br>
+A man-eating shark is scary. (Адамды жейтін акула — қорқынышты.)<br>
+A man eating shark? — who is the man? (Мына сөйлемде таңдау керек: адам жеуде ме, әлде адам жейтін акула ма?) 😅<br><br>
+`,
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: a well-known actor, a brand-new phone, a man-eating shark, a heart-warming story."
+    },
+    {
+      type: "fill",
+      text: "Complete: When Brian got his promotion, he bought a ___ car. (brand-new / old-fashioned)",
+      answer: "brand-new"
+    },
+    {
+      type: "choice",
+      text: "Which sentence uses the compound adjective correctly?",
+      choices: [
+        "She is a well known singer.",
+        "She is a well-known singer.",
+        "She is well-known singer."
+      ],
+      answer: "She is a well-known singer."
+    },
+    {
+      type: "match",
+      text: "Match the compound adjective to its meaning 👇",
+      pairs: [
+        ["well-known", "famous"],
+        ["brand-new", "completely new"],
+        ["heart-warming", "making you feel happy and touched"],
+        ["man-eating", "that eats humans (dangerous!)"],
+        ["fast-moving", "moving quickly"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 short sentences using compound adjectives. Try to use at least two '-ing' adjectives (e.g. heart-warming) and one with a hyphen to avoid ambiguity (e.g. man-eating)."
+    }
+  ]
+},
+
+3: {
+  desc: `
+💫 <b>Talking about somebody’s qualities using adjectives — Адамның қасиеттерін сын есіммен сипаттау</b><br><br>
+
+Сын есімдер (adjectives) — адамды, затты, немесе құбылысты сипаттайтын сөздер.<br>
+Мысалы: <i>kind, clever, funny, shy, hardworking, friendly</i> т.б.<br><br>
+
+🎯 <b>Адамды сипаттағанда</b> сын есім оның мінезі (character), сыртқы келбеті (appearance), және қабілетін (ability) білдіруі мүмкін:<br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Type</th><th>Example adjectives</th><th>Meaning</th></tr>
+<tr><td>Personality (мінез)</td><td>kind, lazy, honest, funny, brave</td><td>What kind of person they are</td></tr>
+<tr><td>Appearance (келбет)</td><td>tall, short, slim, beautiful, strong</td><td>How they look</td></tr>
+<tr><td>Ability (қабілет)</td><td>smart, talented, creative, hardworking</td><td>What they can do well</td></tr>
+</table><br>
+
+🌈 <b>Мысал:</b><br>
+My best friend is <b>kind</b> and <b>funny</b>.  
+He is very <b>tall</b> and <b>strong</b>.  
+He always helps others and studies hard — he’s really <b>hardworking</b>! 💪<br><br>
+
+💡 <b>Useful patterns:</b><br>
+— She is <b>very kind and helpful</b>.<br>
+— He has <b>a great sense of humor</b>.<br>
+— My teacher is <b>smart, patient, and friendly</b>.<br><br>
+
+🌟 <b>Tip:</b> Егер сен адамды сипаттағанда тек сыртқы келбетін ғана емес, мінезін де айтсаң — сөйлеуің бай және қызықты болады!<br><br>
+
+😄 <i>Example short text:</i><br>
+My sister is tall and beautiful. She is also very funny and kind.  
+She likes helping people and always smiles. Everyone loves her! 💖<br><br>
+`,
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: kind, brave, funny, tall, creative, hardworking."
+    },
+    {
+      type: "choice",
+      text: "Which adjective describes personality, not appearance?",
+      choices: [
+        "tall",
+        "beautiful",
+        "kind"
+      ],
+      answer: "kind"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'My best friend is very ___ and always helps others.' (lazy / helpful / short)",
+      answer: "helpful"
+    },
+    {
+      type: "match",
+      text: "Match the adjectives to their meanings 👇",
+      pairs: [
+        ["brave", "not afraid of danger"],
+        ["funny", "makes people laugh"],
+        ["lazy", "does not like working"],
+        ["kind", "helps and cares about others"],
+        ["hardworking", "works a lot and tries hard"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph (5–7 sentences) describing your best friend. Use at least 3 adjectives for personality and 2 for appearance."
+    }
+  ]
+},
+4: {
+  desc: `
+🌟 <b>Determiners and Pre-determiner Structures — Анықтағыш сөздер және олардың алдында келетін құрылымдар</b><br><br>
+
+🧩 <b>Determiners</b> — зат есімнің алдында келіп, оның <b>қандай?</b>, <b>қайсы?</b>, <b>неше?</b> екенін білдіретін сөздер.<br><br>
+
+Мысалы:<br>
+— <b>this</b> book — бұл кітап 📘<br>
+— <b>my</b> friend — менің досым 👭<br>
+— <b>some</b> water — біраз су 💧<br>
+— <b>a few</b> apples — бірнеше алма 🍎<br><br>
+
+🧠 <b>Determiner түрлері:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Type</th><th>Examples</th><th>Meaning</th></tr>
+<tr><td>Articles</td><td>a, an, the</td><td>жалпылама немесе нақты затты білдіреді</td></tr>
+<tr><td>Possessives</td><td>my, your, his, her, our, their</td><td>біреуге тиістілікті білдіреді</td></tr>
+<tr><td>Demonstratives</td><td>this, that, these, those</td><td>жақын/алыстағы затты көрсетеді</td></tr>
+<tr><td>Quantifiers</td><td>some, any, much, many, few</td><td>сан/мөлшер білдіреді</td></tr>
+<tr><td>Numbers</td><td>one, two, three...</td><td>нақты сан көрсетеді</td></tr>
+</table><br>
+
+💫 <b>Pre-determiners</b> — бұлар determiner алдында тұрады және мөлшерді күшейтеді.<br>
+Яғни, олар “<i>қаншалықты көп?</i>” немесе “<i>бәрі ме?</i>” деген мән береді.<br><br>
+
+<b>Мысалы:</b><br>
+— <b>all my friends</b> 👫 (барлық достарым)<br>
+— <b>both these books</b> 📚 (екеуі де осы кітаптар)<br>
+— <b>half the cake</b> 🍰 (торттың жартысы)<br>
+— <b>double the time</b> ⏰ (екі есе көп уақыт)<br><br>
+
+🧩 <b>Ереже:</b><br>
+<pre style="background:#fff7f8;padding:10px;border-radius:8px;">
+[Pre-determiner] + [Determiner] + [Adjective] + [Noun]
+all my favorite books
+both these red apples
+half the delicious cake
+</pre><br>
+
+🎯 <b>Мысал сөйлемдер:</b><br>
+— <b>All my friends</b> are here! 🎉<br>
+— <b>Both these cats</b> are cute. 😺😺<br>
+— <b>Half the students</b> are doing homework. 📝<br><br>
+
+💡 <b>Tip:</b> “All”, “both”, “half”, “double” сияқты сөздер — pre-determiners, себебі олар determiner алдында келеді!<br><br>
+
+😄 <i>Mini story:</i><br>
+<b>All my classmates</b> love English lessons.  
+<b>Both these teachers</b> are very kind.  
+We spent <b>half the day</b> playing grammar games! 🎮💖<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: all my friends, both these books, half the cake, double the time."
+    },
+    {
+      type: "choice",
+      text: "Which phrase is correct?",
+      choices: [
+        "my all friends",
+        "all my friends",
+        "friends all my"
+      ],
+      answer: "all my friends"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: '___ these apples are green.' (Both / All / Half)",
+      answer: "Both"
+    },
+    {
+      type: "match",
+      text: "Match the phrases to their meanings 👇",
+      pairs: [
+        ["all my friends", "барлық достарым"],
+        ["both these cats", "екеуі де осы мысықтар"],
+        ["half the cake", "торттың жартысы"],
+        ["double the time", "екі есе уақыт"],
+        ["all our teachers", "барлық мұғалімдеріміз"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 sentences using pre-determiners (all, both, half, double). For example: 'All my family is happy today.'"
+    }
+  ]
+},
+5: {
+  desc: `
+❓ <b>Questions — Сұрақтар</b><br><br>
+
+Сұрақтар — ағылшын тілінің жүрегі ❤️.  
+Біреуден ақпарат алу, пікір сұрау, немесе жай ғана әңгімелесу үшін сұрақтар қолданылады.<br><br>
+
+🎯 <b>Сұрақтардың негізгі түрлері:</b><br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Type</th><th>Құрылымы</th><th>Мысал</th><th>Мағынасы</th></tr>
+<tr><td><b>1️⃣ Yes/No Question</b></td><td>Do / Does / Is / Are / Can + Subject</td><td>Do you like apples? 🍎</td><td>Иә/Жоқ деп жауап береді</td></tr>
+<tr><td><b>2️⃣ Wh- Question</b></td><td>Wh-word + Auxiliary + Subject + Verb</td><td>Where do you live? 🏠</td><td>Нақты ақпарат сұрайды</td></tr>
+<tr><td><b>3️⃣ Choice Question</b></td><td>Question + or + Option</td><td>Do you want tea or coffee? ☕</td><td>Таңдау сұрағы</td></tr>
+<tr><td><b>4️⃣ Tag Question</b></td><td>Statement + Tag (..., isn’t it?)</td><td>You’re a student, aren’t you? 🎓</td><td>Келісуді сұрайды</td></tr>
+<tr><td><b>5️⃣ Indirect Question</b></td><td>Can you tell me... / Do you know...</td><td>Can you tell me where he lives? 🕵️‍♀️</td><td>Сыпайы түрде сұрайды</td></tr>
+</table><br>
+
+💬 <b>Мысалдар:</b><br>
+— <b>Is it raining?</b> ☔ → Yes, it is.<br>
+— <b>Where are you from?</b> 🌍 → I’m from Kazakhstan.<br>
+— <b>Do you like English or Math?</b> 📘 ➕ ➗<br>
+— <b>He’s funny, isn’t he?</b> 😄<br>
+— <b>Do you know what time it is?</b> ⏰<br><br>
+
+🌈 <b>Қысқаша ереже:</b><br>
+Wh-words: who, what, where, when, why, how.<br>
+They always come first in “Wh-questions”.<br><br>
+
+🎮 <b>Game idea:</b><br>
+“Ask your friend” — бір-біріне 3 түрлі сұрақ қой (1 yes/no, 1 wh-, 1 choice).<br><br>
+
+💡 <b>Tip:</b> Ағылшын тілінде интонация сұрақта жоғары көтеріледі 🎵  
+Мысалы: “Do you like pizza 🍕?” — соңында дауыс жоғары!<br><br>
+
+<i>Funny mini-dialogue:</i><br>
+👧 — Do you like studying English?<br>
+👦 — Of course! Who doesn’t? 😎<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Let’s read and repeat: Do you like apples? Where are you from? Do you want tea or coffee? You’re a student, aren’t you?"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct question: ‘___ you like chocolate?’",
+      choices: ["Do", "Are", "Is"],
+      answer: "Do"
+    },
+    {
+      type: "fill",
+      text: "Complete: ‘Where ___ you live?’ (do / does / are)",
+      answer: "do"
+    },
+    {
+      type: "match",
+      text: "Match the question type with its example 👇",
+      pairs: [
+        ["Yes/No question", "Do you like apples?"],
+        ["Wh- question", "Where do you live?"],
+        ["Choice question", "Do you want tea or coffee?"],
+        ["Tag question", "She’s nice, isn’t she?"],
+        ["Indirect question", "Can you tell me where he is?"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 different questions — one of each type (Yes/No, Wh-, Choice, Tag, Indirect). For example: 'Are you hungry?', 'Where are you going?', etc."
+    }
+  ]
+},
+6: {
+  desc: `
+💫 <b>Questions including Prepositions — Предлогтармен (баяндауыштармен) бірге келетін сұрақтар</b><br><br>
+
+Ағылшын тілінде кейде сұрақтың ішінде <b>preposition (at, in, with, from, about, for)</b> болады.  
+Бұл сөздер іс-әрекеттің бағытын, орнын немесе кімге/кіммен жасалатынын білдіреді.<br><br>
+
+🎯 <b>Мысалы:</b><br>
+— At what time do you wake up? ⏰<br>
+— With whom are you going to the park? 🌳<br>
+— From whose bag did you take the book? 🎒<br>
+— In which direction is the library? 📚<br>
+— What are you looking for? 👀<br><br>
+
+🧠 <b>Екі жолмен айтуға болады:</b><br>
+1️⃣ <b>Formal (ресми):</b> Preposition сұрақтың басында тұрады.<br>
+➡️ <i>To whom are you talking?</i><br><br>
+2️⃣ <b>Informal (ауызекі):</b> Preposition соңында тұрады.<br>
+➡️ <i>Who are you talking to?</i><br><br>
+
+🎨 <b>Мысалдар:</b><br>
+— Who are you waiting for? 🚏<br>
+— What are you laughing at? 😂<br>
+— Which country are you from? 🌍<br>
+— At what time does school start? 🏫<br>
+— From whom did you get this gift? 🎁<br><br>
+
+💬 <b>Қысқаша ереже:</b><br>
+Wh-word + (Preposition) + Auxiliary + Subject + Verb<br>
+немесе  
+Wh-word + Auxiliary + Subject + Verb + Preposition<br><br>
+
+📘 <b>Wh-words + prepositions:</b><br>
+who with — кіммен<br>
+at what time — қай уақытта<br>
+from whose — кімнен<br>
+in which direction — қай бағытта<br>
+what for — не үшін<br><br>
+
+😄 <b>Mini-dialogue:</b><br>
+👧 — At what time do you get up?<br>
+👦 — At seven o’clock!<br>
+👧 — Who are you going with to school?<br>
+👦 — With my best friend, of course! 🎒<br><br>
+
+💡 <b>Tip:</b> Егер “to, with, from, at” сияқты preposition бар болса — сұрақта оны ұмытпа!  
+Солар сөйлемнің мағынасын анықтайды 💬<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: At what time do you get up? With whom are you talking? From whose bag did you take it?"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "Who are you talking with?",
+        "With who are you talking?",
+        "Who you are talking with?"
+      ],
+      answer: "Who are you talking with?"
+    },
+    {
+      type: "fill",
+      text: "Complete: '___ what time does the lesson start?' (At / In / From)",
+      answer: "At"
+    },
+    {
+      type: "match",
+      text: "Match the question with the correct meaning 👇",
+      pairs: [
+        ["At what time do you get up?", "Қай уақытта оянасың?"],
+        ["With whom are you going?", "Кіммен барасың?"],
+        ["From whose bag is this?", "Бұл кімнің сөмкесінен?"],
+        ["In which direction is the museum?", "Мұражай қай бағытта?"],
+        ["What are you looking for?", "Сен не іздеп жатырсың?"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 questions that include prepositions. For example: 'Who are you waiting for?' or 'At what time do you study English?'"
+    }
+  ]
+},
+
+7: {
+  desc: `
+🌈 <b>Pronouns — Есімдіктер</b><br><br>
+
+<b>Pronouns</b> — зат есімнің орнына жүретін сөздер.  
+Олар сөйлемді жеңіл әрі қайталанбайтындай етеді. 😄<br><br>
+
+🎯 <b>Мысалы:</b><br>
+Sarah is my friend. <b>She</b> is kind.<br>
+Tom and I are playing football. <b>We</b> are happy.<br>
+That is my book. Give it to <b>me</b>.<br><br>
+
+🧠 <b>Есімдіктердің түрлері:</b><br><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Түрі</th><th>Ағылшынша</th><th>Мысал</th></tr>
+<tr><td>Жіктеу есімдіктері (Subject)</td><td>I, you, he, she, it, we, they</td><td><i>She</i> is my teacher.</td></tr>
+<tr><td>Бірыңғай есімдіктер (Object)</td><td>me, you, him, her, it, us, them</td><td>Give <i>me</i> the pencil.</td></tr>
+<tr><td>Меншік есімдіктері (Possessive)</td><td>my, your, his, her, its, our, their</td><td><i>My</i> cat is cute.</td></tr>
+<tr><td>Меншік жалқы есімдіктер (Possessive Pronouns)</td><td>mine, yours, his, hers, ours, theirs</td><td>This bag is <i>mine</i>.</td></tr>
+<tr><td>Өздік есімдіктер (Reflexive)</td><td>myself, yourself, himself, herself, itself, ourselves, themselves</td><td>He made it <i>himself</i>.</td></tr>
+</table><br>
+
+💡 <b>Неге маңызды?</b><br>
+Егер есімдіктер болмаса, сөйлемдер өте ұзақ әрі қайталанатын болар еді! 🙃<br>
+Мысалы:<br>
+❌ Sarah is Sarah’s friend because Sarah likes Sarah’s dog.<br>
+✅ Sarah is <b>her</b> friend because <b>she</b> likes <b>her</b> dog. 🐶<br><br>
+
+🎮 <b>Ойын: “Pronoun Swap”</b><br>
+Мәтіндегі барлық зат есімдерді есімдіктерге ауыстыр!<br>
+Мысалы:<br>
+<i>My brother and I love pizza. My brother and I eat pizza every day.</i><br>
+➡️ <b>We</b> love pizza. <b>We</b> eat it every day! 🍕<br><br>
+
+💬 <b>Story Time идеясы:</b><br>
+"Once upon a time there was a boy named Tim. <b>He</b> had a dog. <b>It</b> was small and funny. <b>They</b> played together every day." 🐕✨<br><br>
+
+🌟 <b>Tip:</b><br>
+Есімдіктер сөйлемдегі заттың қайсы екенін көрсетеді, сондықтан “it” — жансыз заттар мен жануарларға, “he/she” — адамдарға қолданылады.<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I am happy. She is kind. We are friends. They love their dog. He made it himself."
+    },
+    {
+      type: "fill",
+      text: "Fill in: '___ is my best friend. ___ helps me with homework.' (He / She)",
+      answer: "He"
+    },
+    {
+      type: "match",
+      text: "Match the pronouns to their types 👇",
+      pairs: [
+        ["I", "subject pronoun"],
+        ["me", "object pronoun"],
+        ["my", "possessive adjective"],
+        ["mine", "possessive pronoun"],
+        ["myself", "reflexive pronoun"]
+      ]
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "Him likes to play football.",
+        "He likes to play football.",
+        "His likes to play football."
+      ],
+      answer: "He likes to play football."
+    },
+    {
+      type: "write",
+      text: "Create a short story (5–7 sentences) using at least 5 different pronouns. Example: 'She has a cat. It likes milk. They play together every day.' 🐱"
+    }
+  ]
+},
+8: {
+  desc: `
+⏰ <b>Present Simple & Present Continuous</b><br><br>
+
+Бұл екі шақ — ағылшын тіліндегі ең жиі қолданылатын <b>Present Tenses</b>.  
+Бірақ олардың айырмашылығын түсінсең — сөйлеуің бірден табиғи болады! 😎<br><br>
+
+---
+
+🌿 <b>1️⃣ Present Simple — Жалпы шақ</b><br><br>
+📌 <b>Қолданылады:</b> тұрақты, қайталанатын әрекеттерге.<br>
+🕐 “Always”, “usually”, “often”, “every day” сияқты сөздермен келеді.<br><br>
+
+<b>Құрылымы:</b><br>
+👉 Subject + V1 (+s/es for he/she/it)<br><br>
+
+<b>Мысалдар:</b><br>
+I go to school every day. 🏫<br>
+She plays tennis on Sundays. 🎾<br>
+They don’t like milk. 🥛<br>
+Does he work here? 💼<br><br>
+
+<b>Есте сақта:</b> “he/she/it” болса — <b>verb + s</b> қосылады!  
+(He works, She likes, It rains) ☔<br><br>
+
+---
+
+🌼 <b>2️⃣ Present Continuous — Осы сәттегі әрекет</b><br><br>
+📌 <b>Қолданылады:</b> дәл қазір болып жатқан іс-әрекеттерге.<br>
+🕐 “now”, “at the moment”, “right now”, “today” деген сөздермен келеді.<br><br>
+
+<b>Құрылымы:</b><br>
+👉 Subject + am/is/are + Verb-ing<br><br>
+
+<b>Мысалдар:</b><br>
+I am studying English now. 📖<br>
+She is watching TV. 📺<br>
+They are playing football. ⚽<br>
+We aren’t sleeping at the moment. 😴<br><br>
+
+---
+
+🌟 <b>Қысқаша салыстыру:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th></th><th>Present Simple</th><th>Present Continuous</th></tr>
+<tr><td><b>Қашан?</b></td><td>Тұрақты, әдеттегі әрекет</td><td>Қазір болып жатқан әрекет</td></tr>
+<tr><td><b>Белгілер</b></td><td>always, every day, usually</td><td>now, today, at the moment</td></tr>
+<tr><td><b>Мысал</b></td><td>I play football every Sunday.</td><td>I am playing football now.</td></tr>
+</table><br>
+
+💬 <b>Мысалмен:</b><br>
+Emma <b>works</b> in a bank. (job – тұрақты іс)<br>
+Emma <b>is working</b> from home today. (қазіргі жағдай)<br><br>
+
+💡 <b>Tip:</b>  
+Don’t say “I am know” ❌ → “I know” ✅  
+(кей сөздер continuous-пен қолданылмайды: know, like, love, understand, believe)<br><br>
+
+---
+
+🎮 <b>Ойын идеясы:</b>  
+“Now or Always?” — сөйлемді оқып, ол Present Simple ме, әлде Present Continuous па, анықта! 😉<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I go to school every day. She is reading a book now. They play football on weekends. We are studying English at the moment."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct form: 'He ___ to music now.'",
+      choices: ["listens", "is listening"],
+      answer: "is listening"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'My brother ___ to school every day.' (go / goes / is going)",
+      answer: "goes"
+    },
+    {
+      type: "match",
+      text: "Match the sentence to its correct tense 👇",
+      pairs: [
+        ["She is cooking dinner now.", "Present Continuous"],
+        ["He plays football every Sunday.", "Present Simple"],
+        ["I’m reading an interesting book.", "Present Continuous"],
+        ["We study English on Mondays.", "Present Simple"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 4 sentences about your daily routine (Present Simple) and 4 about what you’re doing right now (Present Continuous)."
+    }
+  ]
+},
+9: {
+  desc: `
+⏳ <b>Past Tenses — Өткен шақтар</b><br><br>
+
+Ағылшын тілінде өткен шақтар бірнеше түрге бөлінеді, бірақ ең жиі қолданылатындары — <b>Past Simple</b> және <b>Past Continuous</b>.  
+Екеуін дұрыс қолдануды білсең, кез келген оқиғаны әдемі жеткізе аласың! 🎬<br><br>
+
+---
+
+🔥 <b>1️⃣ Past Simple — Өткенде болған, аяқталған іс</b><br><br>
+📌 <b>Қолданылады:</b> өткен уақытта болған және аяқталған әрекеттер үшін.<br>
+🕐 Кілт сөздер: <i>yesterday, last week, in 2020, ago</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + Verb (V2) немесе <i>did / didn’t</i> + Verb<br><br>
+
+<b>Мысалдар:</b><br>
+I <b>visited</b> my grandmother yesterday. 👵<br>
+They <b>watched</b> a movie last night. 🎥<br>
+He <b>didn’t go</b> to school yesterday. 🏫<br>
+<b>Did</b> you <b>see</b> that car? 🚗<br><br>
+
+🧠 <b>Есте сақта:</b><br>
+✅ <b>Regular verbs</b> → “-ed” жалғауы: work → worked, play → played<br>
+⚡ <b>Irregular verbs</b> → өзгереді: go → went, have → had, eat → ate<br><br>
+
+---
+
+🌧️ <b>2️⃣ Past Continuous — Өткен шақтағы процесс</b><br><br>
+📌 <b>Қолданылады:</b> өткен уақытта болып жатқан ұзақ іс, немесе басқа іс болғанда жалғасқан әрекет.<br>
+🕐 Кілт сөздер: <i>while, when, at that moment</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + was/were + Verb-ing<br><br>
+
+<b>Мысалдар:</b><br>
+I <b>was reading</b> a book at 8 p.m. yesterday. 📖<br>
+They <b>were playing</b> football when it started to rain. ⚽🌧️<br>
+She <b>wasn’t listening</b> to music. 🎧<br>
+<b>Was</b> he <b>sleeping</b> when you called? ☎️<br><br>
+
+---
+
+🌟 <b>Қысқаша салыстыру:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th></th><th>Past Simple</th><th>Past Continuous</th></tr>
+<tr><td><b>Мәні</b></td><td>Болған және аяқталған іс</td><td>Өткен уақытта болып жатқан іс</td></tr>
+<tr><td><b>Құрылымы</b></td><td>V2 / did + V</td><td>was/were + V-ing</td></tr>
+<tr><td><b>Мысал</b></td><td>I watched TV last night.</td><td>I was watching TV when you called.</td></tr>
+</table><br>
+
+💬 <b>Example story:</b><br>
+Yesterday I <b>woke up</b> early. 🌅  
+While I <b>was having</b> breakfast, my phone <b>rang</b>. ☎️  
+It was my friend — she <b>wanted</b> to go for a walk. 🚶‍♀️<br><br>
+
+🎯 <b>Ереже:</b><br>
+🟢 Past Simple → нақты болған, аяқталған іс.<br>
+🔵 Past Continuous → сол сәтте болып жатқан, процесс түріндегі іс.<br><br>
+
+💡 <b>Tip:</b>  
+👉 Екі шақ жиі бірге қолданылады:  
+“When I <b>was cooking</b>, he <b>arrived</b>.” 🍳🚪<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I watched a movie yesterday. She was reading a book when it started to rain. We played football last Sunday."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct form: 'I ___ my homework when you called.'",
+      choices: ["did", "was doing"],
+      answer: "was doing"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'They ___ dinner at 7 p.m. yesterday.' (had / were having)",
+      answer: "were having"
+    },
+    {
+      type: "match",
+      text: "Match the sentences to their tense 👇",
+      pairs: [
+        ["He watched TV last night.", "Past Simple"],
+        ["I was reading when you came in.", "Past Continuous"],
+        ["They played football yesterday.", "Past Simple"],
+        ["She was sleeping at that time.", "Past Continuous"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph (4-5 sentences) about what you did yesterday, using both Past Simple and Past Continuous."
+    }
+  ]
+},
+10: {
+  desc: `
+⏰ <b>Present Perfect & Past Perfect — Қазіргі және Өткен перфект шақтар</b><br><br>
+
+Бұл шақтар <b>уақыт байланысын</b> көрсетеді — бір іс екіншісінен бұрын болғанын немесе оның нәтижесі қазіргі сәтке әсер ететінін білдіреді.  
+Яғни, уақыт машинасымен саяхат сияқты 🚀<br><br>
+
+---
+
+💎 <b>1️⃣ Present Perfect — Қазіргі сәтке дейін болған іс</b><br><br>
+📌 <b>Қолданылады:</b> іс <b>аяқталған</b>, бірақ оның <b>нәтижесі қазір маңызды</b> болғанда.<br>
+🕐 Кілт сөздер: <i>already, just, yet, ever, never, since, for</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + <b>have/has</b> + V<sup>3</sup> (past participle)<br><br>
+
+<b>Мысалдар:</b><br>
+I <b>have finished</b> my homework. ✅ (жұмыс бітті, енді дайын)<br>
+She <b>has already eaten</b> dinner. 🍽️<br>
+We <b>haven’t seen</b> that movie yet. 🎬<br>
+<b>Have</b> you <b>ever been</b> to London? 🇬🇧<br><br>
+
+🧠 <b>Нәтиже — маңызды!</b><br>
+➡️ The action happened before now, but affects now.<br>
+“I’ve lost my keys” = (қазір де таба алмай жүрмін). 🔑😅<br><br>
+
+---
+
+⌛ <b>2️⃣ Past Perfect — Өткен шақтағы “одан бұрын” болған іс</b><br><br>
+📌 <b>Қолданылады:</b> өткенде екі іс болса, олардың <b>бірі екіншісінен бұрын</b> болғанын көрсету үшін.<br>
+🕐 Кілт сөздер: <i>before, after, by the time, when</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + <b>had</b> + V<sup>3</sup><br><br>
+
+<b>Мысалдар:</b><br>
+When I arrived, she <b>had left</b>. 🚪<br>
+He <b>had never seen</b> the sea before that day. 🌊<br>
+They <b>had finished</b> lunch before we came. 🍲<br><br>
+
+---
+
+🌟 <b>3️⃣ Екеуін салыстырайық:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Түрі</th><th>Қолданысы</th><th>Құрылымы</th><th>Мысал</th></tr>
+<tr><td><b>Present Perfect</b></td><td>Өткенде болып, әсері қазір бар</td><td>have/has + V3</td><td>I have finished my work.</td></tr>
+<tr><td><b>Past Perfect</b></td><td>Бір іс екіншісінен бұрын болған</td><td>had + V3</td><td>She had left before I arrived.</td></tr>
+</table><br>
+
+💡 <b>Есте сақта:</b><br>
+- Present Perfect → “қазірге дейінгі тәжірибе”.  
+- Past Perfect → “өткеннің ішінде болған тәртіппен”.  
+- Екеуі де “V<sup>3</sup>” (past participle) қолданады. 💬<br><br>
+
+---
+
+🎯 <b>Мысал әңгіме:</b><br>
+I <b>had finished</b> my homework before my friend <b>came</b>.  
+Then, we <b>watched</b> a movie together. 🎬  
+I <b>have watched</b> that movie three times since then! 😄<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I have already eaten. She has never seen snow before. When I arrived, he had gone home."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct form: 'She ___ her keys before she left the house.'",
+      choices: ["had found", "has found"],
+      answer: "had found"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'I ___ (never / be) to London before.'",
+      answer: "have never been"
+    },
+    {
+      type: "match",
+      text: "Match the sentences to their tense 👇",
+      pairs: [
+        ["I have finished my work.", "Present Perfect"],
+        ["She had gone before we arrived.", "Past Perfect"],
+        ["We have seen that film.", "Present Perfect"],
+        ["He had eaten before dinner.", "Past Perfect"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph (4-5 sentences) about something you had done before another event. For example: 'I had cleaned my room before my guests came.'"
+    }
+  ]
+},
+11: {
+  desc: `
+⏱️ <b>Perfect Continuous Tenses — Үздіксіз перфект шақтар</b><br><br>
+
+Perfect Continuous — бұл іс бір уақыт аралығында <b>созылып келіп, қазірге дейін</b> жалғасқанын көрсетеді.  
+Яғни, бұл “қашаннан бері жасап келе жатырмын” деген мағынаны береді. 🔄<br><br>
+
+---
+
+🌟 <b>1️⃣ Present Perfect Continuous</b><br><br>
+📌 <b>Қолданылады:</b> іс бұрын басталып, <b>қазірге дейін жалғасып жатыр</b> немесе <b>жаңа ғана аяқталған</b> кезде.<br>
+🕐 Кілт сөздер: <i>since, for, all day, lately, recently</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + <b>have/has been</b> + Verb-ing<br><br>
+
+<b>Мысалдар:</b><br>
+I <b>have been studying</b> English for 3 years. 📘<br>
+She <b>has been cooking</b> since morning. 👩‍🍳<br>
+It <b>has been raining</b> all day. 🌧️<br><br>
+
+🧠 <b>Мағына:</b> “Қашаннан бері?” немесе “Қанша уақыт бойы?” сұрақтарына жауап береді.<br>
+➡️ How long have you been learning English? 🗣️<br><br>
+
+---
+
+🕰️ <b>2️⃣ Past Perfect Continuous</b><br><br>
+📌 <b>Қолданылады:</b> өткен уақытта бір іс <b>ұзақ уақыт бойы</b> жалғасып, <b>басқа іс болғанға дейін</b> жүріп тұрғанын көрсету үшін.<br>
+🕐 Кілт сөздер: <i>before, until, by the time</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + <b>had been</b> + Verb-ing<br><br>
+
+<b>Мысалдар:</b><br>
+She <b>had been waiting</b> for the bus for 30 minutes before it arrived. 🚌<br>
+They <b>had been playing</b> football before it started to rain. ⚽<br>
+He <b>had been working</b> hard before the exam. 📖<br><br>
+
+---
+
+🔮 <b>3️⃣ Future Perfect Continuous</b><br><br>
+📌 <b>Қолданылады:</b> болашақта бір іс <b>белгілі бір уақытқа дейін</b> жалғасып тұратынын көрсету үшін.<br>
+🕐 Кілт сөздер: <i>by, for, before</i><br><br>
+
+<b>Құрылымы:</b><br>
+✅ Subject + <b>will have been</b> + Verb-ing<br><br>
+
+<b>Мысалдар:</b><br>
+By next year, I <b>will have been working</b> here for 5 years. 💼<br>
+She <b>will have been studying</b> English for 10 years by 2030. 🎓<br><br>
+
+---
+
+🌈 <b>4️⃣ Барлық үшеуін салыстыру:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Шақ</th><th>Қолданысы</th><th>Құрылымы</th><th>Мысал</th></tr>
+<tr><td><b>Present Perfect Continuous</b></td><td>Қазірге дейін жалғасып жатыр</td><td>have/has been + V-ing</td><td>I have been reading for 2 hours.</td></tr>
+<tr><td><b>Past Perfect Continuous</b></td><td>Өткенде басқа іс болғанға дейін жалғасқан</td><td>had been + V-ing</td><td>She had been waiting before the bus came.</td></tr>
+<tr><td><b>Future Perfect Continuous</b></td><td>Болашақта белгілі уақытқа дейін жалғасады</td><td>will have been + V-ing</td><td>I will have been working for 5 years by 2030.</td></tr>
+</table><br>
+
+---
+
+💡 <b>Қысқаша лайфхак:</b><br>
+- Егер іс <b>қазірге дейін</b> жүріп жатса → <b>Present Perfect Continuous</b><br>
+- Егер іс <b>өткенде бір уақытқа дейін</b> болса → <b>Past Perfect Continuous</b><br>
+- Егер іс <b>болашақта белгілі уақытқа дейін</b> жүрсе → <b>Future Perfect Continuous</b><br><br>
+
+🎬 <b>Example mini-story:</b><br>
+It <b>has been raining</b> since morning, so the children <b>have been playing</b> inside all day. ☔  
+They <b>had been waiting</b> for the rain to stop, but it didn’t! 😅<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I have been studying English for five years. She had been working before the exam. I will have been living here for ten years by next month."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct tense: 'By next year, I ___ here for 4 years.'",
+      choices: ["have been working", "will have been working"],
+      answer: "will have been working"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'She ___ waiting for the train for 30 minutes before it arrived.' (had been / has been)",
+      answer: "had been"
+    },
+    {
+      type: "match",
+      text: "Match the sentence to its correct tense 👇",
+      pairs: [
+        ["I have been learning English for 2 years.", "Present Perfect Continuous"],
+        ["She had been reading before you came.", "Past Perfect Continuous"],
+        ["He will have been working for 10 years by 2030.", "Future Perfect Continuous"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences about your life using Perfect Continuous forms (one in present, one in past, one in future). For example: 'I have been studying since morning.'"
+    }
+  ]
+},
+12: {
+  desc: `
+⚙️ <b>Active and Passive Forms — Белсенді және ырықсыз етіс</b><br><br>
+
+Ағылшын тілінде бір іс кім істегенін (active), немесе кімге істелгенін (passive) айтуға болады.<br>
+Яғни, <b>кім істеді?</b> не <b>кімге істелді?</b> деген айырмашылық! 🎯<br><br>
+
+---
+
+🌟 <b>1️⃣ Active Voice — Белсенді етіс</b><br>
+Бұл кезде <b>істеуші адам (doer)</b> — сөйлемнің басында тұрады.<br><br>
+
+✅ <b>Құрылымы:</b> Subject + Verb + Object<br><br>
+
+<b>Мысалдар:</b><br>
+The teacher <b>explains</b> the lesson. 👩‍🏫<br>
+➡️ Мұғалім сабақты түсіндіреді.<br><br>
+Tom <b>washes</b> the car every Sunday. 🚗<br>
+➡️ Том әр жексенбі сайын көлігін жуады.<br><br>
+
+---
+
+🌀 <b>2️⃣ Passive Voice — Ырықсыз етіс</b><br>
+Бұл кезде <b>істелуші (object)</b> сөйлемнің басына шығады.<br><br>
+
+✅ <b>Құрылымы:</b> Object + <b>to be</b> + Verb (V3) + (by ...)<br><br>
+
+<b>Мысалдар:</b><br>
+The lesson <b>is explained</b> by the teacher. 📘<br>
+➡️ Сабақ мұғаліммен түсіндіріледі.<br><br>
+The car <b>is washed</b> by Tom every Sunday. 🚘<br>
+➡️ Көлік Томмен жуылады.<br><br>
+
+---
+
+📚 <b>3️⃣ Белсенді мен ырықсыздың айырмашылығы:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Active</th><th>Passive</th><th>Мағынасы</th></tr>
+<tr><td>My mom cooks dinner.</td><td>Dinner is cooked by my mom.</td><td>Кешкі ас анаммен дайындалады.</td></tr>
+<tr><td>They built a new school.</td><td>A new school was built by them.</td><td>Жаңа мектеп олармен салынды.</td></tr>
+<tr><td>People speak English everywhere.</td><td>English is spoken everywhere.</td><td>Ағылшын тілі барлық жерде айтылады.</td></tr>
+</table><br>
+
+---
+
+💡 <b>4️⃣ "to be" етістігінің шаққа қарай түрленуі:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Tense</th><th>to be</th><th>Example</th></tr>
+<tr><td>Present Simple</td><td>am / is / are</td><td>The cake <b>is made</b> by grandma. 🎂</td></tr>
+<tr><td>Past Simple</td><td>was / were</td><td>The letter <b>was sent</b> yesterday. 💌</td></tr>
+<tr><td>Present Continuous</td><td>am / is / are being</td><td>The house <b>is being painted</b>. 🏡</td></tr>
+<tr><td>Present Perfect</td><td>has / have been</td><td>The room <b>has been cleaned</b>. 🧹</td></tr>
+</table><br>
+
+---
+
+🎯 <b>5️⃣ Қашан passive қолданамыз?</b><br>
+✅ Істеуші маңызды емес немесе белгісіз болса:<br>
+– The streets <b>are cleaned</b> every day. (кім тазалайтыны маңызды емес)<br><br>
+✅ Ресми сөйлемдерде:<br>
+– The project <b>was completed</b> on time.<br><br>
+✅ Ғылыми не ресми стильде:<br>
+– The experiment <b>was done</b> carefully.<br><br>
+
+---
+
+🎬 <b>6️⃣ Funny mini-story:</b><br>
+The cake <b>was baked</b> by grandma 👵.<br>
+Then it <b>was eaten</b> by Tom 😋.<br>
+Now Tom <b>is being scolded</b> by mom! 😆<br><br>
+
+🧠 Есте сақта:  
+Active → кім істеді  
+Passive → кімге істелді 💫<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: The cake is made by my mom. A new house was built by workers. The lesson is being taught by the teacher."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence in Passive Voice:",
+      choices: [
+        "They clean the room every day.",
+        "The room is cleaned every day.",
+        "They are cleaning the room now."
+      ],
+      answer: "The room is cleaned every day."
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'The letter ___ sent yesterday.' (is / was / were)",
+      answer: "was"
+    },
+    {
+      type: "match",
+      text: "Match each active sentence with its passive form 👇",
+      pairs: [
+        ["They build houses.", "Houses are built."],
+        ["The teacher teaches English.", "English is taught by the teacher."],
+        ["My mom cooked dinner.", "Dinner was cooked by my mom."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences in Active Voice and then rewrite them in Passive Voice. For example: 'Tom paints the wall.' → 'The wall is painted by Tom.'"
+    }
+  ]
+},
+13: {
+  desc: `
+💫 <b>Simple Perfect Forms (Present, Past, Future) және олардың Passive түрлері</b><br><br>
+
+<b>Perfect Tenses</b> — бұл іс-әрекеттің <u>аяқталғанын</u> немесе <u>нәтижесін</u> білдіретін шақтар.<br>
+Олар көбіне <b>have / has / had / will have + V3</b> арқылы жасалады.<br><br>
+
+---
+
+🎯 <b>1️⃣ Present Perfect</b> — қазіргі шақта, бірақ іс <b>жақында аяқталған</b> немесе <b>нәтижесі бар</b>.<br><br>
+
+✅ Құрылымы: <b>have / has + V3</b><br><br>
+
+<b>Мысалдар:</b><br>
+I <b>have finished</b> my homework. 📘<br>
+➡️ Мен үй жұмысымды бітірдім (нәтиже бар).<br><br>
+She <b>has visited</b> London. 🇬🇧<br>
+➡️ Ол Лондонға барып келді (тәжірибе бар).<br><br>
+
+🌀 <b>Passive түрі:</b><br>
+Object + <b>has / have been + V3</b><br><br>
+<b>Мысал:</b><br>
+The homework <b>has been finished</b>. ✅<br>
+➡️ Үй жұмысы аяқталды.<br><br>
+
+---
+
+🕰️ <b>2️⃣ Past Perfect</b> — өткен шақтағы екі істің біреуі <b>бұрын аяқталған</b> болса.<br><br>
+
+✅ Құрылымы: <b>had + V3</b><br><br>
+
+<b>Мысалдар:</b><br>
+I <b>had eaten</b> dinner before you came. 🍽️<br>
+➡️ Сен келгенге дейін мен тамақ ішіп қойғанмын.<br><br>
+She <b>had left</b> when I arrived. 🚶‍♀️<br>
+➡️ Мен келген кезде ол кетіп қалған еді.<br><br>
+
+🌀 <b>Passive түрі:</b><br>
+Object + <b>had been + V3</b><br><br>
+<b>Мысал:</b><br>
+The house <b>had been cleaned</b> before the guests arrived. 🏡<br><br>
+
+---
+
+🚀 <b>3️⃣ Future Perfect</b> — белгілі бір уақытқа дейін іс <b>аяқталады</b>.<br><br>
+
+✅ Құрылымы: <b>will have + V3</b><br><br>
+
+<b>Мысалдар:</b><br>
+I <b>will have finished</b> my report by tomorrow. 📄<br>
+➡️ Ертеңге дейін мен есепті аяқтаймын.<br><br>
+They <b>will have arrived</b> by 6 o’clock. 🕕<br><br>
+
+🌀 <b>Passive түрі:</b><br>
+Object + <b>will have been + V3</b><br><br>
+<b>Мысал:</b><br>
+The project <b>will have been completed</b> by Friday. 📁<br><br>
+
+---
+
+📊 <b>Қысқаша салыстыру кестесі:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Tense</th><th>Active</th><th>Passive</th></tr>
+<tr><td>Present Perfect</td><td>I have done it.</td><td>It has been done.</td></tr>
+<tr><td>Past Perfect</td><td>They had built the bridge.</td><td>The bridge had been built.</td></tr>
+<tr><td>Future Perfect</td><td>We will have finished the task.</td><td>The task will have been finished.</td></tr>
+</table><br>
+
+---
+
+💡 <b>Tip:</b><br>
+Perfect формалар — әрқашан бір істің <b>аяқталған уақыты мен нәтижесіне</b> назар аударады.  
+Passive түрінде кім істегені маңызды емес — нәтиже бастысы. 💫<br><br>
+
+🎬 <b>Funny Example:</b><br>
+By the time you wake up, breakfast <b>will have been eaten</b> by your cat! 😹🍳<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: The project has been finished. The house had been cleaned. The letter will have been sent."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence in Present Perfect Passive:",
+      choices: [
+        "She have finished her work.",
+        "Her work has been finished.",
+        "Her work is finish."
+      ],
+      answer: "Her work has been finished."
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'The report ___ been completed by the manager.' (has / have / had)",
+      answer: "has"
+    },
+    {
+      type: "match",
+      text: "Match the tense with its correct passive example 👇",
+      pairs: [
+        ["Present Perfect", "The letter has been sent."],
+        ["Past Perfect", "The room had been cleaned."],
+        ["Future Perfect", "The task will have been finished."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences in the Perfect Passive form (one in Present, one in Past, one in Future). Example: The cake has been made."
+    }
+  ]
+},
+14: {
+  desc: `
+🚀 <b>Future Tenses — Болашақ шақ түрлері</b><br><br>
+
+Болашақта болатын іс-әрекетті айту үшін ағылшын тілінде бірнеше <b>Future Tense</b> қолданылады.<br>
+Олардың айырмашылығы — <b>уәде ме, жоспар ма, дәлел ме</b> соған байланысты. 🌈<br><br>
+
+---
+
+🔹 <b>1️⃣ Future Simple (will + verb)</b><br><br>
+<b>Қолданылады:</b> болжау, уәде, өз еркімен шешім қабылдағанда.<br><br>
+
+✅ Құрылымы: <b>will + V1</b><br>
+<b>Мысалдар:</b><br>
+I <b>will help</b> you with your homework. 🤝<br>
+➡️ Мен саған көмектесемін (уәде).<br><br>
+It <b>will rain</b> tomorrow. 🌧️<br>
+➡️ Ертең жаңбыр жауады (болжам).<br><br>
+
+---
+
+🔹 <b>2️⃣ Be going to + verb</b><br><br>
+<b>Қолданылады:</b> алдын ала жоспар немесе дәлел бар кезде.<br><br>
+
+✅ Құрылымы: <b>am / is / are + going to + V1</b><br>
+<b>Мысалдар:</b><br>
+We <b>are going to visit</b> grandma this weekend. 👵<br>
+➡️ Біз демалыста әжемізге бармақпыз (жоспар).<br><br>
+Look at those clouds! It’s <b>going to rain</b>. ☁️<br>
+➡️ Қарашы, бұлт! Жаңбыр жауғалы тұр (дәлел).<br><br>
+
+---
+
+🔹 <b>3️⃣ Present Continuous for Future</b><br><br>
+<b>Қолданылады:</b> нақты келісілген жоспарларға.<br><br>
+
+✅ Құрылымы: <b>am / is / are + V-ing</b><br>
+<b>Мысалдар:</b><br>
+I <b>am meeting</b> my friends tomorrow. 👫<br>
+➡️ Ертең достарыммен кездеспекпін.<br><br>
+She <b>is flying</b> to Paris next week. ✈️<br>
+➡️ Ол келесі аптада Парижге ұшады (жоспар нақты).<br><br>
+
+---
+
+🔹 <b>4️⃣ Future Continuous</b><br><br>
+<b>Қолданылады:</b> болашақта белгілі бір уақытта болып жататын іс.<br><br>
+
+✅ Құрылымы: <b>will be + V-ing</b><br>
+<b>Мысалдар:</b><br>
+This time tomorrow, I <b>will be sleeping</b>. 😴<br>
+➡️ Ертең дәл осы уақытта мен ұйықтап жатамын.<br><br>
+
+---
+
+🔹 <b>5️⃣ Future Perfect</b><br><br>
+<b>Қолданылады:</b> белгілі бір уақытқа дейін іс аяқталатынын айту.<br><br>
+
+✅ Құрылымы: <b>will have + V3</b><br>
+<b>Мысал:</b><br>
+By next Monday, we <b>will have finished</b> our project. ✅<br><br>
+
+---
+
+📊 <b>Қысқаша салыстыру:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Form</th><th>Usage</th><th>Example</th></tr>
+<tr><td>will + V1</td><td>Уәде, шешім, болжау</td><td>I will call you later.</td></tr>
+<tr><td>am/is/are + going to + V1</td><td>Жоспар немесе дәлел</td><td>She is going to bake a cake.</td></tr>
+<tr><td>am/is/are + V-ing</td><td>Нақты жоспар</td><td>We are meeting at 5 pm.</td></tr>
+<tr><td>will be + V-ing</td><td>Белгілі уақытта болып жатқан іс</td><td>I will be studying at 9 pm.</td></tr>
+<tr><td>will have + V3</td><td>Белгілі уақытқа дейін аяқталған іс</td><td>They will have arrived by noon.</td></tr>
+</table><br>
+
+---
+
+💡 <b>Tip:</b>  
+“Will” — spontaneous action (қазір шешім қабылдадың).  
+“Going to” — plan (бұрын шешкенсің).  
+“Present Continuous” — нақты келісілген.  
+“Future Perfect” — нәтиже белгілі уақытқа дейін.<br><br>
+
+🎬 <b>Funny Example:</b><br>
+By the time you wake up, your cat <b>will be eating</b> your breakfast again! 🐈🍳<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I will help you. She is going to bake a cake. We are meeting tomorrow. I will be studying at 9 pm."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence using 'going to':",
+      choices: [
+        "She will going to visit her grandma.",
+        "She is going to visit her grandma.",
+        "She goes to visit her grandma."
+      ],
+      answer: "She is going to visit her grandma."
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'By this time tomorrow, I ___ be working on my project.' (will / am / going to)",
+      answer: "will"
+    },
+    {
+      type: "match",
+      text: "Match the Future form to its example 👇",
+      pairs: [
+        ["Future Simple", "I will call you tomorrow."],
+        ["Be going to", "She is going to travel next month."],
+        ["Present Continuous for future", "We are having dinner at 8 pm."],
+        ["Future Continuous", "He will be sleeping at midnight."],
+        ["Future Perfect", "They will have arrived by Friday."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 4 sentences using different Future Tenses (use will, going to, Present Continuous, and Future Perfect)."
+    }
+  ]
+},
+15: {
+  desc: `
+🌠 <b>Future Forms (including Passive Voice) — Болашақ шақ және оның пассив формалары</b><br><br>
+
+Болашақта болатын істерді айту үшін біз әртүрлі <b>future forms</b> қолданамыз:<br>
+<b>will, be going to, be + V-ing</b> т.б.<br>
+Бірақ кейде іс-әрекетті <b>кім істейтіні маңызды емес</b>, тек <b>не істелетіні</b> маңызды болады.<br>
+Мұндайда біз <b>Passive Voice (ырықсыз етіс)</b> қолданамыз. 🤖<br><br>
+
+---
+
+🔹 <b>1️⃣ Active vs Passive recap</b><br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Active (белсенді)</th><th>Passive (ырықсыз)</th></tr>
+<tr><td>Someone will clean the classroom.</td><td>The classroom <b>will be cleaned</b>.</td></tr>
+<tr><td>They are going to build a new school.</td><td>A new school <b>is going to be built</b>.</td></tr>
+<tr><td>They will announce the results tomorrow.</td><td>The results <b>will be announced</b> tomorrow.</td></tr>
+</table><br>
+
+🧠 <b>Ереже:</b><br>
+<b>Future Simple Passive:</b> will + be + V3<br>
+<b>Be going to Passive:</b> am/is/are + going to be + V3<br><br>
+
+---
+
+🎯 <b>Қолданылуы:</b><br>
+✅ Іс-әрекеттің жасаушысы белгісіз болса.<br>
+✅ Бізге нәтижесі маңызды болса.<br><br>
+
+<b>Мысалдар:</b><br>
+The concert <b>will be held</b> next Saturday. 🎤<br>
+New houses <b>are going to be built</b> near the river. 🏠<br>
+Homework <b>will be checked</b> tomorrow. 📘<br><br>
+
+---
+
+🧩 <b>Future Continuous + Passive?</b><br>
+Өте сирек қолданылады, бірақ мүмкін:<br>
+<b>will be being + V3</b><br>
+Example: The road <b>will be being repaired</b> all day tomorrow. 🚧<br><br>
+
+---
+
+🎨 <b>Funny Example:</b><br>
+The cake <b>will be eaten</b> by the cat again tomorrow morning! 🍰🐈<br><br>
+
+---
+
+💡 <b>Tip:</b>  
+Active — кім істейді маңызды.<br>
+Passive — не істеледі маңызды.<br><br>
+
+<b>Active:</b> They will publish the book next month.<br>
+<b>Passive:</b> The book <b>will be published</b> next month. 📚<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: The classroom will be cleaned. A new school is going to be built. The book will be published next month."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct passive form:",
+      choices: [
+        "The results will announce tomorrow.",
+        "The results will be announced tomorrow.",
+        "The results are announcing tomorrow."
+      ],
+      answer: "The results will be announced tomorrow."
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'A new bridge ___ be built next year.' (will / is / was)",
+      answer: "will"
+    },
+    {
+      type: "match",
+      text: "Match the active sentences to their passive forms 👇",
+      pairs: [
+        ["They will build a new park.", "A new park will be built."],
+        ["Someone will paint the wall.", "The wall will be painted."],
+        ["They are going to make a film.", "A film is going to be made."],
+        ["They will open the museum.", "The museum will be opened."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences in the passive future form. For example: 'The project will be completed soon.' or 'The results are going to be announced tomorrow.'"
+    }
+  ]
+},
+16: {
+  desc: `
+🎥 <b>Active & Passive in Different Tenses — Present, Past, Past Perfect + Reported Speech</b><br><br>
+
+🧩 Кейде сөйлемде <b>кім істегені</b> маңызды (Active),  
+ал кейде <b>не істелгені</b> маңызды (Passive).  
+Сол айырмашылықты әртүрлі шақтарда және баяндауда қолданамыз 👇<br><br>
+
+---
+
+🔹 <b>1️⃣ Simple Present</b><br>
+✅ <b>Active:</b> They <b>make</b> cakes every day.<br>
+✅ <b>Passive:</b> Cakes <b>are made</b> every day. 🎂<br><br>
+
+🧠 Ереже: <b>am / is / are + V3</b><br><br>
+
+---
+
+🔹 <b>2️⃣ Simple Past</b><br>
+✅ <b>Active:</b> They <b>painted</b> the wall yesterday.<br>
+✅ <b>Passive:</b> The wall <b>was painted</b> yesterday. 🎨<br><br>
+
+🧠 Ереже: <b>was / were + V3</b><br><br>
+
+---
+
+🔹 <b>3️⃣ Past Perfect</b><br>
+✅ <b>Active:</b> They <b>had finished</b> the work before 6 pm.<br>
+✅ <b>Passive:</b> The work <b>had been finished</b> before 6 pm. ⏰<br><br>
+
+🧠 Ереже: <b>had been + V3</b><br><br>
+
+---
+
+💬 <b>Баяндау сөйлеу (Reported Speech) және Passive</b><br>
+Narrative немесе Reported Speech-та да Passive Voice жиі қолданылады.<br><br>
+
+<b>Active:</b> The teacher said, “They built this bridge in 2000.”<br>
+<b>Reported:</b> The teacher said that the bridge <b>was built</b> in 2000. 🌉<br><br>
+
+<b>Active:</b> People say, “He writes amazing songs.”<br>
+<b>Reported:</b> It is said that he <b>writes</b> amazing songs. 🎵<br><br>
+
+<b>Active:</b> Scientists believe, “Dinosaurs lived here.”<br>
+<b>Reported:</b> It is believed that dinosaurs <b>lived</b> here. 🦖<br><br>
+
+---
+
+💡 <b>TIP:</b><br>
+✅ “It is said / It was believed / It had been known” — бұлар <b>Passive Reporting Structures</b> деп аталады.<br>
+✅ Олар әңгімені ресми және әдемі етіп көрсетеді.<br><br>
+
+---
+
+🎨 <b>Funny example:</b><br>
+It is believed that the cookies <b>were eaten</b> by the teacher… not by the students! 🍪😆<br><br>
+
+---
+
+🧾 <b>Қысқаша кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Tense</th><th>Active</th><th>Passive</th></tr>
+<tr><td>Present Simple</td><td>They make pizza.</td><td>Pizza is made.</td></tr>
+<tr><td>Past Simple</td><td>They cleaned the room.</td><td>The room was cleaned.</td></tr>
+<tr><td>Past Perfect</td><td>They had built the house.</td><td>The house had been built.</td></tr>
+</table><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: Cakes are made every day. The wall was painted yesterday. The work had been finished before 6 pm."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct passive sentence:",
+      choices: [
+        "The book was wrote by her.",
+        "The book was written by her.",
+        "The book wrote by her."
+      ],
+      answer: "The book was written by her."
+    },
+    {
+      type: "fill",
+      text: "Complete: 'The project ___ been completed before the meeting.' (had / has / have)",
+      answer: "had"
+    },
+    {
+      type: "match",
+      text: "Match each active sentence with its passive form 👇",
+      pairs: [
+        ["They make cakes every day.", "Cakes are made every day."],
+        ["They painted the wall yesterday.", "The wall was painted yesterday."],
+        ["They had finished the work.", "The work had been finished."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 reported sentences using passive voice. Example: 'It is said that cats are lucky.' or 'It was reported that the city was flooded.'"
+    }
+  ]
+},
+17: {
+  desc: `
+🌊 <b>Present Continuous & Past Continuous (incl. Passive Forms)</b><br><br>
+
+🎯 <b>1️⃣ Present Continuous — қазіргі сәттегі іс</b><br>
+Бұл шақ <b>дәл қазір</b> не болып жатқанын айту үшін қолданылады ⏰<br><br>
+
+✅ <b>Active:</b> They <b>are painting</b> the house now.<br>
+✅ <b>Passive:</b> The house <b>is being painted</b> now. 🎨<br><br>
+
+🧠 Ереже: <b>am / is / are + being + V3</b><br><br>
+
+---
+
+🎯 <b>2️⃣ Past Continuous — өткен сәтте болып жатқан іс</b><br>
+Бұл шақ <b>өткен кезде бір мезгілде жүріп жатқан</b> әрекеттерді білдіреді ⏳<br><br>
+
+✅ <b>Active:</b> They <b>were cleaning</b> the classroom when I arrived.<br>
+✅ <b>Passive:</b> The classroom <b>was being cleaned</b> when I arrived. 🧹<br><br>
+
+🧠 Ереже: <b>was / were + being + V3</b><br><br>
+
+---
+
+💬 <b>Қысқаша кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Tense</th><th>Active</th><th>Passive</th></tr>
+<tr><td>Present Continuous</td><td>They are building a new bridge.</td><td>A new bridge is being built.</td></tr>
+<tr><td>Past Continuous</td><td>They were fixing the roof.</td><td>The roof was being fixed.</td></tr>
+</table><br>
+
+---
+
+💡 <b>Маңызды:</b><br>
+🔸 “being” — бұл <b>passive continuous</b> белгісі.<br>
+🔸 Егер сөйлемде “now”, “at the moment”, “when I came” сияқты уақыт белгілері болса — Continuous шақ болуы мүмкін.<br><br>
+
+---
+
+🎭 <b>Мысалмен еске сақтау:</b><br>
+👷‍♂️ “The workers are repairing the road.” → “The road is being repaired.”<br>
+🎬 “They were filming a movie.” → “A movie was being filmed.”<br>
+🎓 “The students are taking a test.” → “A test is being taken.”<br><br>
+
+---
+
+😄 <b>Funny story:</b><br>
+At 8 a.m., the teacher <b>was being woken up</b> by her cat 🐱,<br>
+while the students <b>were being tested</b> online! 💻<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: The house is being painted. The classroom was being cleaned. The roof was being fixed."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct passive form: 'A new bridge ___ built now.'",
+      choices: ["is being", "was being", "be"],
+      answer: "is being"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'The cake ___ being decorated when I arrived.' (was / is / were)",
+      answer: "was"
+    },
+    {
+      type: "match",
+      text: "Match the active sentences with their passive forms 👇",
+      pairs: [
+        ["They are painting the fence.", "The fence is being painted."],
+        ["They were building a house.", "A house was being built."],
+        ["They are cleaning the room.", "The room is being cleaned."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences in Passive Continuous form. Example: 'My bike is being repaired.' or 'The hall was being decorated yesterday.'"
+    }
+  ]
+},
+18: {
+  desc: `
+🗣️ <b>Reported Speech — Жанама сөйлеу</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Біреудің сөзін тура айтпай, <b>жанама түрде жеткізу</b> үшін қолданылады.<br>
+Мысалы, біреу “I am tired” десе, сен оны <b>He said he was tired</b> деп жеткізесің.<br><br>
+
+---
+
+🌈 <b>1️⃣ Direct Speech vs Reported Speech</b><br><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct Speech (тікелей)</th><th>Reported Speech (жанама)</th></tr>
+<tr><td>He said, "I am happy."</td><td>He said (that) he <b>was</b> happy.</td></tr>
+<tr><td>She said, "I’m learning English."</td><td>She said she <b>was learning</b> English.</td></tr>
+<tr><td>They said, "We will go."</td><td>They said they <b>would go</b>.</td></tr>
+</table><br>
+
+🧠 <b>Ереже:</b><br>
+Reported speech жасағанда **етістік бір шаққа артқа жылжиды** (backshift).<br><br>
+
+---
+
+🔁 <b>2️⃣ Backshift кестесі:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct Speech</th><th>Reported Speech</th></tr>
+<tr><td>am / is / are</td><td>was / were</td></tr>
+<tr><td>do / does</td><td>did</td></tr>
+<tr><td>have / has</td><td>had</td></tr>
+<tr><td>will</td><td>would</td></tr>
+<tr><td>can</td><td>could</td></tr>
+<tr><td>may</td><td>might</td></tr>
+<tr><td>must</td><td>had to</td></tr>
+</table><br>
+
+---
+
+💬 <b>3️⃣ Уақыт пен орын сөздері де өзгереді:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct</th><th>Reported</th></tr>
+<tr><td>today</td><td>that day</td></tr>
+<tr><td>yesterday</td><td>the day before</td></tr>
+<tr><td>tomorrow</td><td>the next day</td></tr>
+<tr><td>now</td><td>then</td></tr>
+<tr><td>here</td><td>there</td></tr>
+</table><br>
+
+---
+
+💡 <b>4️⃣ “that” қолданылуы:</b><br>
+Кейде “that” сөзін қолданамыз, кейде тастаймыз — айырмашылығы жоқ:<br>
+He said (that) he was tired.<br><br>
+
+---
+
+🎭 <b>5️⃣ Мысалдар:</b><br>
+Direct: “I am reading a book,” she said.<br>
+Reported: She said (that) she was reading a book. 📖<br><br>
+
+Direct: “We will travel tomorrow,” they said.<br>
+Reported: They said they would travel the next day. ✈️<br><br>
+
+Direct: “I can help you,” he said.<br>
+Reported: He said he could help me. 💪<br><br>
+
+---
+
+🤣 <b>Қызықты мини оқиға:</b><br>
+Teacher: “You didn’t do your homework!” 😠<br>
+Student (later): “She said I hadn’t done my homework.” 😅<br><br>
+
+---
+
+🧩 <b>Қысқаша:</b><br>
+🎯 Direct → Reported Speech түріне өткенде шақтар бір сатыға артқа кетеді.<br>
+🎯 Уақыт пен орын сөздері өзгереді.<br>
+🎯 Көмекші сөз “that” кейде айтылмайды.<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: He said he was happy. She said she was learning English. They said they would go tomorrow."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct reported speech: 'She said, “I am busy.”' →",
+      choices: [
+        "She said she is busy.",
+        "She said she was busy.",
+        "She said she will be busy."
+      ],
+      answer: "She said she was busy."
+    },
+    {
+      type: "fill",
+      text: "Complete: 'He said he ___ finished his work.' (has / had / have)",
+      answer: "had"
+    },
+    {
+      type: "match",
+      text: "Match the direct sentences with their reported forms 👇",
+      pairs: [
+        ["I am tired", "He said he was tired"],
+        ["We will come tomorrow", "They said they would come the next day"],
+        ["She can dance", "He said she could dance"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences turning direct speech into reported speech. Example: 'He said, “I love music.” → He said he loved music.'"
+    }
+  ]
+},
+19: {
+  desc: `
+🗣️ <b>Reported Speech — Statements, Questions және Commands</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Direct speech (тікелей сөйлеу) → Reported speech (жанама сөйлеу) түрінде <b>айтылған ойларды, сұрақтарды және бұйрықтарды</b> жеткізуді үйренеміз.<br><br>
+
+---
+
+💬 <b>1️⃣ Reported Statements (айтылған пікірлер)</b><br>
+Statements – жай сөйлемдер. Біз оларды “said (that)” арқылы айтамыз.<br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct speech</th><th>Reported speech</th></tr>
+<tr><td>She said, "I love chocolate."</td><td>She said (that) she loved chocolate. 🍫</td></tr>
+<tr><td>He said, "We are late."</td><td>He said they were late. ⏰</td></tr>
+</table><br>
+
+🧠 <b>Ереже:</b><br>
+- “said” немесе “told” қолданылады.<br>
+- “that” сөзін айтуға да, тастауға да болады.<br><br>
+
+---
+
+❓ <b>2️⃣ Reported Questions (жанама сұрақтар)</b><br>
+Сұрақтарды айтқанда, <b>do/does/did</b> сияқты көмекші сөздер алынып тасталады.<br>
+Сөйлем <b>қалыпты сөз тәртібімен</b> жазылады (inversion болмайды).<br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct Question</th><th>Reported Question</th></tr>
+<tr><td>He asked, "Where are you going?"</td><td>He asked where I was going. 🚶‍♀️</td></tr>
+<tr><td>She asked, "Do you like pizza?"</td><td>She asked if I liked pizza. 🍕</td></tr>
+<tr><td>They asked, "Can you swim?"</td><td>They asked if I could swim. 🏊‍♂️</td></tr>
+</table><br>
+
+💡 <b>Tips:</b><br>
+- <b>Wh-</b> сұрақтарда (what, where, who...) → сол сөз сақталады.<br>
+- <b>Yes/No</b> сұрақтарда → <b>if</b> немесе <b>whether</b> қолданылады.<br><br>
+
+---
+
+🗣️ <b>3️⃣ Reported Commands / Requests (бұйрықтар мен өтініштер)</b><br>
+Commands – бұйрықтарды “told/asked + to + verb” түрінде жеткіземіз.<br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct Command</th><th>Reported Command</th></tr>
+<tr><td>Mom said, "Do your homework!"</td><td>Mom told me <b>to do</b> my homework. 📘</td></tr>
+<tr><td>The teacher said, "Don’t be late!"</td><td>The teacher told us <b>not to be</b> late. ⏰</td></tr>
+<tr><td>She said, "Please help me."</td><td>She asked me <b>to help</b> her. 🙏</td></tr>
+</table><br>
+
+---
+
+🎀 <b>Қысқаша ереже:</b><br>
+🟢 <b>Statements</b> → said / told + (that) + clause<br>
+🔵 <b>Questions</b> → asked + if / wh-word + normal word order<br>
+🟣 <b>Commands</b> → told / asked + to / not to + verb<br><br>
+
+---
+
+🤣 <b>Мысалмен шағын диалог:</b><br>
+Teacher: “Close your books.”<br>
+Student: “She told us to close our books.”<br>
+Friend: “Do you like BTS?”<br>
+You: “He asked if I liked BTS!” 🎤<br>
+Mom: “Clean your room.”<br>
+You: “Mom told me to clean my room!” 🧹<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: She said she was tired. He asked where I was going. Mom told me to clean my room."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct reported form: 'He said, “I am learning English.”'",
+      choices: [
+        "He said he is learning English.",
+        "He said he was learning English.",
+        "He said he has learned English."
+      ],
+      answer: "He said he was learning English."
+    },
+    {
+      type: "fill",
+      text: "Complete: 'She asked if I ___ like pizza.' (do / did / does)",
+      answer: "did"
+    },
+    {
+      type: "match",
+      text: "Match the direct speech to its reported form 👇",
+      pairs: [
+        ["Mom said, 'Go to bed!'", "Mom told me to go to bed."],
+        ["The teacher said, 'Don’t talk!'", "The teacher told us not to talk."],
+        ["He asked, 'Can you swim?'", "He asked if I could swim."]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 of your own sentences changing direct speech into reported speech. Include one statement, one question, and one command. 💬"
+    }
+  ]
+},
+20: {
+  desc: `
+🧩 <b>Reported Speech: Indirect / Embedded Questions</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Сұрақты тура түрде емес, <b>жанама (indirect)</b> немесе <b>embedded (құрамдас)</b> түрде айту.  
+Яғни, сұраудың сыпайы, жұмсақ түрін қолдану 💬<br><br>
+
+---
+
+💬 <b>1️⃣ Тікелей сұрақ (Direct Question)</b><br>
+➡ “Where is the bank?” 🏦<br>
+Бұл — жай сұрақ. Бірақ кейде біз оны әдепті түрде жеткізгіміз келеді.<br><br>
+
+✨ <b>2️⃣ Жанама сұрақ (Indirect Question)</b><br>
+➡ “Can you tell me where the bank is?”<br>
+(= “Банк қайда екенін айта аласыз ба?”)<br><br>
+
+🧠 <b>Негізгі ереже:</b><br>
+Indirect / Embedded Question ішінде **inversion (аударылған тәртіп)** болмайды.<br>
+👉 Яғни, “Where is the bank?” → “where the bank is.”<br><br>
+
+---
+
+🧱 <b>3️⃣ Құрылымы:</b><br>
+<code>Intro phrase + question word + normal sentence order</code><br><br>
+
+🪄 <b>Intro phrases (кіріспе тіркестер):</b><br>
+- Can you tell me...<br>
+- Do you know...<br>
+- Could you explain...<br>
+- I wonder...<br>
+- I’d like to know...<br><br>
+
+---
+
+🧮 <b>4️⃣ Мысалдар:</b><br>
+Direct: “What time is it?” ⏰<br>
+Indirect: “Do you know what time it is?”<br><br>
+
+Direct: “Where did she go?” 🚗<br>
+Indirect: “Can you tell me where she went?”<br><br>
+
+Direct: “Is he at school?” 🎓<br>
+Indirect: “I wonder if he is at school.”<br><br>
+
+Direct: “Why are you sad?” 😢<br>
+Indirect: “Could you tell me why you are sad?”<br><br>
+
+---
+
+💡 <b>5️⃣ “If” және “Whether” қолдану:</b><br>
+Yes/No сұрақтарда <b>if</b> немесе <b>whether</b> қолданылады.<br>
+Direct: “Is it raining?” → Indirect: “I wonder <b>if</b> it’s raining.” ☔<br><br>
+
+---
+
+🎀 <b>6️⃣ Тренингтік кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Direct Question</th><th>Indirect / Embedded Form</th></tr>
+<tr><td>Where is my phone?</td><td>Can you tell me where my phone is?</td></tr>
+<tr><td>Does he like coffee?</td><td>I’d like to know if he likes coffee.</td></tr>
+<tr><td>Why are you late?</td><td>She asked why I was late.</td></tr>
+<tr><td>When will the movie start?</td><td>Do you know when the movie will start?</td></tr>
+</table><br>
+
+---
+
+🤣 <b>Кішкентай күлкілі диалог:</b><br>
+Teacher: “Where is your homework?” 😠<br>
+Student: “She asked where my homework was!” 😅<br>
+Friend: “Do you like pizza?” 🍕<br>
+You: “He asked if I liked pizza!”<br><br>
+
+---
+
+🌟 <b>Қысқаша:</b><br>
+✅ <b>Inversion жоқ</b> (where is → where it is)<br>
+✅ <b>Intro phrase</b> қолданылады (Do you know, Can you tell me...)<br>
+✅ <b>If / whether</b> — Yes/No сұрақтарға<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: Do you know where she went? I wonder if he is at school. Can you tell me what time it is?"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct indirect question: 'Where is the library?'",
+      choices: [
+        "Can you tell me where is the library?",
+        "Can you tell me where the library is?",
+        "Do you know where is library?"
+      ],
+      answer: "Can you tell me where the library is?"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'I wonder if it ___ raining.' (is / was / were)",
+      answer: "is"
+    },
+    {
+      type: "match",
+      text: "Match the direct questions to their indirect forms 👇",
+      pairs: [
+        ["What time is it?", "Do you know what time it is?"],
+        ["Is he your teacher?", "I wonder if he is your teacher."],
+        ["Where did she go?", "Can you tell me where she went?"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences turning direct questions into indirect ones. Example: 'Where is my book?' → 'Can you tell me where my book is?' 📚"
+    }
+  ]
+},
+21: {
+  desc: `
+✨ <b>Adverbs — Үстеулер</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Adverbs — бұл етістік (verb), сын есім (adjective) немесе басқа үстеуді сипаттайтын сөздер.<br>
+Олар <b>қалай?</b> <b>қашан?</b> <b>қайда?</b> және <b>қаншалықты жиі?</b> деген сұрақтарға жауап береді.<br><br>
+
+---
+
+🌈 <b>1️⃣ Adverbs деген не?</b><br>
+<b>Adjective</b> зат есімді сипаттайды.<br>
+<b>Adverb</b> — әрекетті сипаттайды.<br><br>
+
+🧩 <b>Мысал:</b><br>
+He is a <b>slow</b> runner. → (adjective)<br>
+He runs <b>slowly</b>. → (adverb) 🏃‍♂️<br><br>
+
+---
+
+📘 <b>2️⃣ Үстеулер қалай жасалады?</b><br>
+Көптеген үстеулер сын есімге “-ly” жалғау арқылы жасалады:<br><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Adjective</th><th>Adverb</th></tr>
+<tr><td>quick</td><td>quickly</td></tr>
+<tr><td>happy</td><td>happily</td></tr>
+<tr><td>slow</td><td>slowly</td></tr>
+<tr><td>careful</td><td>carefully</td></tr>
+<tr><td>good</td><td>well (ерекше форма)</td></tr>
+</table><br>
+
+---
+
+⚖️ <b>3️⃣ Comparative Adverbs — Салыстырмалы үстеулер</b><br>
+Екі әрекетті салыстыру үшін қолданылады.<br><br>
+
+🧠 <b>Ереже:</b><br>
+- Қысқа үстеулерге “-er” жалғанады.  
+- Ұзындарға “more / less” қолданылады.<br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Adverb</th><th>Comparative</th><th>Example</th></tr>
+<tr><td>fast</td><td>faster</td><td>He runs faster than me. 🏃‍♂️💨</td></tr>
+<tr><td>hard</td><td>harder</td><td>She studies harder than before. 📚</td></tr>
+<tr><td>carefully</td><td>more carefully</td><td>He drives more carefully than his brother. 🚗</td></tr>
+<tr><td>quickly</td><td>more quickly</td><td>They finished more quickly today. ⏱️</td></tr>
+</table><br>
+
+---
+
+💫 <b>4️⃣ Superlative Adverbs — Ең жоғарғы шегі</b><br>
+“Ең тез”, “ең жақсы” дегенді білдіреді.<br><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Adverb</th><th>Superlative</th><th>Example</th></tr>
+<tr><td>fast</td><td>the fastest</td><td>Usain runs the fastest. 🥇</td></tr>
+<tr><td>carefully</td><td>the most carefully</td><td>He painted the most carefully. 🎨</td></tr>
+<tr><td>well</td><td>the best</td><td>She sings the best. 🎤</td></tr>
+</table><br>
+
+---
+
+🎯 <b>5️⃣ Есте сақта:</b><br>
+- “good → well”  
+- “bad → badly”  
+- “early → earlier → the earliest”  
+- “hard → harder → the hardest”<br><br>
+
+---
+
+🤣 <b>Қызықты мини диалог:</b><br>
+🐢 Tortoise: “I walk slowly.”<br>
+🐇 Rabbit: “But I run faster!”<br>
+🏁 Teacher: “Well, who studied harder?” 😄<br><br>
+
+---
+
+🌟 <b>Қысқаша:</b><br>
+✅ Adverbs сипаттайды “қалай, қашан, қайда”  
+✅ Comparative: faster / more quickly  
+✅ Superlative: the fastest / the most carefully<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: He runs faster than me. She studies harder. They worked more carefully than before."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct comparative adverb: 'She sings ___ than her sister.'",
+      choices: ["more beautifully", "beautiful", "most beautifully"],
+      answer: "more beautifully"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'He drives ___ than his brother.' (carefully / more carefully / careful)",
+      answer: "more carefully"
+    },
+    {
+      type: "match",
+      text: "Match the adverb with its comparative form 👇",
+      pairs: [
+        ["fast", "faster"],
+        ["hard", "harder"],
+        ["carefully", "more carefully"],
+        ["well", "better"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 4 sentences comparing two actions using comparative adverbs. Example: 'I study harder than my friend.' 📚"
+    }
+  ]
+},
+22: {
+  desc: `
+🌟 <b>Comparative Adverbs: Positions and Variety — Салыстырмалы үстеулер: орны және түрлері</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Comparative adverbs сөйлемде екі әрекетті салыстыру үшін қолданылады.<br>
+Бірақ оларды қайда қою керек және әртүрлі қалай қолдануға болатынын білу маңызды! 💡<br><br>
+
+---
+
+💫 <b>1️⃣ Comparative adverbs деген не?</b><br>
+Бұлар әрекетті (етістікті) салыстырады.<br><br>
+
+📘 Мысалы:<br>
+- She sings <b>more beautifully</b> than her sister. 🎤<br>
+- He runs <b>faster</b> than me. 🏃‍♂️<br><br>
+
+🧠 Ереже:<br>
+• Қысқа үстеулер → <b>-er</b> жалғауы<br>
+• Ұзын үстеулер → <b>more / less</b> + adverb<br><br>
+
+---
+
+🏗️ <b>2️⃣ Comparative adverbs сөйлемде қайда орналасады?</b><br>
+Comparative adverbs көбінесе етістіктен кейін немесе сөйлем соңында келеді.<br><br>
+
+📍 <b>Position examples:</b><br>
+✅ He works <b>harder</b> than his brother.<br>
+✅ She speaks English <b>more fluently</b> now.<br>
+✅ They arrived <b>earlier</b> today.<br><br>
+
+⚠️ Бірақ кейде adverb сөйлемнің басында немесе соңында ерекше екпін беру үшін келеді:<br>
+💬 <i>More quickly than usual</i>, he finished his homework! ✏️<br><br>
+
+---
+
+🎨 <b>3️⃣ Variety of comparative adverbs — Түрлі формалар</b><br>
+Кейбір үстеулер ерекше түрленеді, ереже бұзуы мүмкін 😄<br><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Adverb</th><th>Comparative</th><th>Superlative</th><th>Example</th></tr>
+<tr><td>well</td><td>better</td><td>best</td><td>She sings better than before. 🎶</td></tr>
+<tr><td>badly</td><td>worse</td><td>worst</td><td>He played worse than yesterday. 😬</td></tr>
+<tr><td>early</td><td>earlier</td><td>earliest</td><td>We came earlier than them. ⏰</td></tr>
+<tr><td>far</td><td>farther / further</td><td>farthest / furthest</td><td>He ran farther than anyone. 🏅</td></tr>
+</table><br>
+
+---
+
+🧩 <b>4️⃣ Екі әрекетті салыстырудың басқа тәсілдері:</b><br>
+👉 <b>less + adverb + than</b> — біреу аз істеді деген мағынада.<br>
+👉 <b>as + adverb + as</b> — теңдік білдіреді.<br><br>
+
+📗 Мысалдар:<br>
+- He drives <b>less carefully</b> than me. 🚗<br>
+- She studies <b>as hard as</b> her brother. 📚<br>
+- My dog runs <b>faster</b> than my cat! 🐶🐱<br><br>
+
+---
+
+🎮 <b>Ойын: “Adverb Race!”</b><br>
+Екі әрекетті салыстырып сөйлем құрастыр:<br>
+💬 Example: “I type faster than my teacher.” 💻<br>
+💬 “I wake up earlier than my sister.” 😄<br><br>
+
+---
+
+💡 <b>Қысқаша:</b><br>
+✅ Comparative adverbs = faster, more slowly, less carefully<br>
+✅ Сөйлем соңында жиі тұрады<br>
+✅ “as ... as” және “less ... than” құрылымдарын қолдан<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Let’s read some examples aloud: She studies harder. He runs faster. They work more carefully than before."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence with a comparative adverb:",
+      choices: [
+        "She sings beautiful than her friend.",
+        "She sings more beautifully than her friend.",
+        "She sings most beautifully than her friend."
+      ],
+      answer: "She sings more beautifully than her friend."
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'He finished his homework ___ than usual.' (earlier / more early / earliest)",
+      answer: "earlier"
+    },
+    {
+      type: "match",
+      text: "Match the adverb with its comparative form 👇",
+      pairs: [
+        ["well", "better"],
+        ["badly", "worse"],
+        ["early", "earlier"],
+        ["far", "farther / further"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences using comparative adverbs to compare actions in your life. Example: 'I wake up earlier than my brother.'"
+    }
+  ]
+},
+23: {
+  desc: `
+🚀 <b>Modals — Modal verbs: Possibility, Intent, Ability, Necessity</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Modal verbs – көмекші етістіктер, олар негізгі етістікке мағына қосады: <i>мүмкіндік, қабілет, ниет немесе міндет</i> білдіреді.<br><br>
+
+---
+
+🌈 <b>1️⃣ Ability (Қабілет)</b><br>
+Бір нәрсені істей алу қабілетін көрсетеді.<br><br>
+
+✅ <b>can</b> — қазіргі қабілет<br>
+✅ <b>could</b> — өткен шақтағы қабілет<br><br>
+
+📘 Мысалдар:<br>
+- I <b>can swim</b> very fast. 🏊‍♀️<br>
+- When I was 5, I <b>could draw</b> dinosaurs. 🦕<br><br>
+
+---
+
+💭 <b>2️⃣ Possibility (Мүмкіндік)</b><br>
+Бір нәрсе <i>болуы мүмкін</i> екенін білдіреді.<br><br>
+
+✅ <b>may</b> — мүмкін<br>
+✅ <b>might</b> — әлдеқайда әлсіз мүмкіндік<br>
+✅ <b>could</b> — белгілі бір жағдайға байланысты мүмкіндік<br><br>
+
+📗 Мысалдар:<br>
+- It <b>may rain</b> today. 🌧️<br>
+- She <b>might come</b> later. ⏰<br>
+- That <b>could be</b> true. 🤔<br><br>
+
+---
+
+🔥 <b>3️⃣ Necessity (Қажеттілік, міндет)</b><br>
+Бір нәрсені істеу керек екенін білдіреді.<br><br>
+
+✅ <b>must</b> — қатты міндет<br>
+✅ <b>have to</b> — сыртқы жағдай талабынан<br><br>
+
+📙 Мысалдар:<br>
+- You <b>must</b> wear a seatbelt. 🚗<br>
+- I <b>have to</b> finish my homework before dinner. 📚<br><br>
+
+---
+
+💡 <b>4️⃣ Intent (Ниет)</b><br>
+Бір нәрсені істеуге <i>ниет, жоспар</i> білдіреді.<br><br>
+
+✅ <b>will</b> — жоспар немесе шешім<br>
+✅ <b>would</b> — сыпайылық немесе шартты сөйлем<br><br>
+
+📘 Мысалдар:<br>
+- I <b>will study</b> tonight. 📖<br>
+- I <b>would help</b> you if I could. ❤️<br><br>
+
+---
+
+🎯 <b>5️⃣ Қысқаша кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Function</th><th>Modals</th><th>Example</th></tr>
+<tr><td>Ability</td><td>can, could</td><td>I can play the piano. 🎹</td></tr>
+<tr><td>Possibility</td><td>may, might, could</td><td>It may snow tomorrow. ❄️</td></tr>
+<tr><td>Necessity</td><td>must, have to</td><td>You must study hard. 💪</td></tr>
+<tr><td>Intent</td><td>will, would</td><td>I will call you later. 📞</td></tr>
+</table><br>
+
+---
+
+🎮 <b>Mini Game: Modal Mood!</b><br>
+Оқушылар сөйлемге лайық модалды таңдайды:<br>
+💬 “I ___ go to the party if I finish my work.” → <b>might</b><br>
+💬 “You ___ help your friend with homework.” → <b>should</b><br><br>
+
+---
+
+💫 <b>Қысқаша ереже:</b><br>
+🟢 can/could → қабілет немесе мүмкіндік<br>
+🟡 may/might → болжам<br>
+🔵 must/have to → міндет<br>
+🟣 will/would → ниет, жоспар, сыпайылық<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I can swim. It might rain. You must study. I will call you later."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct modal verb: 'It ___ rain this evening.'",
+      choices: ["can", "may", "must"],
+      answer: "may"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'You ___ wear a helmet when cycling.' (must / might / could)",
+      answer: "must"
+    },
+    {
+      type: "match",
+      text: "Match each modal verb to its function 👇",
+      pairs: [
+        ["can", "ability"],
+        ["may", "possibility"],
+        ["must", "necessity"],
+        ["will", "intent"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 sentences using different modals (can, might, must, will, would). Example: 'I can play the guitar.'"
+    }
+  ]
+},
+24: {
+  desc: `
+🌟 <b>Modal Forms — Different Functions + Past Modal Variants</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Модаль етістіктердің әртүрлі мағынасы мен олардың <b>өткен шақтағы</b> түрлерін үйрену.<br>
+Олар сөйлеуде сенімділік, болжам, өкініш, немесе міндеттілікті білдіреді.<br><br>
+
+---
+
+💪 <b>1️⃣ Ability — Қабілет (Past form)</b><br>
+<b>can → could</b><br>
+➡ “Could” өткен шақтағы қабілетті білдіреді.<br><br>
+
+📘 Мысалдар:<br>
+- I <b>could</b> run very fast when I was 10. 🏃‍♂️<br>
+- She <b>couldn't</b> swim last summer. 🏊‍♀️<br><br>
+
+---
+
+🌈 <b>2️⃣ Obligation / Necessity — Міндеттілік</b><br>
+<b>must → had to</b> (past form)<br>
+➡ “Had to” — сыртқы себеппен істеуге тура келген жағдай.<br><br>
+
+📙 Мысалдар:<br>
+- I <b>had to</b> finish my project yesterday. 💻<br>
+- We <b>had to</b> wake up early. ⏰<br><br>
+
+---
+
+💭 <b>3️⃣ Advice / Recommendation — Кеңес</b><br>
+<b>should → should have</b> (past form)<br>
+➡ “Should have” — істелмеген, бірақ істеу керек болған әрекет.<br><br>
+
+📗 Мысалдар:<br>
+- You <b>should have studied</b> harder. 📚<br>
+- I <b>shouldn't have eaten</b> so much cake! 🍰<br><br>
+
+---
+
+🔮 <b>4️⃣ Possibility / Speculation — Болжам, сенім</b><br>
+<b>might / could / must + have + V3</b><br>
+➡ Өткен шақтағы оқиғаны болжап айту.<br><br>
+
+📘 Мысалдар:<br>
+- She <b>might have left</b> already. 🚪<br>
+- He <b>must have forgotten</b> his keys. 🔑<br>
+- They <b>could have missed</b> the bus. 🚌<br><br>
+
+---
+
+💡 <b>5️⃣ Permission — Рұқсат</b><br>
+<b>may → was allowed to</b><br>
+➡ Өткен шақта рұқсат болғанын білдіреді.<br><br>
+
+📗 Мысалдар:<br>
+- When I was a child, I <b>was allowed to</b> play outside until 9 p.m. 🌙<br><br>
+
+---
+
+📋 <b>Қысқаша кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Function</th><th>Present Modal</th><th>Past Form</th><th>Example</th></tr>
+<tr><td>Ability</td><td>can</td><td>could</td><td>I could swim when I was 6.</td></tr>
+<tr><td>Obligation</td><td>must</td><td>had to</td><td>We had to go home early.</td></tr>
+<tr><td>Advice</td><td>should</td><td>should have</td><td>You should have told me!</td></tr>
+<tr><td>Possibility</td><td>might / could / must</td><td>might have / could have / must have</td><td>He might have missed the train.</td></tr>
+<tr><td>Permission</td><td>may</td><td>was allowed to</td><td>I was allowed to stay up late.</td></tr>
+</table><br>
+
+---
+
+💬 <b>Мысал әңгіме:</b><br>
+Yesterday was funny! 😂 I <b>had to</b> wake up early, but I <b>couldn't</b> find my socks.<br>
+I <b>might have left</b> them in the kitchen! Mom said I <b>should have cleaned</b> my room.<br><br>
+
+---
+
+🎯 <b>Қысқаша ереже:</b><br>
+🟢 can → could<br>
+🟡 must → had to<br>
+🔵 should → should have<br>
+🟣 might → might have<br>
+🔴 may → was allowed to<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I could swim when I was young. You should have studied. He must have forgotten his keys."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "He must have forgot his wallet.",
+        "He must have forgotten his wallet.",
+        "He must has forgotten his wallet."
+      ],
+      answer: "He must have forgotten his wallet."
+    },
+    {
+      type: "fill",
+      text: "Complete: 'I ___ to finish my report yesterday.' (must / had to / have to)",
+      answer: "had to"
+    },
+    {
+      type: "match",
+      text: "Match the modal to its past form 👇",
+      pairs: [
+        ["can", "could"],
+        ["must", "had to"],
+        ["should", "should have"],
+        ["may", "was allowed to"],
+        ["might", "might have"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 4 sentences using past modals. Example: 'I should have called my friend yesterday.'"
+    }
+  ]
+},
+25: {
+  desc: `
+📘 <b>Prepositions — Демеуліктер</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Prepositions — заттың, іс-әрекеттің **орнын, уақытын, бағытын немесе байланысын** көрсететін сөздер.<br>
+Мысалы: <b>in, on, at, under, next to, with, from</b> және т.б.<br><br>
+
+---
+
+🌈 <b>1️⃣ Place (Орын)</b><br>
+<b>in</b> — ішінде<br>
+<b>on</b> — үстінде<br>
+<b>under</b> — астында<br>
+<b>next to</b> — қасында<br>
+<b>behind</b> — артында<br><br>
+
+📍 Мысалдар:<br>
+- The cat is <b>under</b> the table. 🐱<br>
+- The book is <b>on</b> the desk. 📖<br>
+- She is <b>in</b> the classroom. 🏫<br><br>
+
+---
+
+⏰ <b>2️⃣ Time (Уақыт)</b><br>
+<b>at</b> — нақты уақыт (at 7 o’clock)<br>
+<b>on</b> — күндер мен даталар (on Monday, on July 5th)<br>
+<b>in</b> — айлар, жылдар, маусымдар (in March, in 2025, in winter)<br><br>
+
+🕒 Мысалдар:<br>
+- I go to bed <b>at</b> 10 p.m.<br>
+- School starts <b>in</b> September.<br>
+- We play football <b>on</b> Fridays. ⚽<br><br>
+
+---
+
+🚗 <b>3️⃣ Direction (Бағыт)</b><br>
+<b>to</b> — бір бағытқа қарай<br>
+<b>into</b> — ішке қарай<br>
+<b>from</b> — бір жерден<br>
+<b>through</b> — ішінен<br><br>
+
+📘 Мысалдар:<br>
+- He is going <b>to</b> school. 🎒<br>
+- The dog ran <b>into</b> the house. 🐶<br>
+- We walked <b>through</b> the park. 🌳<br><br>
+
+---
+
+💬 <b>4️⃣ Other common prepositions</b><br>
+<b>with</b> — бірге<br>
+<b>without</b> — онсыз<br>
+<b>about</b> — туралы<br>
+<b>for</b> — үшін<br>
+<b>by</b> — арқылы<br><br>
+
+🧩 Мысалдар:<br>
+- I went <b>with</b> my friends. 👯‍♀️<br>
+- This gift is <b>for</b> you. 🎁<br>
+- The story is <b>about</b> animals. 🦊🐻<br><br>
+
+---
+
+💡 <b>Қысқаша ереже кестесі:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Type</th><th>Prepositions</th><th>Example</th></tr>
+<tr><td>Place</td><td>in, on, under, next to</td><td>The cat is on the sofa. 🐈</td></tr>
+<tr><td>Time</td><td>in, on, at</td><td>I get up at 7 a.m.</td></tr>
+<tr><td>Direction</td><td>to, from, into, through</td><td>He runs into the room.</td></tr>
+<tr><td>Other</td><td>with, about, for, by</td><td>I study with my friend.</td></tr>
+</table><br>
+
+---
+
+🎮 <b>Mini Game: “Preposition Hunt!”</b><br>
+Төмендегі сөйлемдерден prepositions тап 👀:<br>
+1️⃣ The dog is under the chair.<br>
+2️⃣ We will meet at the park.<br>
+3️⃣ She is walking to school.<br><br>
+
+---
+
+🌟 <b>Есте сақтауға лайфхак:</b><br>
+🟢 “in” – ішінде<br>
+🟡 “on” – үстінде<br>
+🔵 “at” – дәл сол жерде<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: The cat is under the table. I go to school at 8 o’clock. She is walking to the park."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct preposition: 'The book is ___ the desk.'",
+      choices: ["in", "on", "under"],
+      answer: "on"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'We go to school ___ the morning.' (in / on / at)",
+      answer: "in"
+    },
+    {
+      type: "match",
+      text: "Match the prepositions to their type 👇",
+      pairs: [
+        ["in", "time / place"],
+        ["on", "time / surface"],
+        ["under", "place (below something)"],
+        ["to", "direction (toward)"],
+        ["with", "together / company"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 short sentences using different prepositions. Example: 'My bag is on the chair.'"
+    }
+  ]
+},
+26: {
+  desc: `
+🌟 <b>Prepositions before nouns/adjectives & Dependent Prepositions</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Prepositions кейде <b>сын есімдермен</b>, <b>зат есімдермен</b> немесе <b>етістіктермен</b> бірге қолданылады.<br>
+Олар сол сөзге нақты мағына береді және жиі тіркес түрінде есте сақталады.<br><br>
+
+---
+
+🧩 <b>1️⃣ Prepositions before nouns (зат есімдердің алдында)</b><br>
+Кейбір зат есімдер әрқашан белгілі preposition-пен бірге жүреді.<br><br>
+
+📘 Мысалдар:<br>
+- a reason <b>for</b> something — бір нәрсенің себебі<br>
+- an answer <b>to</b> a question — сұраққа жауап<br>
+- a key <b>to</b> success — табыс кілті<br>
+- a problem <b>with</b> the car — көліктегі мәселе<br><br>
+
+💡 <i>Tip:</i> Preposition заттың “байланысын” көрсетеді.<br><br>
+
+---
+
+🌈 <b>2️⃣ Prepositions after adjectives (сын есімдерден кейін)</b><br>
+Кейбір сын есімдер әрқашан белгілі preposition-пен тіркеседі.<br><br>
+
+📙 Мысалдар:<br>
+- good <b>at</b> — бір нәрседен жақсы болу 💪<br>
+- interested <b>in</b> — қызығушылығы бар 💫<br>
+- afraid <b>of</b> — қорқу 😨<br>
+- proud <b>of</b> — мақтану 🌟<br>
+- famous <b>for</b> — белгілі болу 🌍<br><br>
+
+📗 Мысал сөйлемдер:<br>
+- She is <b>good at</b> painting. 🎨<br>
+- I am <b>afraid of</b> spiders. 🕷️<br>
+- They are <b>interested in</b> history. 📜<br><br>
+
+---
+
+💬 <b>3️⃣ Prepositions after verbs (dependent prepositions)</b><br>
+Кейбір етістіктер де белгілі preposition-пен тіркеседі.  
+Бұл тіркестерді бөлуге болмайды! ⚠️<br><br>
+
+📘 Мысалдар:<br>
+- listen <b>to</b> — тыңдау 👂<br>
+- depend <b>on</b> — тәуелді болу 🔗<br>
+- wait <b>for</b> — күту ⏳<br>
+- talk <b>about</b> — айту / талқылау 🗣️<br>
+- belong <b>to</b> — біреуге тиесілі болу 🎒<br><br>
+
+📙 Мысал сөйлемдер:<br>
+- I’m waiting <b>for</b> my bus. 🚌<br>
+- It depends <b>on</b> the weather. 🌦️<br>
+- We talked <b>about</b> our plans. 💭<br><br>
+
+---
+
+🧠 <b>4️⃣ Mini Table — Common Dependent Prepositions</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Adjective</th><th>Preposition</th><th>Example</th></tr>
+<tr><td>good</td><td>at</td><td>She’s good at English.</td></tr>
+<tr><td>afraid</td><td>of</td><td>He’s afraid of dogs.</td></tr>
+<tr><td>interested</td><td>in</td><td>I’m interested in music.</td></tr>
+<tr><td>proud</td><td>of</td><td>We’re proud of our team.</td></tr>
+<tr><td>famous</td><td>for</td><td>The city is famous for pizza.</td></tr>
+</table><br>
+
+---
+
+🎮 <b>Mini Game: “Preposition Partner!”</b><br>
+Төмендегі тіркестерді дұрыс жұптастыр:<br>
+👉 afraid — of<br>
+👉 listen — to<br>
+👉 depend — on<br>
+👉 proud — of<br><br>
+
+---
+
+💫 <b>Есте сақтауға лайфхак:</b><br>
+🟢 <b>Adjective + preposition</b> → good at, afraid of, interested in<br>
+🟡 <b>Noun + preposition</b> → reason for, answer to, key to<br>
+🔵 <b>Verb + preposition</b> → depend on, talk about, wait for<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I’m interested in music. She’s afraid of spiders. We talked about our plans."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct option: 'She is afraid ___ dogs.'",
+      choices: ["on", "for", "of"],
+      answer: "of"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'I am proud ___ my country.' (of / in / for)",
+      answer: "of"
+    },
+    {
+      type: "match",
+      text: "Match the word with its correct preposition 👇",
+      pairs: [
+        ["interested", "in"],
+        ["afraid", "of"],
+        ["depend", "on"],
+        ["listen", "to"],
+        ["good", "at"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 sentences using adjective + preposition and verb + preposition combinations. Example: 'I’m good at swimming.'"
+    }
+  ]
+},
+27: {
+  desc: `
+🚀 <b>Infinitive — Етістіктің бастапқы түрі (“to + verb”)</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Infinitive — бұл етістіктің <b>бастапқы формасы</b>, яғни “to” сөзімен бірге қолданылады.<br>
+Ол іс-әрекетті жалпы түрде білдіреді: <i>to go</i>, <i>to eat</i>, <i>to study</i> т.б.<br><br>
+
+---
+
+🌟 <b>1️⃣ Infinitive деген не?</b><br>
+Infinitive = <b>to + verb</b><br><br>
+
+📘 Мысалдар:<br>
+- to read — оқу 📖<br>
+- to play — ойнау 🎮<br>
+- to be — болу 🧍‍♂️<br>
+- to study — оқу (сабақ оқу) 🏫<br><br>
+
+---
+
+🌈 <b>2️⃣ Infinitive қай кезде қолданылады?</b><br>
+
+✅ <b>1. Мақсат білдіру үшін:</b><br>
+- I study <b>to learn</b> English. (Мен ағылшынша үйрену үшін оқимын.)<br>
+- She went to the shop <b>to buy</b> milk. 🛒<br><br>
+
+✅ <b>2. Кейбір етістіктерден кейін:</b><br>
+(<i>want, decide, hope, need, plan, learn, forget</i>)<br><br>
+- I <b>want to go</b> home. 🏠<br>
+- They <b>decided to travel</b> abroad. ✈️<br>
+- We <b>hope to see</b> you soon. 👋<br><br>
+
+✅ <b>3. Кейбір сын есімдерден кейін:</b><br>
+(<i>happy, glad, sorry, afraid</i>)<br><br>
+- I’m <b>happy to see</b> you! 😊<br>
+- He’s <b>afraid to fly</b>. 😨<br><br>
+
+✅ <b>4. Кейбір зат есімдерден кейін:</b><br>
+- It’s time <b>to start</b> the lesson. ⏰<br>
+- She has a lot of homework <b>to do</b>. 📚<br><br>
+
+---
+
+📋 <b>3️⃣ Кесте: Common Infinitive Phrases</b><br>
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Verb / Adjective / Noun</th><th>Infinitive Example</th></tr>
+<tr><td>want</td><td>I want <b>to go</b> home.</td></tr>
+<tr><td>decide</td><td>They decided <b>to travel</b> abroad.</td></tr>
+<tr><td>learn</td><td>She is learning <b>to dance</b>.</td></tr>
+<tr><td>happy</td><td>I’m happy <b>to help</b> you.</td></tr>
+<tr><td>afraid</td><td>He’s afraid <b>to speak</b> in public.</td></tr>
+<tr><td>time</td><td>It’s time <b>to eat</b> lunch.</td></tr>
+</table><br>
+
+---
+
+💡 <b>4️⃣ “to” жоқ infinitive (bare infinitive)</b><br>
+Кейбір сөздерден кейін “to” жазылмайды.  
+Бұл — <b>bare infinitive</b> деп аталады.<br><br>
+
+📘 Мысалдар:<br>
+- I can <b>swim</b>. (жоқ “to”)<br>
+- You should <b>study</b> more.<br>
+- Let’s <b>go</b> to the park! 🌳<br><br>
+
+🧠 Ереже:<br>
+<code>can, may, must, should, let, make</code> сияқты сөздерден кейін “to” жазылмайды.<br><br>
+
+---
+
+🎀 <b>Есте сақтауға лайфхак:</b><br>
+🟢 “to” бар infinitive — мақсатты білдіреді: <i>I want to learn</i><br>
+🔵 “to” жоқ infinitive — модаль етістіктерден кейін келеді: <i>I can swim</i><br>
+🟣 Infinitive — сөйлемде етістіктің “атауы” сияқты жұмыс істейді.<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I want to learn English. She decided to travel. We can swim. He’s happy to see you."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct form: 'I want ___ a doctor.'",
+      choices: ["to be", "be", "being"],
+      answer: "to be"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'She decided ___ abroad next year.' (to travel / travel / traveling)",
+      answer: "to travel"
+    },
+    {
+      type: "match",
+      text: "Match the word to its correct infinitive example 👇",
+      pairs: [
+        ["want", "to go"],
+        ["decide", "to study"],
+        ["happy", "to help"],
+        ["can", "swim"],
+        ["afraid", "to fly"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 sentences using infinitives. Example: 'I need to finish my homework.'"
+    }
+  ]
+},
+28: {
+  desc: `
+🌟 <b>Infinitive forms after adjectives / verbs & Gerunds, Phrasal Verbs</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Infinitive пен Gerund (V + ing) қай кезде қолданылатынын және phrasal verbs-тің (етістікті тіркестердің) мағынасын үйренеміз.<br><br>
+
+---
+
+💫 <b>1️⃣ Infinitive after adjectives — сын есімнен кейінгі инфинитив</b><br><br>
+Кейбір сын есімдерден кейін <b>to + verb</b> қолданылады.<br>
+Бұл — себепті, мақсатты немесе эмоцияны білдіреді.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- I’m <b>happy to see</b> you. 😊<br>
+- She’s <b>afraid to fly</b>. ✈️<br>
+- It’s <b>important to study</b> every day. 📚<br>
+- He was <b>surprised to hear</b> the news. 😲<br><br>
+
+🧠 <b>Ереже:</b><br>
+Adjective + “to + verb”<br>
+👉 happy / glad / afraid / ready / surprised / important + to + infinitive<br><br>
+
+---
+
+🌈 <b>2️⃣ Infinitive after certain verbs — кейбір етістіктерден кейін</b><br><br>
+Көптеген етістіктерден кейін infinitive (to + verb) қолданылады.<br><br>
+
+📋 <b>Мысал кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Verb</th><th>Example</th></tr>
+<tr><td>want</td><td>I want <b>to eat</b> pizza. 🍕</td></tr>
+<tr><td>decide</td><td>They decided <b>to travel</b> abroad. ✈️</td></tr>
+<tr><td>plan</td><td>We plan <b>to visit</b> London. 🏙️</td></tr>
+<tr><td>hope</td><td>She hopes <b>to pass</b> the exam. 🧠</td></tr>
+<tr><td>need</td><td>You need <b>to rest</b>. 😴</td></tr>
+<tr><td>forget</td><td>Don’t forget <b>to call</b> your friend. 📞</td></tr>
+</table><br>
+
+---
+
+💡 <b>3️⃣ Gerunds (V + ing) — етістікті “ing” формасы</b><br><br>
+Gerund — бұл етістікке “-ing” жалғанып, зат есім ретінде қолданылатын түрі.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- I enjoy <b>reading</b>. 📖<br>
+- She likes <b>dancing</b>. 💃<br>
+- We finished <b>studying</b>. 🏫<br>
+- He avoids <b>talking</b> loudly. 🤫<br><br>
+
+🧠 <b>Gerund</b> мына сөздерден кейін жиі келеді:<br>
+enjoy, like, love, hate, finish, avoid, suggest, mind<br><br>
+
+📋 <b>Infinitive vs Gerund кестесі:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Infinitive (to + V)</th><th>Gerund (V + ing)</th></tr>
+<tr><td>want to go</td><td>enjoy going</td></tr>
+<tr><td>decide to study</td><td>finish studying</td></tr>
+<tr><td>hope to travel</td><td>avoid talking</td></tr>
+<tr><td>need to rest</td><td>like dancing</td></tr>
+</table><br>
+
+---
+
+⚡ <b>4️⃣ Phrasal Verbs — Етістік + көмекші сөз</b><br><br>
+Phrasal verbs — бір етістік пен көмекші сөздің (preposition/adverb) қосындысы.<br>
+Мағынасы көбінесе жаңа болады.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- look after — қамқор болу 👩‍👧<br>
+- turn on — қосу 💡<br>
+- turn off — өшіру 🔌<br>
+- give up — тастау / бас тарту 🙅‍♂️<br>
+- look for — іздеу 🔎<br>
+- get up — тұру 🛏️<br><br>
+
+🎯 <b>Лайфхак:</b><br>
+Phrasal verbs-ті әрдайым тұтас жатта — олар жеке мағына береді!<br>
+<code>look after ≠ look + after</code> — бұл бірге жаңа мағына!<br><br>
+
+---
+
+💬 <b>Мысал сөйлемдер:</b><br>
+- She decided <b>to start studying</b> English. 📘<br>
+- I enjoy <b>listening</b> to music. 🎵<br>
+- Don’t forget <b>to turn off</b> the lights. 💡<br>
+- He gave up <b>smoking</b>. 🚭<br><br>
+
+🎀 <b>Есте сақтауға лайфхак:</b><br>
+🔹 Infinitive — “to + verb” → мақсат пен жоспарды білдіреді.<br>
+🔹 Gerund — “verb + ing” → әрекеттің өзіне көңіл бөледі.<br>
+🔹 Phrasal verb — жаңа мағыналы тіркес! 🌟<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Listen and repeat: I’m happy to help you. I decided to travel. I enjoy reading. Don’t forget to turn off the light."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct form: 'She enjoys ___ TV.'",
+      choices: ["to watch", "watch", "watching"],
+      answer: "watching"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'I’m ready ___ my homework now.' (to start / starting / start)",
+      answer: "to start"
+    },
+    {
+      type: "match",
+      text: "Match the words to their meanings 👇",
+      pairs: [
+        ["look after", "to take care of someone 👶"],
+        ["turn on", "to start a machine or light 💡"],
+        ["give up", "to stop doing something 🚭"],
+        ["enjoy", "to get pleasure from doing something 😊"],
+        ["decide", "to make a choice about something 🧠"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 5 sentences using infinitives, gerunds, or phrasal verbs. For example: 'I need to study.' / 'He enjoys cooking.' / 'She turned off the TV.'"
+    }
+  ]
+},
+29: {
+  desc: `
+🌟 <b>Conjunctions: so that, although, while, whereas</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Conjunctions (жалғаулықтар) сөйлемдерді байланыстырып, ойды толық жеткізуге көмектеседі.<br>
+Бүгін біз төрт негізгі жалғаулықты үйренеміз: <b>so that, although, while, whereas</b> 🌈<br><br>
+
+---
+
+💫 <b>1️⃣ “so that” — мақсат немесе нәтиже көрсету</b><br>
+“so that” — “сондықтан”, “... үшін” деген мағынаны береді.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- I study hard <b>so that</b> I can get good grades. 🎓<br>
+- She left early <b>so that</b> she wouldn’t miss the bus. 🚌<br>
+- He whispered <b>so that</b> nobody could hear him. 🤫<br><br>
+
+🧠 <b>Ереже:</b>  
+<code>so that + subject + can/could/will/would + verb</code><br><br>
+
+---
+
+💫 <b>2️⃣ “although” — қарама-қайшылық білдіреді (“дегенмен”)</b><br><br>
+📘 <b>Мысалдар:</b><br>
+- <b>Although</b> it was raining, they went for a walk. ☔<br>
+- <b>Although</b> she was tired, she finished her homework. 😴✍️<br>
+- <b>Although</b> he’s young, he’s very smart. 🧠<br><br>
+
+🧩 <b>Tip:</b>  
+“although” — әрқашан екі ойдың арасында контраст жасайды.<br><br>
+
+---
+
+💫 <b>3️⃣ “while” — бір уақытта болатын әрекеттер</b><br><br>
+📘 <b>Мысалдар:</b><br>
+- I was watching TV <b>while</b> my brother was cooking. 📺👨‍🍳<br>
+- She sang <b>while</b> he played the guitar. 🎤🎸<br>
+- <b>While</b> we were studying, it started to rain. 🌧️<br><br>
+
+⏳ <b>Мағынасы:</b> “кезінде”, “сол уақытта” дегенді білдіреді.<br><br>
+
+---
+
+💫 <b>4️⃣ “whereas” — салыстыру, айырмашылық білдіреді</b><br><br>
+📘 <b>Мысалдар:</b><br>
+- Tom likes football, <b>whereas</b> John prefers basketball. ⚽🏀<br>
+- I enjoy cold weather, <b>whereas</b> my sister loves summer. ❄️☀️<br>
+- Cats are independent, <b>whereas</b> dogs are loyal. 🐱🐶<br><br>
+
+💡 <b>Tip:</b>  
+“whereas” = “while” (кейде) → бірақ айырмашылық үшін қолданылады.<br><br>
+
+---
+
+🎀 <b>Қысқаша кесте:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Conjunction</th><th>Мағынасы</th><th>Example</th></tr>
+<tr><td><b>so that</b></td><td>мақсат / нәтиже</td><td>I study so that I can pass. 📘</td></tr>
+<tr><td><b>although</b></td><td>қарама-қайшылық</td><td>Although it’s cold, I’m happy. ❄️😊</td></tr>
+<tr><td><b>while</b></td><td>бір уақытта</td><td>She cooked while I cleaned. 🍳🧹</td></tr>
+<tr><td><b>whereas</b></td><td>салыстыру / айырмашылық</td><td>I like tea, whereas he likes coffee. 🍵☕</td></tr>
+</table><br>
+
+---
+
+🌈 <b>Мысал мини-story:</b><br>
+<b>Although</b> it was late, Alice started studying. 📚  
+She listened to music <b>while</b> she worked. 🎧  
+Her brother watched TV, <b>whereas</b> she focused on homework. 🧠  
+She wanted to finish <b>so that</b> she could rest early. 😴<br><br>
+
+💡 <i>Мораль:</i> Жалғаулықтар сөйлемдерді әдемі байланыстырады! 💖<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: so that, although, while, whereas."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct word: '___ it was raining, they played outside.'",
+      choices: ["so that", "although", "whereas"],
+      answer: "although"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'He studied hard ___ he could pass the exam.' (although / so that / whereas)",
+      answer: "so that"
+    },
+    {
+      type: "match",
+      text: "Match each conjunction to its meaning 👇",
+      pairs: [
+        ["so that", "shows purpose or result 🎯"],
+        ["although", "shows contrast or opposite meaning ⚡"],
+        ["while", "shows simultaneous actions ⏳"],
+        ["whereas", "shows difference or comparison 🔍"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 4 sentences using each conjunction (so that, although, while, whereas). Make them funny or real-life!"
+    }
+  ]
+},
+30: {
+  desc: `
+🌟 <b>Clauses — Сөйлем бөліктері</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Clauses — бұл сөйлемнің ішіндегі кіші сөйлемдер, яғни өзінде subject (бастауыш) пен verb (баяндауыш) бар бөлік.<br><br>
+
+📘 <b>Негізгі түрлері:</b><br><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Type</th><th>Мағынасы</th><th>Example</th></tr>
+<tr><td><b>Main clause</b></td><td>Толық ойды білдіреді</td><td>I love English. 💬</td></tr>
+<tr><td><b>Subordinate clause</b></td><td>Басты ойға қосымша ақпарат береді</td><td>because it’s interesting 🎓</td></tr>
+<tr><td><b>Relative clause</b></td><td>Адам, зат, немесе орынды сипаттайды</td><td>the boy <b>who is reading</b> a book 📖</td></tr>
+<tr><td><b>Adverbial clause</b></td><td>Уақыт, себеп, мақсат, шарт білдіреді</td><td>I’ll go <b>if it doesn’t rain</b>. ☔</td></tr>
+</table><br>
+
+---
+
+💫 <b>1️⃣ Main + Subordinate Clauses</b><br>
+Main clause жеке тұра алады, subordinate clause — main-ға тәуелді.<br><br>
+📘 <b>Мысал:</b><br>
+I stayed home <b>because it was raining</b>. ☔<br>
+→ “I stayed home” — main clause<br>
+→ “because it was raining” — subordinate clause<br><br>
+
+---
+
+💫 <b>2️⃣ Relative Clauses</b><br>
+Relative clauses — адам, зат, немесе орынды сипаттайтын қосымша ақпарат береді.<br>
+Олар <b>who, which, that, where, whose</b> сөздерімен басталады.<br><br>
+📘 <b>Мысал:</b><br>
+The teacher <b>who helps us</b> is very kind. 👩‍🏫<br>
+The phone <b>that I bought</b> is expensive. 📱<br>
+This is the place <b>where we met</b>. 📍<br><br>
+
+---
+
+💡 <b>Tip:</b><br>
+Clause = кіші сөйлем бөлігі (ішінде subject + verb бар).  
+Main clause — өз алдына толық ой, subordinate — көмекші ой.<br><br>
+
+🌈 <b>Мысал мини-story:</b><br>
+I love English <b>because it’s fun</b>.  
+My friend <b>who studies online</b> is very smart.  
+We learn grammar <b>so that we can speak better</b>! 😄<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: main clause, subordinate clause, relative clause, adverbial clause."
+    },
+    {
+      type: "choice",
+      text: "Which clause gives a reason? 'I stayed home because it was raining.'",
+      choices: ["main clause", "adverbial clause", "relative clause"],
+      answer: "adverbial clause"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'This is the boy ___ won the race.' (who / which / where)",
+      answer: "who"
+    },
+    {
+      type: "match",
+      text: "Match the clause type to its function 👇",
+      pairs: [
+        ["Main clause", "expresses a complete idea"],
+        ["Subordinate clause", "depends on another clause"],
+        ["Relative clause", "describes a noun or person"],
+        ["Adverbial clause", "shows time, reason, or condition"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 complex sentences combining main and subordinate clauses. For example: 'I went out because it was sunny.'"
+    }
+  ]
+},
+31: {
+  desc: `
+🤖 <b>Talking about New Technologies using Relative Clauses</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Технологиялар туралы сөйлегенде relative clauses (who, which, that, where, whose) қолдануды үйрену.<br><br>
+
+---
+
+💫 <b>1️⃣ Relative Clauses — қайталанудан сақтайды</b><br>
+Олар зат, адам немесе орынды сипаттайды.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- The robot <b>that cleans the floor</b> is very useful. 🤖<br>
+- A phone <b>which takes good photos</b> is expensive. 📱<br>
+- The engineer <b>who designed this app</b> is famous. 💻<br>
+- This is the lab <b>where we test new ideas</b>. 🔬<br>
+- That’s the student <b>whose project won the prize</b>. 🏆<br><br>
+
+---
+
+💡 <b>2️⃣ Relative Pronouns кестесі:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Word</th><th>Used for</th><th>Example</th></tr>
+<tr><td><b>who</b></td><td>people</td><td>The scientist <b>who invented</b> the computer...</td></tr>
+<tr><td><b>which</b></td><td>things</td><td>The laptop <b>which I bought</b> is new.</td></tr>
+<tr><td><b>that</b></td><td>people & things</td><td>The car <b>that drives itself</b> is amazing.</td></tr>
+<tr><td><b>where</b></td><td>places</td><td>The lab <b>where we work</b> is modern.</td></tr>
+<tr><td><b>whose</b></td><td>possession</td><td>The student <b>whose idea</b> changed everything.</td></tr>
+</table><br>
+
+---
+
+🧠 <b>3️⃣ Practice:</b><br>
+Try to describe new technologies using <b>who / which / that / where / whose</b>.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- A drone <b>that flies by itself</b> helps people in emergencies. 🚁<br>
+- The scientist <b>who discovered AI</b> is brilliant. 🧠<br>
+- The factory <b>where robots work</b> is amazing! 🏭<br><br>
+
+🌈 <b>Mini Story:</b><br>
+There’s a company <b>that builds smart homes</b>. 🏡  
+They hire engineers <b>who know programming</b>. 💻  
+They test new devices <b>which connect to the Internet</b>. 🌐  
+That’s the future <b>where everything is smart!</b> 🤩<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: who, which, that, where, whose."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct option: 'The scientist ___ invented the robot is famous.'",
+      choices: ["which", "who", "where"],
+      answer: "who"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'This is the lab ___ we test our AI system.' (where / who / whose)",
+      answer: "where"
+    },
+    {
+      type: "match",
+      text: "Match the relative pronoun to its meaning 👇",
+      pairs: [
+        ["who", "refers to people 👩‍🔬"],
+        ["which", "refers to things 💻"],
+        ["that", "refers to both people and things 🔗"],
+        ["where", "refers to a place 📍"],
+        ["whose", "shows possession 🧠"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 4 sentences about modern technologies using relative clauses (who, which, that, where, whose)."
+    }
+  ]
+},
+32: {
+  desc: `
+🌟 <b>If only / Wish [that] Clauses & Relative Clauses with Prepositions</b><br><br>
+
+🎯 <b>Мақсаты:</b><br>
+Оқушы өзінің өкінішін, тілек немесе арманын білдіретін сөйлемдер (If only / Wish) мен предлогпен (with, to, for, about т.б.) келетін relative clauses түрлерін ажыратып қолдануды үйренеді.<br><br>
+
+---
+
+💫 <b>1️⃣ If only / Wish [that] — арман мен өкініш білдіру</b><br>
+Бұл құрылым өткен немесе қазіргі жағдайға деген өкінішті, тілек білдіреді.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- <b>I wish</b> I had more free time. ⏰ (қазіргі тілек)<br>
+- <b>If only</b> I could fly! 🕊️ (қазіргі арман)<br>
+- <b>I wish</b> I hadn’t lost my keys. 🔑 (өткен өкініш)<br>
+- <b>If only</b> it didn’t rain today! ☔<br><br>
+
+🧠 <b>Есте сақта:</b><br>
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;font-size:14px;">
+<tr><th>Құрылым</th><th>Мағынасы</th><th>Example</th></tr>
+<tr><td><b>I wish + Past Simple</b></td><td>қазіргі тілек</td><td>I wish I knew English better.</td></tr>
+<tr><td><b>I wish + Past Perfect</b></td><td>өткен өкініш</td><td>I wish I had studied harder.</td></tr>
+<tr><td><b>If only + Past Simple</b></td><td>қазіргі арман</td><td>If only it were sunny!</td></tr>
+<tr><td><b>If only + Past Perfect</b></td><td>өткен өкініш</td><td>If only I had gone to the party.</td></tr>
+</table><br>
+
+---
+
+💫 <b>2️⃣ Relative Clauses with Prepositions</b><br>
+Бұл түрінде relative pronoun (who / which / whom) предлогпен бірге келеді.<br><br>
+
+📘 <b>Мысалдар:</b><br>
+- The person <b>to whom</b> I spoke was kind. 😊<br>
+- The book <b>about which</b we talked was interesting. 📚<br>
+- The friend <b>with whom</b I travelled is from Canada. 🌍<br>
+- OR (informal): The person <b>who</b> I spoke <b>to</b>. 👍<br><br>
+
+💡 <b>Tip:</b><br>
+Formal style → preposition + pronoun (to whom, with which)<br>
+Informal style → pronoun + preposition (who I talked to)<br><br>
+
+🌈 <b>Mini Story:</b><br>
+I wish I had a laptop 💻 <b>which I could work on anywhere.</b><br>
+If only I knew the engineer 👨‍🔧 <b>who designed this app!</b><br>
+That’s the friend 🙋‍♀️ <b>with whom</b> I share my ideas.<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Repeat after me: I wish I knew, If only it were sunny, The person to whom I spoke."
+    },
+    {
+      type: "choice",
+      text: "Choose the correct option: 'I wish I ___ harder for the test.'",
+      choices: ["study", "studied", "had studied"],
+      answer: "had studied"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'If only it ___ raining today!' (isn't / wasn't / hadn't been)",
+      answer: "wasn't"
+    },
+    {
+      type: "match",
+      text: "Match each structure to its meaning 👇",
+      pairs: [
+        ["I wish + Past Simple", "Present wish or regret"],
+        ["I wish + Past Perfect", "Past regret"],
+        ["If only + Past Simple", "Unreal present situation"],
+        ["If only + Past Perfect", "Unreal past situation"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write 3 sentences using 'wish' and 2 sentences using 'if only' about your life or school."
+    }
+  ]
+},
+33: {
+  desc: `
+🎯 <b>Perform Grammar and Vocabulary Exercises</b><br><br>
+
+Бұл бөлім — алдыңғы барлық грамматикалық тақырыптарды қайталау және лексикалық дағдыларды бекітуге арналған практикалық жаттығулар жиынтығы.<br><br>
+
+🌟 <b>Мақсаты:</b><br>
+- Грамматикалық құрылымдарды нақты сөйлемдерде қолдану;<br>
+- Сөздік қорды (vocabulary) тақырыптар бойынша кеңейту;<br>
+- Шығармашылық ойлау мен сөйлеу дағдыларын дамыту.<br><br>
+
+---
+
+💫 <b>1️⃣ Grammar Revision</b><br>
+Қайталайық! 💪<br>
+Present, Past, Perfect, Passive, Modals, Clauses — барлығын араластырып сөйлем құрастыр.<br><br>
+
+📘 <b>Мысал:</b><br>
+- I have been studying English for 5 years. 📚<br>
+- The cake was made by my mom. 🎂<br>
+- If only I had more free time! ⏰<br>
+- The teacher who helped me is kind. 👩‍🏫<br><br>
+
+---
+
+💫 <b>2️⃣ Vocabulary Practice</b><br>
+Төмендегі сөздерден сөйлем құр: <b>adventure, success, creativity, friendship, challenge</b><br><br>
+
+📘 <b>Мысал:</b><br>
+- Friendship is something that makes life better. ❤️<br>
+- Creativity helps me solve problems. 🎨<br><br>
+
+---
+
+🌈 <b>Mini Game:</b> “Grammar Mixer” 🎲<br>
+Try to write a funny story using:<br>
+1 compound noun, 1 adjective clause, 1 modal verb, and 1 past tense verb!<br><br>
+
+📘 <b>Example:</b><br>
+The snowman who could talk wanted to travel the world! ☃️✈️<br><br>
+
+✨ Practice makes perfect — сондықтан әр түрлі тақырыптан грамматикалық және сөздік жаттығулар орында!<br><br>
+`,
+
+  tasks: [
+    {
+      type: "tts",
+      text: "Let's practice! Say aloud: I have studied English for years. If only I could travel more. The teacher who smiles a lot."
+    },
+    {
+      type: "match",
+      text: "Match the grammar structure with its example 👇",
+      pairs: [
+        ["Present Perfect", "I have finished my homework."],
+        ["Passive Voice", "The book was written by J.K. Rowling."],
+        ["Modal Verb", "You should study for the exam."],
+        ["Relative Clause", "The boy who plays guitar is my friend."]
+      ]
+    },
+    {
+      type: "choice",
+      text: "Which sentence is in the passive voice?",
+      choices: [
+        "The cat chased the mouse.",
+        "The mouse was chased by the cat.",
+        "The cat is chasing."
+      ],
+      answer: "The mouse was chased by the cat."
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'If only I ___ a superhero!' (am / were / was)",
+      answer: "were"
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph (5–7 sentences) using at least 3 grammar forms: a modal, a perfect tense, and a clause."
+    }
+  ]
+},
+};
+
+function createCard(i, title){
+  const el = document.createElement('div');
+  el.className = 'card';
+  el.dataset.index = i;
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <h3>${title}</h3>
+        <div class="meta"><span class="badge">Lesson ${i+1}</span><span>1 hour</span></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-weight:800;font-size:18px">💫</div>
+      </div>
+    </div>
+    <div class="hint" style="margin-top:10px">Кликни - тақырыпты үйреніп, тапсырмаларды орында.</div>
+    <div class="sticker">Fun!</div>
+  `;
+  el.addEventListener('click', ()=>openModal(i));
+  return el;
+}
+
+const grid = document.getElementById('grid');
+topics.forEach((t,i)=> grid.appendChild(createCard(i,t)));
+
+/* Modal logic */
+const modal = document.getElementById('modal');
+const panelContent = document.getElementById('panelContent');
+document.getElementById('closeModal').addEventListener('click', ()=> modal.style.display = 'none');
+window.addEventListener('keydown', e=>{ if(e.key==='Escape') modal.style.display='none' });
+
+function openModal(index){
+  const title = topics[index];
+  const data = contentByIndex[index] || { desc: "Тақырыптың түсіндірмесі және интерактивті тапсырмалар төменде.", tasks: [
+    {type:"read", text:"Read aloud the short prompt provided by your teacher."},
+    {type:"write", text:"Write 4 sentences applying the grammar point."},
+    {type:"match", text:"Create a small matching activity (make cards and match).", pairs:[
+      ["Example A","Definition A"],
+      ["Example B","Definition B"]
+    ]}
+  ]};
+
+  panelContent.innerHTML = `
+    <div class="topicTitle">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="#fff6f9"/><path d="M12 6v6l4 2" stroke="#ff6f96" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div style="font-size:13px;color:var(--muted)">Unit</div>
+        <div style="font-weight:800">${title}</div>
+      </div>
+    </div>
+
+    <p style="margin-top:8px;color:var(--muted)">${data.desc}</p>
+
+    <div class="row" id="tasksRow"></div>
+
+    <div style="margin-top:14px;">
+      <label style="font-weight:700;font-size:13px">Teacher / notes for this lesson</label>
+      <textarea id="noteArea" placeholder="Write quick notes or sample sentences..."></textarea>
+    </div>
+  `;
+
+  // render tasks
+  // render tasks
+// render tasks
+const tasksRow = document.getElementById('tasksRow');
+data.tasks.forEach((task, idx)=>{
+  const node = document.createElement('div');
+  node.className = 'task';
+
+  // ✅ "CHOOSE" тапсырмасы
+  if(task.type === 'choice'){
+    const options = (task.choices||[]).map(o=>{
+      return `<label style="display:block;margin:6px 0">
+                <input type="radio" name="choice${index}_${idx}" value="${o}">
+                ${o}
+              </label>`;
+    }).join('');
+
+    node.innerHTML = `
+      <strong>✅ Choose</strong>
+      <div style="margin-top:8px">${task.text}</div>
+      ${options}
+      <div class="actions">
+        <button class="btn small check-btn">Check</button>
+      </div>`;
+
+    // ✅ батырмаға event listener қосамыз
+    node.querySelector('.check-btn').addEventListener('click', (e)=>{
+      checkChoice(e.target, task.answer);
+    });
+  }
+
+  // ✅ "FILL" тапсырмасы
+  else if(task.type === 'fill'){
+    node.innerHTML = `
+      <strong>✏ Fill</strong>
+      <div style="margin-top:8px">${task.text}</div>
+      <input placeholder="Type answer..." style="padding:8px;border-radius:8px;border:1px solid #eee;width:100%">
+      <div class="actions">
+        <button class="btn small check-btn">Check</button>
+      </div>`;
+
+    // ✅ батырмаға listener қосамыз
+    node.querySelector('.check-btn').addEventListener('click', (e)=>{
+      checkFill(e.target, task.answer);
+    });
+  }
+
+  // ✅ "WRITE" тапсырмасы
+  else if(task.type === 'write'){
+    node.innerHTML = `
+      <strong>✍️ Write</strong>
+      <div style="margin-top:8px">${task.text}</div>
+      <textarea placeholder="Type your answer here..."></textarea>
+      <div class="actions">
+        <button class="btn small save-btn">Save</button>
+      </div>`;
+    
+    node.querySelector('.save-btn').addEventListener('click', (e)=>{
+      saveAnswer(e.target);
+    });
+  }
+
+  // ✅ "MATCH" тапсырмасы
+  else if(task.type === 'match'){
+  const pairs = task.pairs || [];
+
+  // сол жақтағы сөздер (draggable)
+  const leftHtml = pairs.map(p =>
+    `<div class="draggable" draggable="true">${escapeHtml(p[0])}</div>`
+  ).join('');
+
+  // оң жақтағы анықтамалар (drop аймақтары)
+  // әр drop-қа data-correct="сол жақтағы дұрыс сөз" атрибутын қосамыз
+  const rightHtml = pairs.map(p =>
+    `<div class="dropHere" data-correct="${escapeHtml(p[0])}">${escapeHtml(p[1])}</div>`
+  ).join('');
+
+  node.innerHTML = `
+    <strong>🔗 Match</strong>
+    <div style="margin-top:8px">${task.text}</div>
+    <div class="matchArea">
+      <div class="matchCol">${leftHtml}</div>
+      <div class="matchCol">${rightHtml}</div>
+    </div>
+    <div class="actions">
+      <button class="btn small check-match">Check</button>
+    </div>`;
+
+  node.querySelector('.check-match').addEventListener('click', e => checkMatches(e.target));
+}
+
+
+  // ✅ "TTS" тапсырмасы (дауыстап оқу)
+  else if(task.type === 'tts'){
+    node.innerHTML = `
+      <strong>🗣️ Read aloud</strong>
+      <div style="margin-top:8px">${task.text}</div>
+      <div class="actions">
+        <button class="btn small play-tts">▶ Play</button>
+      </div>`;
+
+    node.querySelector('.play-tts').addEventListener('click', (e)=>{
+      speak(task.text);
+    });
+  }
+
+  tasksRow.appendChild(node);
+});
+
+
+  // enable drag handlers
+  enableDrag();
+
+  modal.style.display = 'flex';
+  document.getElementById('noteArea').value = localStorage.getItem('note_'+index) || '';
+  document.getElementById('saveNotes').onclick = ()=>{
+    const val = document.getElementById('noteArea').value;
+    localStorage.setItem('note_'+index, val);
+    alert('Saved to local browser notes.');
+  };
+  document.getElementById('shareLink').onclick = ()=>{
+    const text = `${title} — quick notes: ${document.getElementById('noteArea').value}`;
+    navigator.clipboard && navigator.clipboard.writeText(text).then(()=>alert('Copied!'));
+  };
+}
+
+/* small helpers */
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
+/* Text-to-speech */
+function speak(text){
+  if(!("speechSynthesis" in window)){ alert('TTS қолжетімсіз'); return; }
+  const ut = new SpeechSynthesisUtterance(text);
+  ut.lang = 'en-US';
+  ut.rate = 0.95;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(ut);
+}
+
+/* Save answer (locally) */
+function saveAnswer(btn){
+  const ta = btn.parentElement.previousElementSibling;
+  const val = ta.value.trim();
+  if(!val){ alert('Жауабыңды жазыңыз'); return; }
+  // simple local save
+  const key = 'savedAnswer_'+Date.now();
+  localStorage.setItem(key, val);
+  alert('Saved locally (localStorage).');
+}
+
+/* sticker */
+function markSticker(btn){
+  btn.innerText = '💖 Sticker added';
+  btn.disabled = true;
+}
+
+/* enable drag & drop for match tasks */
+function enableDrag(){
+  const drags = document.querySelectorAll('.draggable');
+  drags.forEach(d=>{
+    d.ondragstart = e=>{
+      e.dataTransfer.setData('text/plain', d.textContent.trim());
+      setTimeout(()=>d.style.opacity = '0.4',50);
+    };
+    d.ondragend = ()=>d.style.opacity = '';
+  });
+  const drops = document.querySelectorAll('.dropHere');
+  drops.forEach(d=>{
+    d.ondragover = e=>e.preventDefault();
+    d.ondrop = e=>{
+      e.preventDefault();
+      const txt = e.dataTransfer.getData('text/plain');
+      d.textContent = txt;
+      d.dataset.mapped = txt;
+    };
+  });
+}
+
+/* check matches simple check (verifies pairs exist) */
+/* check matches — improved version with correctness check */
+function checkMatches(btn) {
+  const task = btn.closest('.task');
+  if (!task) return;
+
+  const drops = task.querySelectorAll('.dropHere');
+  let correctCount = 0;
+  let total = 0;
+
+  drops.forEach(drop => {
+    const idx = drop.dataset.idx;
+    const expected = drop.dataset.expected; // will set below
+    total++;
+    if (drop.dataset.mapped) {
+      // find original pair by text match
+      const foundPair = Array.from(drops).find(d => d.textContent.includes(drop.dataset.mapped));
+      // compare expected correctly
+      const isCorrect = drop.dataset.mapped === drop.dataset.correct;
+      if (isCorrect) correctCount++;
+    }
+  });
+
+  // highlight correct / wrong visually
+  drops.forEach(drop => {
+    const mapped = drop.dataset.mapped;
+    if (!mapped) {
+      drop.style.background = '#fffaf0';
+      drop.style.border = '2px dashed #ffb6c1';
+      return;
+    }
+    if (mapped === drop.dataset.correct) {
+      drop.style.background = '#d7ffd7';
+      drop.style.border = '2px solid #3cb043';
+    } else {
+      drop.style.background = '#ffd6d6';
+      drop.style.border = '2px solid #ff5555';
+    }
+  });
+
+  // alert total
+  alert(`✅ Correct: ${correctCount} / ${total}`);
+}
+
+
+/* check choice */
+function checkChoice(btn, correct){
+  // 1️⃣ Сол тапсырма блокты табамыз
+  const task = btn.closest('.task');
+  if (!task) return;
+
+  // 2️⃣ Барлық radio элементтерін іздейміз
+  const radios = task.querySelectorAll('input[type=radio]');
+  let chosenRadio = null;
+
+  // 3️⃣ Барлық таңдаулардың түсін қайтарамыз (reset)
+  radios.forEach(radio => {
+    const label = radio.parentElement;
+    label.style.background = '#fff';
+    label.style.border = '1px dashed #ffd6e8';
+    label.style.borderRadius = '8px';
+    label.style.padding = '6px 8px';
+    if (radio.checked) chosenRadio = radio;
+  });
+
+  // 4️⃣ Егер ештеңе таңдалмаса — ескерту шығару
+  if (!chosenRadio) {
+    alert('Choose an answer first 😊');
+    return;
+  }
+
+  // 5️⃣ Барлық радиоларды блоктаймыз (disable)
+  radios.forEach(r => r.disabled = true);
+
+  // 6️⃣ Дұрыс не бұрыс екенін тексереміз
+  const chosenLabel = chosenRadio.parentElement;
+  if (chosenRadio.value === correct) {
+    chosenLabel.style.background = '#d7ffd7';   // жасыл фон
+    chosenLabel.style.border = '2px solid #3cb043';
+    btn.style.background = '#3cb043';
+    btn.textContent = '✅ Correct!';
+  } else {
+    chosenLabel.style.background = '#ffd6d6';   // қызыл фон
+    chosenLabel.style.border = '2px solid #ff5555';
+    btn.style.background = '#ff5555';
+    btn.textContent = '❌ Try again';
+    // Дұрыс жауапты визуалды көрсету
+    radios.forEach(r => {
+      if (r.value === correct) {
+        r.parentElement.style.background = '#e0f5ff';
+        r.parentElement.style.border = '2px dashed #0077ff';
+      }
+    });
+  }
+}
+
+
+
+
+/* check fill */
+function checkFill(btn, answer){
+  const inp = btn.closest('.task').querySelector('input');
+  if(!inp) return;
+  const val = inp.value.trim().toLowerCase();
+  if(!val) { alert('Type answer'); return; }
+  alert(val === (answer+'').toLowerCase() ? '✅ Good!' : `❌ Try again. Expected: ${answer}`);
+}
+
+/* small share: show basic site tips */
+function siteTips(){
+  alert('Сақтау: карточка ашып, Save my notes басыңыз. Daуыстап оқу үшін Read → Play батырмасын қолданыңыз.');
+}
+
+/* On load tip */
+setTimeout(()=>siteTips(), 900);
+</script>
+</body>
+</html> 

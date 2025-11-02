@@ -262,41 +262,62 @@ Then, the funny teacher said,<br>
 <b>Complex noun phrases →</b> сипаттамалармен толыққан топ (my big red school bag)<br><br>
 `,
 tasks: [
-  {
-    type: "tts",
-    text: "Let's read some compound nouns aloud! Repeat after me: toothbrush, schoolbag, sunflower, playground, raincoat."
-  },
-  {
-    type: "write",
-    text: "Now write 5 funny sentences using compound nouns! 😊 For example: 'My schoolbag is full of candy!' or 'The snowman is dancing in the playground!'"
-  },
-  {
-    type: "match",
-    text: "Match each compound noun to its meaning. Drag the word to the correct box 👇",
-    pairs: [
-      ["toothbrush", "a small brush used for cleaning your teeth 🪥"],
-      ["schoolbag", "a bag you use to carry books to school 🎒"],
-      ["raincoat", "a jacket you wear when it rains 🌧️"],
-      ["sunflower", "a tall yellow flower that looks like the sun 🌻"],
-      ["snowman", "a person made of snow ☃️"]
-    ]
-  },
-  {
-    type: "fill",
-    text: "Complete the sentence: 'My ___ is full of books and pencils.' (toothbrush / schoolbag / sunflower)",
-    answer: "schoolbag"
-  },
-  {
-    type: "choice",
-    text: "Which group of words is a **complex noun phrase**?",
-    choices: [
-      "rain + coat",
-      "my big blue school bag",
-      "snow + man"
-    ],
-    answer: "my big blue school bag"
-  }
-]
+    {
+      type: "tts",
+      text: "Listen and repeat these compound and complex phrases: 'toothbrush', 'swimming pool', 'a big red school bag', 'the old man in the blue hat'."
+    },
+    {
+      type: "choice",
+      text: "Identify the compound noun in this sentence: 'My father-in-law works at the airport every morning.'",
+      choices: [
+        "father-in-law",
+        "airport",
+        "every morning",
+        "works at"
+      ],
+      answer: "father-in-law"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'Our school ___ has three new classrooms.' (building / build / built)",
+      answer: "building"
+    },
+    {
+      type: "match",
+      text: "Match each compound noun to its correct meaning 👇",
+      pairs: [
+        ["mother-in-law", "your spouse’s mother 👩‍🦳"],
+        ["bookstore", "a shop where you can buy books 📚"],
+        ["traffic jam", "a situation where cars cannot move 🚗"],
+        ["hairdryer", "a device used to dry your hair 💨"],
+        ["bedroom", "a room where you sleep 🛏️"]
+      ]
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph (5–7 sentences) describing your perfect day using at least <b>five compound nouns</b> (e.g. ‘newspaper’, ‘breakfast table’, ‘schoolbag’, ‘homework’, ‘football match’)."
+    },
+    {
+      type: "choice",
+      text: "Which of these is a <b>complex noun phrase</b>?",
+      choices: [
+        "sunflower",
+        "my favorite black leather jacket",
+        "raincoat",
+        "notebook"
+      ],
+      answer: "my favorite black leather jacket"
+    },
+    {
+      type: "write",
+      text: "Combine the following ideas into one <b>complex noun phrase</b>: 'teacher', 'young', 'English', 'from London'."
+    },
+    {
+      type: "fill",
+      text: "Make a correct compound noun: ‘class + room = ___’, ‘police + man = ___’, ‘rain + coat = ___’.",
+      answer: "classroom, policeman, raincoat"
+    }
+  ]
 },
 1: {
   desc: `
@@ -337,36 +358,64 @@ She has <b>a lot of</b> homework! 📚<br><br>
 I have <b>a little</b> money = менде біраз ақша бар 💵<br>
 I have <b>little</b> money = менде өте аз ақша бар 😟<br><br>
 `,
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Let’s read some examples aloud! Repeat after me: I have a few apples. She has a little milk. There are many cars. There isn’t much water."
+      text: "Repeat after me: There are many problems, but only a few solutions. I don’t have much time, but I have some hope."
     },
     {
       type: "choice",
-      text: "Choose the correct quantifier: 'When Blake Mycoskie was twenty-nine, he took ___ time off work to go travelling.'",
-      choices: ["a little", "a few"],
-      answer: "a little"
-    },
-    {
-      type: "fill",
-      text: "Complete the sentence: 'There are ___ students in the classroom today.' (many / much / a little)",
+      text: "Choose the best quantifier: 'There are ___ reasons why people prefer online education nowadays.'",
+      choices: ["much", "many", "a little", "few"],
       answer: "many"
     },
     {
+      type: "choice",
+      text: "Select the correct option: 'I don’t have ___ patience for rude people.'",
+      choices: ["many", "a few", "much", "a lot"],
+      answer: "much"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'There is ___ milk left in the fridge, we should buy more.' (a little / few / any)",
+      answer: "a little"
+    },
+    {
       type: "match",
-      text: "Match the quantifiers to the correct type 👇",
+      text: "Match the quantifiers with the most natural context 👇",
       pairs: [
-        ["many", "countable nouns"],
-        ["much", "uncountable nouns"],
-        ["a few", "countable nouns"],
-        ["a little", "uncountable nouns"],
-        ["some", "positive both types"]
+        ["many", "used with plural countable nouns (books, cars)"],
+        ["much", "used with uncountable nouns (water, time)"],
+        ["a few", "positive, small number of countables"],
+        ["few", "negative, almost none (countables)"],
+        ["little", "negative, almost none (uncountables)"]
       ]
     },
     {
+      type: "choice",
+      text: "Choose the sentence that sounds natural:",
+      choices: [
+        "There is many sugar in the cup.",
+        "There are much people in the park.",
+        "There are a few chairs in the room.",
+        "I have few money in my pocket."
+      ],
+      answer: "There are a few chairs in the room."
+    },
+    {
+      type: "fill",
+      text: "Rewrite correctly: 'There isn’t many coffee left in the pot.' → Replace ‘many’ with the right quantifier.",
+      answer: "much"
+    },
+    {
       type: "write",
-      text: "Write 5 sentences using different quantifiers (some, many, a few, much, a lot of). For example: 'I have a few English books.'"
+      text: "Write a short paragraph (5–6 sentences) about your study habits using at least <b>five different quantifiers</b> (some, a few, much, a lot of, little). Example: 'I have a lot of homework but only a little free time.'"
+    },
+    {
+      type: "choice",
+      text: "Identify the quantifier used incorrectly: 'There are much people waiting outside.'",
+      choices: ["Correct", "Incorrect"],
+      answer: "Incorrect"
     }
   ]
 },
@@ -403,42 +452,81 @@ I have <b>little</b> money = менде өте аз ақша бар 😟<br><br>
 A man-eating shark is scary. (Адамды жейтін акула — қорқынышты.)<br>
 A man eating shark? — who is the man? (Мына сөйлемде таңдау керек: адам жеуде ме, әлде адам жейтін акула ма?) 😅<br><br>
 `,
-  tasks: [
-    {
-      type: "tts",
-      text: "Repeat after me: a well-known actor, a brand-new phone, a man-eating shark, a heart-warming story."
-    },
-    {
-      type: "fill",
-      text: "Complete: When Brian got his promotion, he bought a ___ car. (brand-new / old-fashioned)",
-      answer: "brand-new"
-    },
-    {
-      type: "choice",
-      text: "Which sentence uses the compound adjective correctly?",
-      choices: [
-        "She is a well known singer.",
-        "She is a well-known singer.",
-        "She is well-known singer."
-      ],
-      answer: "She is a well-known singer."
-    },
-    {
-      type: "match",
-      text: "Match the compound adjective to its meaning 👇",
-      pairs: [
-        ["well-known", "famous"],
-        ["brand-new", "completely new"],
-        ["heart-warming", "making you feel happy and touched"],
-        ["man-eating", "that eats humans (dangerous!)"],
-        ["fast-moving", "moving quickly"]
-      ]
-    },
-    {
-      type: "write",
-      text: "Write 5 short sentences using compound adjectives. Try to use at least two '-ing' adjectives (e.g. heart-warming) and one with a hyphen to avoid ambiguity (e.g. man-eating)."
-    }
-  ]
+tasks: [
+  {
+    type: "tts",
+    text: "Listen and repeat carefully: a well-known actor, an open-minded teacher, a fast-growing company, a record-breaking performance, a heart-warming movie."
+  },
+  {
+    type: "choice",
+    text: "Choose the sentence where the compound adjective is used correctly:",
+    choices: [
+      "The city has many high rise buildings.",
+      "The city has many high-rise buildings.",
+      "The city has many high rise-buildings."
+    ],
+    answer: "The city has many high-rise buildings."
+  },
+  {
+    type: "choice",
+    text: "Find the sentence where the compound adjective is used <b>incorrectly</b>:",
+    choices: [
+      "He is an open-minded person.",
+      "We met a famous well known author.",
+      "She wore a brightly-colored dress."
+    ],
+    answer: "We met a famous well known author."
+  },
+  {
+    type: "fill",
+    text: "Fill in the correct compound adjective: 'Our school has a ___ library full of new books.' (state-of-the-art / well known / fast moving)",
+    answer: "state-of-the-art"
+  },
+  {
+    type: "match",
+    text: "Match each compound adjective to its definition 👇",
+    pairs: [
+      ["open-minded", "willing to consider new ideas"],
+      ["old-fashioned", "not modern or out of date"],
+      ["record-breaking", "better than any previous record"],
+      ["full-time", "working for the whole of the usual working week"],
+      ["blue-eyed", "having blue eyes"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which phrase shows the correct use of a hyphen?",
+    choices: [
+      "a fast moving train",
+      "a fast-moving train",
+      "a train fast-moving"
+    ],
+    answer: "a fast-moving train"
+  },
+  {
+    type: "fill",
+    text: "Complete the sentence with a suitable compound adjective: 'He gave me a ___ explanation that helped me understand everything clearly.' (well-prepared / full-time / heart-warming)",
+    answer: "well-prepared"
+  },
+  {
+    type: "write",
+    text: "Write 5 original sentences using compound adjectives. Include at least: one with '-ed' (e.g. well-educated), one with '-ing' (e.g. thought-provoking), and one describing technology (e.g. high-speed internet)."
+  },
+  {
+    type: "choice",
+    text: "Which sentence correctly shows the difference in meaning?",
+    choices: [
+      "A man-eating shark lives in the sea. / A man eating shark lives in the sea.",
+      "A man eating shark is dangerous. / A man-eating shark eats pizza.",
+      "A shark man-eating lives in the sea."
+    ],
+    answer: "A man-eating shark lives in the sea. / A man eating shark lives in the sea."
+  },
+  {
+    type: "write",
+    text: "Combine the following ideas into compound adjectives and write sentences: (1) well + behaved + child, (2) time + saving + app, (3) heart + breaking + story, (4) brightly + colored + bird, (5) five + star + hotel."
+  }
+]
 },
 
 3: {
@@ -473,42 +561,81 @@ He always helps others and studies hard — he’s really <b>hardworking</b>! �
 My sister is tall and beautiful. She is also very funny and kind.  
 She likes helping people and always smiles. Everyone loves her! 💖<br><br>
 `,
-  tasks: [
-    {
-      type: "tts",
-      text: "Repeat after me: kind, brave, funny, tall, creative, hardworking."
-    },
-    {
-      type: "choice",
-      text: "Which adjective describes personality, not appearance?",
-      choices: [
-        "tall",
-        "beautiful",
-        "kind"
-      ],
-      answer: "kind"
-    },
-    {
-      type: "fill",
-      text: "Complete: 'My best friend is very ___ and always helps others.' (lazy / helpful / short)",
-      answer: "helpful"
-    },
-    {
-      type: "match",
-      text: "Match the adjectives to their meanings 👇",
-      pairs: [
-        ["brave", "not afraid of danger"],
-        ["funny", "makes people laugh"],
-        ["lazy", "does not like working"],
-        ["kind", "helps and cares about others"],
-        ["hardworking", "works a lot and tries hard"]
-      ]
-    },
-    {
-      type: "write",
-      text: "Write a short paragraph (5–7 sentences) describing your best friend. Use at least 3 adjectives for personality and 2 for appearance."
-    }
-  ]
+tasks: [
+  {
+    type: "tts",
+    text: "Listen and repeat: confident, reliable, talkative, modest, generous, ambitious."
+  },
+  {
+    type: "choice",
+    text: "Which sentence uses adjectives to describe both personality and appearance?",
+    choices: [
+      "He is tall and has blue eyes.",
+      "She is kind and always helps others.",
+      "My friend is tall, friendly, and always positive."
+    ],
+    answer: "My friend is tall, friendly, and always positive."
+  },
+  {
+    type: "choice",
+    text: "Identify the adjective that shows a *negative* personality quality:",
+    choices: [
+      "generous",
+      "lazy",
+      "honest"
+    ],
+    answer: "lazy"
+  },
+  {
+    type: "fill",
+    text: "Complete the sentence: 'People like Anna because she is very ___ and always listens to others.' (selfish / patient / noisy)",
+    answer: "patient"
+  },
+  {
+    type: "match",
+    text: "Match each adjective to its correct description 👇",
+    pairs: [
+      ["reliable", "someone you can trust and depend on"],
+      ["selfish", "someone who only thinks about themselves"],
+      ["ambitious", "someone who wants to achieve great success"],
+      ["talkative", "someone who likes to speak a lot"],
+      ["modest", "someone who doesn’t boast about their achievements"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence uses the adjective *in the wrong context*?",
+    choices: [
+      "He is a hardworking student who always does his homework.",
+      "My sister is very lazy and helps everyone in need.",
+      "She’s an honest girl who never lies."
+    ],
+    answer: "My sister is very lazy and helps everyone in need."
+  },
+  {
+    type: "fill",
+    text: "Fill in the blank: 'A person who helps others and gives to charity is called ___. (kind / generous / shy)'",
+    answer: "generous"
+  },
+  {
+    type: "write",
+    text: "Write a description of an ideal classmate (6–8 sentences). Include adjectives from different categories: appearance (e.g. tall, pretty), personality (e.g. confident, polite), and abilities (e.g. creative, hardworking)."
+  },
+  {
+    type: "choice",
+    text: "Which pair of adjectives are *opposites*?",
+    choices: [
+      "honest – polite",
+      "brave – cowardly",
+      "talkative – funny"
+    ],
+    answer: "brave – cowardly"
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences comparing two people you know (friends, celebrities, teachers, etc.). Use comparative adjectives such as more confident, friendlier, less talkative."
+  }
+]
 },
 4: {
   desc: `
@@ -562,40 +689,80 @@ half the delicious cake
 We spent <b>half the day</b> playing grammar games! 🎮💖<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: all my friends, both these books, half the cake, double the time."
+      text: "Repeat after me: all my friends, both these books, half the cake, double the effort."
     },
     {
       type: "choice",
-      text: "Which phrase is correct?",
+      text: "Choose the correct structure:",
       choices: [
-        "my all friends",
-        "all my friends",
-        "friends all my"
+        "My all teachers are great.",
+        "All my teachers are great.",
+        "Teachers all my are great."
       ],
-      answer: "all my friends"
+      answer: "All my teachers are great."
     },
     {
       type: "fill",
-      text: "Complete the sentence: '___ these apples are green.' (Both / All / Half)",
-      answer: "Both"
+      text: "Complete the sentence: '___ these students completed the project on time.' (All / Half / Either)",
+      answer: "All"
     },
     {
       type: "match",
-      text: "Match the phrases to their meanings 👇",
+      text: "Match the pre-determiner phrases to their meanings 👇",
       pairs: [
-        ["all my friends", "барлық достарым"],
-        ["both these cats", "екеуі де осы мысықтар"],
-        ["half the cake", "торттың жартысы"],
-        ["double the time", "екі есе уақыт"],
-        ["all our teachers", "барлық мұғалімдеріміз"]
+        ["both my parents", "екеуі де менің ата-анам"],
+        ["all the houses", "барлық үйлер"],
+        ["half the money", "ақшаның жартысы"],
+        ["double the effort", "екі есе күш"],
+        ["all her friends", "оның барлық достары"]
+      ]
+    },
+    {
+      type: "choice",
+      text: "Which sentence contains an incorrect determiner structure?",
+      choices: [
+        "All the students passed the exam.",
+        "Both of these cars are new.",
+        "My both parents work as doctors."
+      ],
+      answer: "My both parents work as doctors."
+    },
+    {
+      type: "fill",
+      text: "Fill in the blank: 'We spent ___ the day revising for the exam.' (all / half / both)",
+      answer: "half"
+    },
+    {
+      type: "match",
+      text: "Match each determiner to its correct function 👇",
+      pairs: [
+        ["my", "shows possession"],
+        ["these", "shows nearness or pointing"],
+        ["many", "shows quantity (countable)"],
+        ["some", "shows indefinite amount"],
+        ["the", "shows specificity"]
       ]
     },
     {
       type: "write",
-      text: "Write 5 sentences using pre-determiners (all, both, half, double). For example: 'All my family is happy today.'"
+      text: "Write 5 sentences using pre-determiners (all, both, half, double). At least one should include an adjective (e.g. all my old notebooks, both these delicious cakes)."
+    },
+    {
+      type: "choice",
+      text: "Which is the correct sentence with a pre-determiner?",
+      choices: [
+        "All of my friends love music.",
+        "My all friends love music.",
+        "Friends all my love music."
+      ],
+      answer: "All of my friends love music."
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph (5–6 sentences) describing your school day using at least three pre-determiners and determiners together (e.g. all my lessons, both the teachers, half the class)."
     }
   ]
 },
@@ -639,36 +806,80 @@ They always come first in “Wh-questions”.<br><br>
 👦 — Of course! Who doesn’t? 😎<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Let’s read and repeat: Do you like apples? Where are you from? Do you want tea or coffee? You’re a student, aren’t you?"
+      text: "Repeat after me: Do you like coffee? Where are you from? You’re coming, aren’t you? Can you tell me what time it is?"
     },
     {
       type: "choice",
-      text: "Choose the correct question: ‘___ you like chocolate?’",
-      choices: ["Do", "Are", "Is"],
-      answer: "Do"
+      text: "Which is a correct Wh-question?",
+      choices: [
+        "Where you are going?",
+        "Where are you going?",
+        "Are where you going?"
+      ],
+      answer: "Where are you going?"
     },
     {
       type: "fill",
-      text: "Complete: ‘Where ___ you live?’ (do / does / are)",
-      answer: "do"
+      text: "Complete: ‘He’s from Almaty, ___ he?’ (is / isn’t / does)",
+      answer: "isn’t"
     },
     {
       type: "match",
-      text: "Match the question type with its example 👇",
+      text: "Match the question type to its example 👇",
       pairs: [
-        ["Yes/No question", "Do you like apples?"],
-        ["Wh- question", "Where do you live?"],
-        ["Choice question", "Do you want tea or coffee?"],
-        ["Tag question", "She’s nice, isn’t she?"],
-        ["Indirect question", "Can you tell me where he is?"]
+        ["Yes/No question", "Do you enjoy reading?"],
+        ["Wh-question", "Why did you leave early?"],
+        ["Choice question", "Would you like tea or coffee?"],
+        ["Tag question", "It’s cold today, isn’t it?"],
+        ["Indirect question", "Could you tell me where he lives?"]
       ]
     },
     {
+      type: "choice",
+      text: "Which sentence is an indirect question?",
+      choices: [
+        "Do you know where he went?",
+        "Where did he go?",
+        "He went where?"
+      ],
+      answer: "Do you know where he went?"
+    },
+    {
+      type: "fill",
+      text: "Fill in the blanks: ‘___ you know what time ___ is?’ (Do / it / does)",
+      answer: "Do, it"
+    },
+    {
+      type: "match",
+      text: "Match the Wh-word to what it asks for 👇",
+      pairs: [
+        ["Who", "a person"],
+        ["Where", "a place"],
+        ["When", "a time"],
+        ["Why", "a reason"],
+        ["How", "a manner or way something happens"]
+      ]
+    },
+    {
+      type: "choice",
+      text: "Which of these is a Tag Question?",
+      choices: [
+        "Are you going to school?",
+        "Where are you going?",
+        "You’re going to school, aren’t you?"
+      ],
+      answer: "You’re going to school, aren’t you?"
+    },
+    {
       type: "write",
-      text: "Write 5 different questions — one of each type (Yes/No, Wh-, Choice, Tag, Indirect). For example: 'Are you hungry?', 'Where are you going?', etc."
+      text: "Write 5 sentences — each a different type of question (Yes/No, Wh-, Choice, Tag, Indirect). Example: 'Are you tired?', 'What are you doing?', 'Do you prefer tea or coffee?', 'He’s your brother, isn’t he?', 'Can you tell me where she is?'"
+    },
+    {
+      type: "write",
+      text: "Imagine you’re interviewing a famous person. Write 6 creative questions of different types to ask them. Use at least one indirect question (e.g. 'Could you tell me why you chose this career?')."
     }
   ]
 },
@@ -721,40 +932,79 @@ what for — не үшін<br><br>
 Солар сөйлемнің мағынасын анықтайды 💬<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: At what time do you get up? With whom are you talking? From whose bag did you take it?"
+      text: "Repeat after me: Who are you talking to? At what time does the train leave? From whose bag did you take the book?"
     },
     {
       type: "choice",
-      text: "Choose the correct sentence:",
+      text: "Which question is grammatically correct?",
       choices: [
-        "Who are you talking with?",
-        "With who are you talking?",
-        "Who you are talking with?"
+        "To who are you talking?",
+        "Who are you talking to?",
+        "Who you are talking to?"
       ],
-      answer: "Who are you talking with?"
+      answer: "Who are you talking to?"
+    },
+    {
+      type: "choice",
+      text: "Which sentence sounds more formal?",
+      choices: [
+        "Who are you talking to?",
+        "To whom are you talking?"
+      ],
+      answer: "To whom are you talking?"
     },
     {
       type: "fill",
-      text: "Complete: '___ what time does the lesson start?' (At / In / From)",
-      answer: "At"
+      text: "Complete: '___ which direction is the school bus going?' (In / At / From)",
+      answer: "In"
     },
     {
       type: "match",
-      text: "Match the question with the correct meaning 👇",
+      text: "Match the question to its meaning 👇",
       pairs: [
-        ["At what time do you get up?", "Қай уақытта оянасың?"],
-        ["With whom are you going?", "Кіммен барасың?"],
-        ["From whose bag is this?", "Бұл кімнің сөмкесінен?"],
-        ["In which direction is the museum?", "Мұражай қай бағытта?"],
-        ["What are you looking for?", "Сен не іздеп жатырсың?"]
+        ["At what time do you get up?", "Қай уақытта тұрасың?"],
+        ["Who are you talking to?", "Сен кіммен сөйлесіп жатырсың?"],
+        ["From whose notebook is this?", "Бұл кімнің дәптерінен?"],
+        ["What are you looking for?", "Сен не іздеп жатырсың?"],
+        ["In which direction did he go?", "Ол қай бағытқа кетті?"]
+      ]
+    },
+    {
+      type: "choice",
+      text: "Find the incorrect question:",
+      choices: [
+        "Who are you waiting for?",
+        "At what time does the lesson start?",
+        "With who you are playing football?"
+      ],
+      answer: "With who you are playing football?"
+    },
+    {
+      type: "fill",
+      text: "Fill in the blanks: '___ whom are you sharing the room ___?' (With / with / to)",
+      answer: "With"
+    },
+    {
+      type: "match",
+      text: "Match the preposition with its function 👇",
+      pairs: [
+        ["at", "time"],
+        ["in", "place or direction"],
+        ["from", "origin or source"],
+        ["with", "person or instrument"],
+        ["for", "purpose or reason"]
       ]
     },
     {
       type: "write",
-      text: "Write 5 questions that include prepositions. For example: 'Who are you waiting for?' or 'At what time do you study English?'"
+      text: "Write 5 questions including prepositions — at least one in formal and one in informal style. Example: 'To whom did you send the email?' and 'Who are you talking to?'"
+    },
+    {
+      type: "write",
+      text: "Imagine you’re a detective! 🕵️‍♀️ Write 5 investigative questions using prepositions (e.g. 'From whom did you hear this news?', 'At what time did it happen?', 'Who were you with?')."
     }
   ]
 },
@@ -800,40 +1050,88 @@ That is my book. Give it to <b>me</b>.<br><br>
 Есімдіктер сөйлемдегі заттың қайсы екенін көрсетеді, сондықтан “it” — жансыз заттар мен жануарларға, “he/she” — адамдарға қолданылады.<br><br>
 `,
 
-  tasks: [
+  
+tasks: [
     {
       type: "tts",
       text: "Repeat after me: I am happy. She is kind. We are friends. They love their dog. He made it himself."
     },
     {
+      type: "choice",
+      text: "Which sentence uses the correct pronoun?",
+      choices: [
+        "Her loves to dance.",
+        "She loves to dance.",
+        "Hers loves to dance."
+      ],
+      answer: "She loves to dance."
+    },
+    {
       type: "fill",
-      text: "Fill in: '___ is my best friend. ___ helps me with homework.' (He / She)",
-      answer: "He"
+      text: "Fill in the blank: 'My brother and I are going to the park. ___ are bringing our dog.' (We / They / He)",
+      answer: "We"
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'That pen belongs to Anna. It’s ___.' (her / hers / she)",
+      answer: "hers"
+    },
+    {
+      type: "choice",
+      text: "Which is a reflexive pronoun?",
+      choices: ["ours", "himself", "their"],
+      answer: "himself"
     },
     {
       type: "match",
-      text: "Match the pronouns to their types 👇",
+      text: "Match the pronouns to their functions 👇",
       pairs: [
-        ["I", "subject pronoun"],
-        ["me", "object pronoun"],
-        ["my", "possessive adjective"],
-        ["mine", "possessive pronoun"],
-        ["myself", "reflexive pronoun"]
+        ["I", "subject pronoun (the one who acts)"],
+        ["me", "object pronoun (receives the action)"],
+        ["my", "possessive adjective (before a noun)"],
+        ["mine", "possessive pronoun (stands alone)"],
+        ["myself", "reflexive (refers back to the subject)"]
       ]
     },
     {
       type: "choice",
-      text: "Choose the correct sentence:",
+      text: "Which sentence has all pronouns used correctly?",
       choices: [
-        "Him likes to play football.",
-        "He likes to play football.",
-        "His likes to play football."
+        "Me and she are friends. We like playing with our dog.",
+        "She and I are friends. We like playing with our dog.",
+        "Her and me are friends. Us like to play with dog."
       ],
-      answer: "He likes to play football."
+      answer: "She and I are friends. We like playing with our dog."
+    },
+    {
+      type: "fill",
+      text: "Complete: 'Jack hurt ___ while playing football.' (him / himself / his)",
+      answer: "himself"
+    },
+    {
+      type: "choice",
+      text: "Which pronoun can replace the bold words: 'Tom and Mary love pizza'? 🍕",
+      choices: ["They", "We", "It"],
+      answer: "They"
+    },
+    {
+      type: "match",
+      text: "Match the sentences to the correct pronoun replacements 👇",
+      pairs: [
+        ["The book is mine.", "Possessive pronoun"],
+        ["He made it himself.", "Reflexive pronoun"],
+        ["She gave me a gift.", "Object pronoun"],
+        ["We are students.", "Subject pronoun"],
+        ["This is my pen.", "Possessive adjective"]
+      ]
     },
     {
       type: "write",
-      text: "Create a short story (5–7 sentences) using at least 5 different pronouns. Example: 'She has a cat. It likes milk. They play together every day.' 🐱"
+      text: "Write 5 sentences using different pronoun types (subject, object, possessive, reflexive). Example: 'I love my cat. It follows me everywhere. I feed it myself.'"
+    },
+    {
+      type: "write",
+      text: "Create a short story (5–8 sentences) about you and your friend. Use at least 7 pronouns, including a reflexive one. Example: 'My friend and I went shopping. We bought some clothes. She paid for them herself.'"
     }
   ]
 },
@@ -901,35 +1199,77 @@ Don’t say “I am know” ❌ → “I know” ✅
 “Now or Always?” — сөйлемді оқып, ол Present Simple ме, әлде Present Continuous па, анықта! 😉<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: I go to school every day. She is reading a book now. They play football on weekends. We are studying English at the moment."
+      text: "Listen and repeat: She works at a hospital. She is working a night shift this week. I play football every Sunday. I am playing football now."
     },
     {
       type: "choice",
-      text: "Choose the correct form: 'He ___ to music now.'",
-      choices: ["listens", "is listening"],
-      answer: "is listening"
+      text: "Choose the correct form: 'He usually ___ breakfast at 8 a.m.'",
+      choices: ["is eating", "eats", "eat"],
+      answer: "eats"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct form: 'Listen! The birds ___ beautifully.'",
+      choices: ["sing", "are singing", "sings"],
+      answer: "are singing"
     },
     {
       type: "fill",
-      text: "Complete: 'My brother ___ to school every day.' (go / goes / is going)",
-      answer: "goes"
+      text: "Complete: 'My parents ___ in London, but this month they ___ in Paris.' (live / stay)",
+      answer: "live / are staying"
     },
     {
       type: "match",
       text: "Match the sentence to its correct tense 👇",
       pairs: [
-        ["She is cooking dinner now.", "Present Continuous"],
-        ["He plays football every Sunday.", "Present Simple"],
-        ["I’m reading an interesting book.", "Present Continuous"],
-        ["We study English on Mondays.", "Present Simple"]
+        ["I get up early every day.", "Present Simple"],
+        ["They are studying for exams right now.", "Present Continuous"],
+        ["He doesn’t like coffee.", "Present Simple"],
+        ["We are watching a film at the moment.", "Present Continuous"],
+        ["The Earth moves around the Sun.", "Present Simple (fact)"]
       ]
     },
     {
+      type: "fill",
+      text: "Complete the sentence: 'Be quiet! The baby ___.' (sleep / sleeps / is sleeping)",
+      answer: "is sleeping"
+    },
+    {
+      type: "choice",
+      text: "Which sentence is CORRECT?",
+      choices: [
+        "She is know the answer.",
+        "She knows the answer.",
+        "She is knowing the answer."
+      ],
+      answer: "She knows the answer."
+    },
+    {
+      type: "match",
+      text: "Match the time expression with the correct tense 👇",
+      pairs: [
+        ["every day", "Present Simple"],
+        ["now", "Present Continuous"],
+        ["today", "Present Continuous"],
+        ["often", "Present Simple"],
+        ["at the moment", "Present Continuous"]
+      ]
+    },
+    {
+      type: "fill",
+      text: "Choose the correct option: 'I ___ my homework now, please don’t disturb me.' (do / am doing / does)",
+      answer: "am doing"
+    },
+    {
       type: "write",
-      text: "Write 4 sentences about your daily routine (Present Simple) and 4 about what you’re doing right now (Present Continuous)."
+      text: "Write 6 sentences: 3 in Present Simple (your habits) and 3 in Present Continuous (what you are doing this week). Use time expressions like 'every day', 'now', 'this week'."
+    },
+    {
+      type: "write",
+      text: "Write a short paragraph comparing your daily routine and what you are doing differently this month. Example: 'I usually go to school by bus, but this month I am walking because the weather is nice.'"
     }
   ]
 },
@@ -998,35 +1338,77 @@ It was my friend — she <b>wanted</b> to go for a walk. 🚶‍♀️<br><br>
 “When I <b>was cooking</b>, he <b>arrived</b>.” 🍳🚪<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: I watched a movie yesterday. She was reading a book when it started to rain. We played football last Sunday."
+      text: "Listen and repeat: I was reading when the phone rang. They played basketball yesterday. He was walking home when it started to rain."
     },
     {
       type: "choice",
-      text: "Choose the correct form: 'I ___ my homework when you called.'",
-      choices: ["did", "was doing"],
-      answer: "was doing"
+      text: "Choose the correct form: 'While I ___ dinner, my mom ___ home.'",
+      choices: ["was cooking / came", "cooked / was coming", "was cooking / was coming"],
+      answer: "was cooking / came"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "He was watched TV when I arrived.",
+        "He watched TV when I was arrived.",
+        "He was watching TV when I arrived."
+      ],
+      answer: "He was watching TV when I arrived."
     },
     {
       type: "fill",
-      text: "Complete the sentence: 'They ___ dinner at 7 p.m. yesterday.' (had / were having)",
-      answer: "were having"
+      text: "Complete the sentence: 'It ___ heavily while we ___ to school.' (rain / walk)",
+      answer: "was raining / were walking"
     },
     {
       type: "match",
-      text: "Match the sentences to their tense 👇",
+      text: "Match the sentences to their type 👇",
       pairs: [
-        ["He watched TV last night.", "Past Simple"],
-        ["I was reading when you came in.", "Past Continuous"],
-        ["They played football yesterday.", "Past Simple"],
-        ["She was sleeping at that time.", "Past Continuous"]
+        ["I studied hard last night.", "Past Simple"],
+        ["We were playing football when it started to rain.", "Past Continuous"],
+        ["She didn’t go to school yesterday.", "Past Simple (negative)"],
+        ["He was still working at midnight.", "Past Continuous (process)"],
+        ["They met while they were studying abroad.", "Mixed (Simple + Continuous)"]
       ]
     },
     {
+      type: "fill",
+      text: "Fill in the correct form: 'He ___ (not / finish) his homework when his friends ___ (call) him.'",
+      answer: "didn't finish / called"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct time expression for Past Continuous:",
+      choices: ["at the moment", "yesterday at 7 p.m.", "last year"],
+      answer: "yesterday at 7 p.m."
+    },
+    {
+      type: "match",
+      text: "Match the verb to its irregular past form 👇",
+      pairs: [
+        ["go", "went"],
+        ["see", "saw"],
+        ["eat", "ate"],
+        ["have", "had"],
+        ["make", "made"]
+      ]
+    },
+    {
+      type: "fill",
+      text: "Complete: 'When I ___ (arrive) home, my sister ___ (sleep).' ",
+      answer: "arrived / was sleeping"
+    },
+    {
       type: "write",
-      text: "Write a short paragraph (4-5 sentences) about what you did yesterday, using both Past Simple and Past Continuous."
+      text: "Write a short story (6–7 sentences) describing what you were doing yesterday evening when something unexpected happened. Use both Past Simple and Past Continuous correctly."
+    },
+    {
+      type: "write",
+      text: "Imagine you are a detective 👀 Write a paragraph about what happened at 8 p.m. yesterday using both tenses. Example: 'I was driving to the station when I saw a man running away.'"
     }
   ]
 },
@@ -1092,35 +1474,76 @@ Then, we <b>watched</b> a movie together. 🎬
 I <b>have watched</b> that movie three times since then! 😄<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: I have already eaten. She has never seen snow before. When I arrived, he had gone home."
+      text: "Listen and repeat: I have never tried sushi before. She has already finished her homework. When we arrived, they had already left."
     },
     {
       type: "choice",
-      text: "Choose the correct form: 'She ___ her keys before she left the house.'",
-      choices: ["had found", "has found"],
-      answer: "had found"
+      text: "Choose the correct sentence:",
+      choices: [
+        "I had never seen snow before I moved to Canada.",
+        "I have never saw snow before I moved to Canada.",
+        "I have never see snow before I moved to Canada."
+      ],
+      answer: "I had never seen snow before I moved to Canada."
     },
     {
       type: "fill",
-      text: "Complete: 'I ___ (never / be) to London before.'",
-      answer: "have never been"
+      text: "Complete the sentence: 'By the time we got to the cinema, the film ___ (already / start)'.",
+      answer: "had already started"
+    },
+    {
+      type: "fill",
+      text: "Fill in: 'I ___ (live) here for five years, but before that I ___ (live) in Astana.'",
+      answer: "have lived / had lived"
+    },
+    {
+      type: "choice",
+      text: "Which tense fits the context? 'She ___ her keys, so she can’t open the door now.'",
+      choices: ["had lost", "has lost", "loses"],
+      answer: "has lost"
     },
     {
       type: "match",
-      text: "Match the sentences to their tense 👇",
+      text: "Match the sentence to its correct time meaning 👇",
       pairs: [
-        ["I have finished my work.", "Present Perfect"],
-        ["She had gone before we arrived.", "Past Perfect"],
-        ["We have seen that film.", "Present Perfect"],
-        ["He had eaten before dinner.", "Past Perfect"]
+        ["I have finished my homework.", "Result connected to now"],
+        ["He has worked here since 2019.", "Started in the past, continues now"],
+        ["She had gone to bed before I called.", "One past action happened before another"],
+        ["They had never met before the party.", "Earlier past experience"]
+      ]
+    },
+    {
+      type: "fill",
+      text: "Complete: 'After he ___ (finish) his dinner, he ___ (go) to bed.'",
+      answer: "had finished / went"
+    },
+    {
+      type: "choice",
+      text: "Choose the best completion: 'Have you ever ___ abroad?'",
+      choices: ["go", "been", "gone"],
+      answer: "been"
+    },
+    {
+      type: "match",
+      text: "Match the signal words to the correct tense 👇",
+      pairs: [
+        ["already", "Present Perfect"],
+        ["by the time", "Past Perfect"],
+        ["ever / never", "Present Perfect"],
+        ["before / after", "Past Perfect"],
+        ["since / for", "Present Perfect"]
       ]
     },
     {
       type: "write",
-      text: "Write a short paragraph (4-5 sentences) about something you had done before another event. For example: 'I had cleaned my room before my guests came.'"
+      text: "Write 5 sentences using Present Perfect to describe your life experiences (e.g. I have visited...). Then, write 3 sentences using Past Perfect to describe events that happened before another past moment (e.g. I had finished my homework before dinner)."
+    },
+    {
+      type: "write",
+      text: "Imagine a story called 'The Missed Train' 🚆 — write 5–6 sentences mixing both tenses correctly. Example: 'I had bought the ticket, but by the time I reached the station, the train had left. I have learned to wake up earlier since then.'"
     }
   ]
 },
@@ -1197,34 +1620,77 @@ It <b>has been raining</b> since morning, so the children <b>have been playing</
 They <b>had been waiting</b> for the rain to stop, but it didn’t! 😅<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: I have been studying English for five years. She had been working before the exam. I will have been living here for ten years by next month."
+      text: "Listen and repeat: I have been studying for three years. She had been working before the meeting. By next summer, I will have been living here for ten years."
     },
     {
       type: "choice",
-      text: "Choose the correct tense: 'By next year, I ___ here for 4 years.'",
-      choices: ["have been working", "will have been working"],
-      answer: "will have been working"
+      text: "Choose the correct tense: 'By 2030, she ___ English for 12 years.'",
+      choices: ["has been studying", "had been studying", "will have been studying"],
+      answer: "will have been studying"
     },
     {
       type: "fill",
-      text: "Complete: 'She ___ waiting for the train for 30 minutes before it arrived.' (had been / has been)",
-      answer: "had been"
+      text: "Complete: 'He ___ (wait) for an hour before the doctor arrived.'",
+      answer: "had been waiting"
+    },
+    {
+      type: "fill",
+      text: "Fill in: 'I ___ (work) here since 2020, and I still enjoy my job.'",
+      answer: "have been working"
+    },
+    {
+      type: "choice",
+      text: "Which sentence is correct?",
+      choices: [
+        "I had been learning English since 5 years.",
+        "I have been learning English for 5 years.",
+        "I will have been learn English for 5 years."
+      ],
+      answer: "I have been learning English for 5 years."
     },
     {
       type: "match",
       text: "Match the sentence to its correct tense 👇",
       pairs: [
-        ["I have been learning English for 2 years.", "Present Perfect Continuous"],
-        ["She had been reading before you came.", "Past Perfect Continuous"],
-        ["He will have been working for 10 years by 2030.", "Future Perfect Continuous"]
+        ["He has been reading for an hour.", "Present Perfect Continuous"],
+        ["She had been crying before you came.", "Past Perfect Continuous"],
+        ["By next year, we will have been living here for a decade.", "Future Perfect Continuous"]
+      ]
+    },
+    {
+      type: "fill",
+      text: "Complete the sentence: 'They were tired because they ___ (work) all day.'",
+      answer: "had been working"
+    },
+    {
+      type: "choice",
+      text: "Choose the best explanation: 'It has been raining all morning' means...",
+      choices: [
+        "It rained and stopped.",
+        "It started raining and is still raining now.",
+        "It will start raining soon."
+      ],
+      answer: "It started raining and is still raining now."
+    },
+    {
+      type: "match",
+      text: "Match the signal words with their tense 👇",
+      pairs: [
+        ["for / since / lately", "Present Perfect Continuous"],
+        ["before / until / by the time", "Past Perfect Continuous"],
+        ["by / for / by then", "Future Perfect Continuous"]
       ]
     },
     {
       type: "write",
-      text: "Write 3 sentences about your life using Perfect Continuous forms (one in present, one in past, one in future). For example: 'I have been studying since morning.'"
+      text: "Write 6 sentences (2 for each tense). Use your own life as context. Example: 'I have been learning English since 2020.' / 'Before I moved, I had been living in Almaty.' / 'By next year, I will have been studying for 4 years.'"
+    },
+    {
+      type: "write",
+      text: "Creative task: Imagine your future career. Write a short story (5–6 sentences) using all three Perfect Continuous tenses to describe your journey — past, present, and future progress."
     }
   ]
 },
@@ -1304,38 +1770,69 @@ Active → кім істеді
 Passive → кімге істелді 💫<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: The cake is made by my mom. A new house was built by workers. The lesson is being taught by the teacher."
+      text: "Repeat after me: The car is repaired by the mechanic. The house was built last year. The project has been completed by our team."
     },
     {
       type: "choice",
-      text: "Choose the correct sentence in Passive Voice:",
-      choices: [
-        "They clean the room every day.",
-        "The room is cleaned every day.",
-        "They are cleaning the room now."
-      ],
-      answer: "The room is cleaned every day."
+      text: "Choose the correct passive form: 'The windows ___ cleaned every morning.'",
+      choices: ["is", "are", "were"],
+      answer: "are"
     },
     {
       type: "fill",
-      text: "Complete the sentence: 'The letter ___ sent yesterday.' (is / was / were)",
+      text: "Complete: 'The report ___ written by the students yesterday.' (was / were / is)",
       answer: "was"
     },
     {
+      type: "choice",
+      text: "Choose the correct transformation: 'People speak English everywhere.' → ?",
+      choices: [
+        "Everywhere English is speaking.",
+        "English is spoken everywhere.",
+        "English speaks everywhere."
+      ],
+      answer: "English is spoken everywhere."
+    },
+    {
       type: "match",
-      text: "Match each active sentence with its passive form 👇",
+      text: "Match the active sentence with its correct passive form 👇",
       pairs: [
-        ["They build houses.", "Houses are built."],
-        ["The teacher teaches English.", "English is taught by the teacher."],
-        ["My mom cooked dinner.", "Dinner was cooked by my mom."]
+        ["They built a new school.", "A new school was built."],
+        ["The students are writing an essay.", "An essay is being written by the students."],
+        ["He has finished the work.", "The work has been finished by him."],
+        ["She will deliver the speech.", "The speech will be delivered by her."]
       ]
     },
     {
+      type: "fill",
+      text: "Complete: 'The door was opened ___ a key.' (by / with / to)",
+      answer: "with"
+    },
+    {
+      type: "fill",
+      text: "Complete: 'The prize was given ___ the best student.' (by / with / to)",
+      answer: "to"
+    },
+    {
+      type: "choice",
+      text: "Which sentence is in the passive voice?",
+      choices: [
+        "The chef is cooking the dinner.",
+        "The dinner is being cooked by the chef.",
+        "The chef cooks dinner every day."
+      ],
+      answer: "The dinner is being cooked by the chef."
+    },
+    {
       type: "write",
-      text: "Write 3 sentences in Active Voice and then rewrite them in Passive Voice. For example: 'Tom paints the wall.' → 'The wall is painted by Tom.'"
+      text: "Transform these sentences into the passive voice: (1) The company makes phones. (2) They are painting the house. (3) She has completed the project. (4) The police caught the thief."
+    },
+    {
+      type: "write",
+      text: "Creative task 🌍: Write a short news-style paragraph (5–6 sentences) using passive voice. Example: 'A new bridge has been built across the river. It was opened by the mayor yesterday.'"
     }
   ]
 },
@@ -1417,38 +1914,63 @@ Passive түрінде кім істегені маңызды емес — нә�
 By the time you wake up, breakfast <b>will have been eaten</b> by your cat! 😹🍳<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: The project has been finished. The house had been cleaned. The letter will have been sent."
+      text: "Repeat after me: The letter has been written. The house had been built before we came. The project will have been finished by Friday."
     },
     {
       type: "choice",
-      text: "Choose the correct sentence in Present Perfect Passive:",
-      choices: [
-        "She have finished her work.",
-        "Her work has been finished.",
-        "Her work is finish."
-      ],
-      answer: "Her work has been finished."
-    },
-    {
-      type: "fill",
-      text: "Complete the sentence: 'The report ___ been completed by the manager.' (has / have / had)",
+      text: "Choose the correct passive form: 'The bridge ___ been repaired recently.'",
+      choices: ["has", "have", "had"],
       answer: "has"
     },
     {
+      type: "fill",
+      text: "Complete: 'The report ___ been completed before the deadline.' (had / has / will have)",
+      answer: "had"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct transformation: 'They have painted the walls.' → ?",
+      choices: [
+        "The walls have painted.",
+        "The walls have been painted.",
+        "The walls are painted."
+      ],
+      answer: "The walls have been painted."
+    },
+    {
       type: "match",
-      text: "Match the tense with its correct passive example 👇",
+      text: "Match the tense to the correct passive form 👇",
       pairs: [
-        ["Present Perfect", "The letter has been sent."],
-        ["Past Perfect", "The room had been cleaned."],
-        ["Future Perfect", "The task will have been finished."]
+        ["Present Perfect", "The homework has been done."],
+        ["Past Perfect", "The room had been cleaned before we came."],
+        ["Future Perfect", "The project will have been completed by June."]
       ]
     },
     {
+      type: "fill",
+      text: "Complete the sentence: 'By the end of the year, the new library ___ opened.' (will have been / has been / had been)",
+      answer: "will have been"
+    },
+    {
+      type: "choice",
+      text: "Which sentence shows Past Perfect Passive?",
+      choices: [
+        "The food had been cooked before guests arrived.",
+        "The food has been cooked now.",
+        "The food will have been cooked soon."
+      ],
+      answer: "The food had been cooked before guests arrived."
+    },
+    {
       type: "write",
-      text: "Write 3 sentences in the Perfect Passive form (one in Present, one in Past, one in Future). Example: The cake has been made."
+      text: "Transform these into passive: (1) They have built a new road. (2) The teacher had corrected the test. (3) The company will have finished the design."
+    },
+    {
+      type: "write",
+      text: "Creative challenge 💡: Write a short paragraph (4–6 sentences) describing a completed project using Perfect and Passive forms. Example: 'The project has been completed successfully. All documents had been checked before submission. The final report will have been approved by next week.'"
     }
   ]
 },
@@ -1538,42 +2060,76 @@ By next Monday, we <b>will have finished</b> our project. ✅<br><br>
 By the time you wake up, your cat <b>will be eating</b> your breakfast again! 🐈🍳<br><br>
 `,
 
-  tasks: [
-    {
-      type: "tts",
-      text: "Repeat after me: I will help you. She is going to bake a cake. We are meeting tomorrow. I will be studying at 9 pm."
-    },
-    {
-      type: "choice",
-      text: "Choose the correct sentence using 'going to':",
-      choices: [
-        "She will going to visit her grandma.",
-        "She is going to visit her grandma.",
-        "She goes to visit her grandma."
-      ],
-      answer: "She is going to visit her grandma."
-    },
-    {
-      type: "fill",
-      text: "Complete the sentence: 'By this time tomorrow, I ___ be working on my project.' (will / am / going to)",
-      answer: "will"
-    },
-    {
-      type: "match",
-      text: "Match the Future form to its example 👇",
-      pairs: [
-        ["Future Simple", "I will call you tomorrow."],
-        ["Be going to", "She is going to travel next month."],
-        ["Present Continuous for future", "We are having dinner at 8 pm."],
-        ["Future Continuous", "He will be sleeping at midnight."],
-        ["Future Perfect", "They will have arrived by Friday."]
-      ]
-    },
-    {
-      type: "write",
-      text: "Write 4 sentences using different Future Tenses (use will, going to, Present Continuous, and Future Perfect)."
-    }
-  ]
+tasks: [
+  {
+    type: "tts",
+    text: "Repeat after me: I will visit London next summer. She is going to start a new job. We are meeting the manager tomorrow. By next month, I will have finished my course."
+  },
+  {
+    type: "choice",
+    text: "Which sentence shows a planned action (not a sudden decision)?",
+    choices: [
+      "I think I’ll call him tonight.",
+      "She is going to study medicine next year.",
+      "I will open the window, it’s hot here."
+    ],
+    answer: "She is going to study medicine next year."
+  },
+  {
+    type: "fill",
+    text: "Complete: 'By the time you arrive, we ___ eating dinner.' (will be / are / going to)",
+    answer: "will be"
+  },
+  {
+    type: "choice",
+    text: "Choose the sentence that uses the correct future structure:",
+    choices: [
+      "She will going to travel abroad.",
+      "She will have finished the report by Monday.",
+      "She is will study after class."
+    ],
+    answer: "She will have finished the report by Monday."
+  },
+  {
+    type: "match",
+    text: "Match each sentence to the correct Future form 👇",
+    pairs: [
+      ["Future Simple", "I will probably move to another city."],
+      ["Be going to", "Look at the sky! It’s going to snow soon."],
+      ["Present Continuous (for plan)", "We are meeting our teacher at 10 o’clock."],
+      ["Future Continuous", "This time tomorrow, I will be driving to the airport."],
+      ["Future Perfect", "By next week, the new building will have been completed."]
+    ]
+  },
+  {
+    type: "fill",
+    text: "Complete: 'They ___ start the meeting at 9 a.m., it’s already in the schedule.' (are going to / will / be)",
+    answer: "are going to"
+  },
+  {
+    type: "choice",
+    text: "Find the correct transformation: 'The workers finish the bridge next month.' → ?",
+    choices: [
+      "The bridge will be finished next month.",
+      "The bridge is going finish next month.",
+      "The bridge will have finished next month."
+    ],
+    answer: "The bridge will be finished next month."
+  },
+  {
+    type: "fill",
+    text: "Complete with the correct tense: 'I ___ (not / see) you this weekend — I’m flying to Paris on Saturday.'",
+    answer: "am not seeing"
+  },
+  {
+    type: "write",
+    text: "Rewrite these sentences using different Future forms: (1) I think it rains tomorrow. (2) We plan to visit grandma. (3) He finishes the report before Monday. (4) This time next week, I relax on the beach."
+  },
+  {
+    type: "write",
+    text: "Creative challenge 💡: Write a short paragraph (5–6 sentences) about your plans and predictions for the next year. Use all five Future forms (will, going to, Present Continuous, Future Continuous, Future Perfect). Example: 'I’m going to start a new hobby. I will travel abroad in summer. By the end of the year, I will have improved my English.'"
+  }
+]
 },
 15: {
   desc: `
@@ -1632,41 +2188,70 @@ Passive — не істеледі маңызды.<br><br>
 <b>Passive:</b> The book <b>will be published</b> next month. 📚<br><br>
 `,
 
-  tasks: [
-    {
-      type: "tts",
-      text: "Repeat after me: The classroom will be cleaned. A new school is going to be built. The book will be published next month."
-    },
-    {
-      type: "choice",
-      text: "Choose the correct passive form:",
-      choices: [
-        "The results will announce tomorrow.",
-        "The results will be announced tomorrow.",
-        "The results are announcing tomorrow."
-      ],
-      answer: "The results will be announced tomorrow."
-    },
-    {
-      type: "fill",
-      text: "Complete the sentence: 'A new bridge ___ be built next year.' (will / is / was)",
-      answer: "will"
-    },
-    {
-      type: "match",
-      text: "Match the active sentences to their passive forms 👇",
-      pairs: [
-        ["They will build a new park.", "A new park will be built."],
-        ["Someone will paint the wall.", "The wall will be painted."],
-        ["They are going to make a film.", "A film is going to be made."],
-        ["They will open the museum.", "The museum will be opened."]
-      ]
-    },
-    {
-      type: "write",
-      text: "Write 3 sentences in the passive future form. For example: 'The project will be completed soon.' or 'The results are going to be announced tomorrow.'"
-    }
-  ]
+tasks: [
+  {
+    type: "tts",
+    text: "Repeat after me: The bridge will be completed next year. The concert is going to be held in London. The results will be announced on Friday."
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct in Future Passive Voice?",
+    choices: [
+      "They will building a new stadium.",
+      "A new stadium will be built next year.",
+      "A new stadium is built next year."
+    ],
+    answer: "A new stadium will be built next year."
+  },
+  {
+    type: "fill",
+    text: "Complete: 'The documents ___ be checked before the meeting.' (will / was / are)",
+    answer: "will"
+  },
+  {
+    type: "choice",
+    text: "Choose the correct transformation (Active → Passive): 'They are going to repair the road tomorrow.'",
+    choices: [
+      "The road will be repaired tomorrow.",
+      "The road is going to be repaired tomorrow.",
+      "The road will being repaired tomorrow."
+    ],
+    answer: "The road is going to be repaired tomorrow."
+  },
+  {
+    type: "match",
+    text: "Match each active sentence to its correct passive form 👇",
+    pairs: [
+      ["They will announce the results soon.", "The results will be announced soon."],
+      ["The company is going to launch a new product.", "A new product is going to be launched."],
+      ["Someone will deliver the food at 6.", "The food will be delivered at 6."],
+      ["They will finish the bridge by June.", "The bridge will be finished by June."]
+    ]
+  },
+  {
+    type: "fill",
+    text: "Complete with the correct future form: 'The project ___ (be) presented at the conference next month.'",
+    answer: "will be"
+  },
+  {
+    type: "choice",
+    text: "Which of these sentences sounds more formal and typical for news reports?",
+    choices: [
+      "They’re going to clean the park tomorrow.",
+      "The park is going to be cleaned tomorrow.",
+      "They clean the park tomorrow."
+    ],
+    answer: "The park is going to be cleaned tomorrow."
+  },
+  {
+    type: "write",
+    text: "Transform these sentences into the Future Passive form: (1) They will publish the book next month. (2) Someone is going to paint the classroom. (3) The workers will finish the bridge by Friday."
+  },
+  {
+    type: "write",
+    text: "Creative Challenge 🎯: Write a short paragraph (5–6 sentences) describing future city plans using the passive voice. Example: 'A new metro line will be opened next year. Several parks are going to be built around the city.' Try to use at least 3 different passive future structures (will be + V3, is going to be + V3, will have been + V3)."
+  }
+]
 },
 16: {
   desc: `
@@ -1736,14 +2321,14 @@ It is believed that the cookies <b>were eaten</b> by the teacher… not by the s
 </table><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
       text: "Repeat after me: Cakes are made every day. The wall was painted yesterday. The work had been finished before 6 pm."
     },
     {
       type: "choice",
-      text: "Choose the correct passive sentence:",
+      text: "Which sentence is correct in Passive Voice?",
       choices: [
         "The book was wrote by her.",
         "The book was written by her.",
@@ -1766,8 +2351,27 @@ It is believed that the cookies <b>were eaten</b> by the teacher… not by the s
       ]
     },
     {
+      type: "choice",
+      text: "Choose the correct reported passive form: 'People say that this building is haunted.'",
+      choices: [
+        "It said that this building was haunted.",
+        "It is said that this building is haunted.",
+        "It is say that this building was haunted."
+      ],
+      answer: "It is said that this building is haunted."
+    },
+    {
+      type: "fill",
+      text: "Transform: 'Scientists believe that the planet had water.' → (Reported Passive)",
+      answer: "It is believed that the planet had water."
+    },
+    {
       type: "write",
-      text: "Write 3 reported sentences using passive voice. Example: 'It is said that cats are lucky.' or 'It was reported that the city was flooded.'"
+      text: "Transform these active sentences into the passive reported form: (1) People think he stole the money. (2) Reporters said they finished the investigation. (3) Scientists believe humans will live on Mars."
+    },
+    {
+      type: "write",
+      text: "Creative Challenge 🧠: Write a short news report (4–5 sentences) using at least three passive structures and one reported speech example. Example: 'It is reported that a new museum was opened yesterday. The event was attended by hundreds of people.'"
     }
   ]
 },
@@ -1822,10 +2426,10 @@ At 8 a.m., the teacher <b>was being woken up</b> by her cat 🐱,<br>
 while the students <b>were being tested</b> online! 💻<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: The house is being painted. The classroom was being cleaned. The roof was being fixed."
+      text: "Repeat after me: The house is being painted. The classroom was being cleaned. The roof was being fixed. The bridge is being built now."
     },
     {
       type: "choice",
@@ -1834,9 +2438,24 @@ while the students <b>were being tested</b> online! 💻<br><br>
       answer: "is being"
     },
     {
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "The wall is painted now.",
+        "The wall is being painted now.",
+        "The wall was painted now."
+      ],
+      answer: "The wall is being painted now."
+    },
+    {
       type: "fill",
-      text: "Complete: 'The cake ___ being decorated when I arrived.' (was / is / were)",
+      text: "Complete the sentence: 'The cake ___ being decorated when I arrived.' (was / is / were)",
       answer: "was"
+    },
+    {
+      type: "fill",
+      text: "Transform this: 'They are repairing my car at the moment.' → (Passive)",
+      answer: "My car is being repaired at the moment."
     },
     {
       type: "match",
@@ -1844,12 +2463,27 @@ while the students <b>were being tested</b> online! 💻<br><br>
       pairs: [
         ["They are painting the fence.", "The fence is being painted."],
         ["They were building a house.", "A house was being built."],
-        ["They are cleaning the room.", "The room is being cleaned."]
+        ["They are cleaning the room.", "The room is being cleaned."],
+        ["They were repairing the road.", "The road was being repaired."]
       ]
     },
     {
+      type: "choice",
+      text: "Find the mistake: 'The door was being open when the wind blew.'",
+      choices: [
+        "No mistake",
+        "‘being open’ should be ‘being opened’",
+        "‘was’ should be ‘is’"
+      ],
+      answer: "‘being open’ should be ‘being opened’"
+    },
+    {
       type: "write",
-      text: "Write 3 sentences in Passive Continuous form. Example: 'My bike is being repaired.' or 'The hall was being decorated yesterday.'"
+      text: "Write 3 sentences using Passive Continuous forms: 1 in Present, 1 in Past, and 1 using a time clause (e.g., 'when I arrived', 'at the moment')."
+    },
+    {
+      type: "write",
+      text: "Creative Task 🎨: Describe what is being done in your school (or at home) right now and what was being done yesterday at the same time. Use at least 5 passive continuous verbs."
     }
   ]
 },
@@ -1932,38 +2566,48 @@ Student (later): “She said I hadn’t done my homework.” 😅<br><br>
 🎯 Көмекші сөз “that” кейде айтылмайды.<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: He said he was happy. She said she was learning English. They said they would go tomorrow."
+      text: "Repeat after me: He said he was tired. She said she was learning English. They said they would go the next day."
     },
     {
       type: "choice",
-      text: "Choose the correct reported speech: 'She said, “I am busy.”' →",
+      text: "Choose the correct reported form: 'He said, “I have never been to Paris.”' →",
       choices: [
-        "She said she is busy.",
-        "She said she was busy.",
-        "She said she will be busy."
+        "He said he never went to Paris.",
+        "He said he had never been to Paris.",
+        "He said he has never been to Paris."
       ],
-      answer: "She said she was busy."
+      answer: "He said he had never been to Paris."
     },
     {
       type: "fill",
-      text: "Complete: 'He said he ___ finished his work.' (has / had / have)",
+      text: "Complete: 'She said she ___ already finished her homework.' (has / had / have)",
       answer: "had"
+    },
+    {
+      type: "choice",
+      text: "Find the mistake: 'He said he was going to school tomorrow.'",
+      choices: [
+        "Correct sentence.",
+        "‘tomorrow’ should be ‘the next day’.",
+        "‘was’ should be ‘is’."
+      ],
+      answer: "‘tomorrow’ should be ‘the next day’."
     },
     {
       type: "match",
       text: "Match the direct sentences with their reported forms 👇",
       pairs: [
-        ["I am tired", "He said he was tired"],
-        ["We will come tomorrow", "They said they would come the next day"],
-        ["She can dance", "He said she could dance"]
+        ["I am hungry.", "He said he was hungry."],
+        ["We will go tomorrow.", "They said they would go the next day."],
+        ["She has seen that movie.", "He said she had seen that movie."]
       ]
     },
     {
       type: "write",
-      text: "Write 3 sentences turning direct speech into reported speech. Example: 'He said, “I love music.” → He said he loved music.'"
+      text: "Transform 3 direct sentences into reported ones. Include time changes (e.g., today → that day). Example: 'He said, “I’m busy today.” → He said he was busy that day.'"
     }
   ]
 },
@@ -2036,38 +2680,48 @@ Mom: “Clean your room.”<br>
 You: “Mom told me to clean my room!” 🧹<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: She said she was tired. He asked where I was going. Mom told me to clean my room."
+      text: "Repeat after me: He asked where I was going. She told me not to be late. They asked if I could swim."
     },
     {
       type: "choice",
-      text: "Choose the correct reported form: 'He said, “I am learning English.”'",
+      text: "Choose the correct reported question: 'She asked, “Where do you live?”' →",
       choices: [
-        "He said he is learning English.",
-        "He said he was learning English.",
-        "He said he has learned English."
+        "She asked where did I live.",
+        "She asked where I lived.",
+        "She asked that where I lived."
       ],
-      answer: "He said he was learning English."
+      answer: "She asked where I lived."
     },
     {
       type: "fill",
-      text: "Complete: 'She asked if I ___ like pizza.' (do / did / does)",
-      answer: "did"
+      text: "Complete: 'Mom told me ___ my room.' (to clean / clean / cleaning)",
+      answer: "to clean"
+    },
+    {
+      type: "choice",
+      text: "Which is correct?",
+      choices: [
+        "The teacher told us don’t talk.",
+        "The teacher told us not to talk.",
+        "The teacher said to not talking."
+      ],
+      answer: "The teacher told us not to talk."
     },
     {
       type: "match",
-      text: "Match the direct speech to its reported form 👇",
+      text: "Match the direct speech to its reported version 👇",
       pairs: [
-        ["Mom said, 'Go to bed!'", "Mom told me to go to bed."],
-        ["The teacher said, 'Don’t talk!'", "The teacher told us not to talk."],
-        ["He asked, 'Can you swim?'", "He asked if I could swim."]
+        ["He said, 'Do you like coffee?'", "He asked if I liked coffee."],
+        ["She said, 'Go to bed!'", "She told me to go to bed."],
+        ["Mom said, 'Don’t forget your bag!'", "Mom told me not to forget my bag."]
       ]
     },
     {
       type: "write",
-      text: "Write 3 of your own sentences changing direct speech into reported speech. Include one statement, one question, and one command. 💬"
+      text: "Write 3 sentences: one reported question, one reported command, and one reported request. Example: 'He asked if I liked movies.' / 'She told me to study harder.' / 'Mom asked me to help her.'"
     }
   ]
 },
@@ -2153,38 +2807,50 @@ You: “He asked if I liked pizza!”<br><br>
 ✅ <b>If / whether</b> — Yes/No сұрақтарға<br><br>
 `,
 
-  tasks: [
+ 
+tasks: [
     {
       type: "tts",
-      text: "Repeat after me: Do you know where she went? I wonder if he is at school. Can you tell me what time it is?"
+      text: "Repeat after me: Can you tell me where the bus stop is? I wonder if she is at home. Do you know when the movie starts?"
     },
     {
       type: "choice",
-      text: "Choose the correct indirect question: 'Where is the library?'",
+      text: "Choose the correct indirect question: 'What time does the shop close?'",
       choices: [
-        "Can you tell me where is the library?",
-        "Can you tell me where the library is?",
-        "Do you know where is library?"
+        "Can you tell me what time does the shop close?",
+        "Can you tell me what time the shop closes?",
+        "Do you know what time does shop close?"
       ],
-      answer: "Can you tell me where the library is?"
+      answer: "Can you tell me what time the shop closes?"
     },
     {
       type: "fill",
-      text: "Complete: 'I wonder if it ___ raining.' (is / was / were)",
-      answer: "is"
+      text: "Complete: 'I wonder if they ___ coming to the party.' (are / is / were)",
+      answer: "are"
+    },
+    {
+      type: "choice",
+      text: "Find the mistake: 'Do you know where is my bag?'",
+      choices: [
+        "Correct sentence.",
+        "‘is’ should come after ‘bag’.",
+        "‘Do you know’ must be removed."
+      ],
+      answer: "‘is’ should come after ‘bag’."
     },
     {
       type: "match",
       text: "Match the direct questions to their indirect forms 👇",
       pairs: [
-        ["What time is it?", "Do you know what time it is?"],
-        ["Is he your teacher?", "I wonder if he is your teacher."],
-        ["Where did she go?", "Can you tell me where she went?"]
+        ["Where is the station?", "Could you tell me where the station is?"],
+        ["Is he at home?", "I wonder if he is at home."],
+        ["Why are you sad?", "Can you tell me why you are sad?"],
+        ["When does the film start?", "Do you know when the film starts?"]
       ]
     },
     {
       type: "write",
-      text: "Write 3 sentences turning direct questions into indirect ones. Example: 'Where is my book?' → 'Can you tell me where my book is?' 📚"
+      text: "Write 3 polite indirect questions using: ‘Do you know...’, ‘Can you tell me...’, and ‘I wonder...’. Example: ‘Do you know what time it is?’ ⏰"
     }
   ]
 },
@@ -2270,35 +2936,55 @@ He runs <b>slowly</b>. → (adverb) 🏃‍♂️<br><br>
 ✅ Superlative: the fastest / the most carefully<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: He runs faster than me. She studies harder. They worked more carefully than before."
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "She speaks very good.",
+        "She speaks very well.",
+        "She very well speaks."
+      ],
+      answer: "She speaks very well."
     },
     {
       type: "choice",
-      text: "Choose the correct comparative adverb: 'She sings ___ than her sister.'",
-      choices: ["more beautifully", "beautiful", "most beautifully"],
-      answer: "more beautifully"
+      text: "Find the correct meaning: 'He hardly eats.'",
+      choices: [
+        "He eats a lot.",
+        "He almost doesn’t eat.",
+        "He eats quickly."
+      ],
+      answer: "He almost doesn’t eat."
     },
     {
       type: "fill",
-      text: "Complete the sentence: 'He drives ___ than his brother.' (carefully / more carefully / careful)",
-      answer: "more carefully"
+      text: "Complete: 'I have ___ seen him this week.' (ever / never / lately)",
+      answer: "never"
+    },
+    {
+      type: "choice",
+      text: "Which is correct?",
+      choices: [
+        "I nearly missed the bus.",
+        "I near missed the bus.",
+        "I missed nearly the bus."
+      ],
+      answer: "I nearly missed the bus."
     },
     {
       type: "match",
-      text: "Match the adverb with its comparative form 👇",
+      text: "Match the adverb to its correct meaning 👇",
       pairs: [
-        ["fast", "faster"],
-        ["hard", "harder"],
-        ["carefully", "more carefully"],
-        ["well", "better"]
+        ["hardly", "almost not"],
+        ["lately", "recently"],
+        ["well", "in a good way"],
+        ["fast", "quickly"]
       ]
     },
     {
       type: "write",
-      text: "Write 4 sentences comparing two actions using comparative adverbs. Example: 'I study harder than my friend.' 📚"
+      text: "Write 4 sentences using the adverbs hardly, lately, well, and nearly. Show the difference in meaning clearly."
     }
   ]
 },
@@ -2375,39 +3061,55 @@ Comparative adverbs көбінесе етістіктен кейін немес�
 ✅ “as ... as” және “less ... than” құрылымдарын қолдан<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Let’s read some examples aloud: She studies harder. He runs faster. They work more carefully than before."
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "He works more hardly than me.",
+        "He works harder than me.",
+        "He works hardlier than me."
+      ],
+      answer: "He works harder than me."
     },
     {
       type: "choice",
-      text: "Choose the correct sentence with a comparative adverb:",
+      text: "Find the correct comparative: 'She speaks ___ than last year.'",
       choices: [
-        "She sings beautiful than her friend.",
-        "She sings more beautifully than her friend.",
-        "She sings most beautifully than her friend."
+        "more fluently",
+        "most fluently",
+        "fluentlyer"
       ],
-      answer: "She sings more beautifully than her friend."
+      answer: "more fluently"
     },
     {
       type: "fill",
-      text: "Complete the sentence: 'He finished his homework ___ than usual.' (earlier / more early / earliest)",
-      answer: "earlier"
+      text: "Complete: 'He drives ___ faster than he used to.' (a bit / little / few)",
+      answer: "a bit"
+    },
+    {
+      type: "choice",
+      text: "Which sentence shows double comparison?",
+      choices: [
+        "He runs much faster now.",
+        "The more you study, the smarter you become.",
+        "She sings better than her friend."
+      ],
+      answer: "The more you study, the smarter you become."
     },
     {
       type: "match",
-      text: "Match the adverb with its comparative form 👇",
+      text: "Match the adverb to the correct modifier 👇",
       pairs: [
-        ["well", "better"],
-        ["badly", "worse"],
-        ["early", "earlier"],
-        ["far", "farther / further"]
+        ["much faster", "significantly quicker"],
+        ["a bit better", "slightly improved"],
+        ["far less carefully", "much less attention"],
+        ["the sooner", "the better outcome"]
       ]
     },
     {
       type: "write",
-      text: "Write 3 sentences using comparative adverbs to compare actions in your life. Example: 'I wake up earlier than my brother.'"
+      text: "Write 4 sentences using advanced comparative structures (e.g. ‘the more..., the more...’, ‘much faster’, ‘a bit better’)."
     }
   ]
 },
@@ -2495,35 +3197,51 @@ Modal verbs – көмекші етістіктер, олар негізгі е�
 🟣 will/would → ниет, жоспар, сыпайылық<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: I can swim. It might rain. You must study. I will call you later."
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "He must has gone home.",
+        "He must have gone home.",
+        "He must have go home."
+      ],
+      answer: "He must have gone home."
     },
     {
       type: "choice",
-      text: "Choose the correct modal verb: 'It ___ rain this evening.'",
-      choices: ["can", "may", "must"],
-      answer: "may"
+      text: "Which means 'it’s impossible'? 'He ___ be at school; it’s Sunday!'",
+      choices: ["must", "might", "can’t"],
+      answer: "can’t"
     },
     {
       type: "fill",
-      text: "Complete the sentence: 'You ___ wear a helmet when cycling.' (must / might / could)",
-      answer: "must"
+      text: "Complete: 'She ___ have forgotten about the meeting.' (might / must / can)",
+      answer: "might"
+    },
+    {
+      type: "choice",
+      text: "Find the correct interpretation: 'You should see a doctor.'",
+      choices: [
+        "Strong obligation",
+        "Mild advice or recommendation",
+        "Future plan"
+      ],
+      answer: "Mild advice or recommendation"
     },
     {
       type: "match",
-      text: "Match each modal verb to its function 👇",
+      text: "Match the modal phrase to its meaning 👇",
       pairs: [
-        ["can", "ability"],
-        ["may", "possibility"],
-        ["must", "necessity"],
-        ["will", "intent"]
+        ["must be", "almost sure"],
+        ["might have", "possible in the past"],
+        ["can’t be", "impossible"],
+        ["should", "advice"]
       ]
     },
     {
       type: "write",
-      text: "Write 5 sentences using different modals (can, might, must, will, would). Example: 'I can play the guitar.'"
+      text: "Write 5 sentences using advanced modal forms (e.g. must have, can’t be, might have, should, would). Show different meanings: obligation, advice, and deduction."
     }
   ]
 },
@@ -2613,40 +3331,56 @@ I <b>might have left</b> them in the kitchen! Mom said I <b>should have cleaned<
 🔴 may → was allowed to<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: I could swim when I was young. You should have studied. He must have forgotten his keys."
+      type: "choice",
+      text: "Choose the correct past modal: 'He looks tired. He ___ been working all day.'",
+      choices: ["must have", "might", "had to"],
+      answer: "must have"
     },
     {
       type: "choice",
-      text: "Choose the correct sentence:",
+      text: "Find the sentence showing regret:",
       choices: [
-        "He must have forgot his wallet.",
-        "He must have forgotten his wallet.",
-        "He must has forgotten his wallet."
+        "He should have called his mom.",
+        "He could have gone there.",
+        "He might have been at home."
       ],
-      answer: "He must have forgotten his wallet."
+      answer: "He should have called his mom."
     },
     {
       type: "fill",
-      text: "Complete: 'I ___ to finish my report yesterday.' (must / had to / have to)",
-      answer: "had to"
+      text: "Complete: 'I ___ helped you, but I didn’t know you needed it.' (could / must / should)",
+      answer: "could"
+    },
+    {
+      type: "choice",
+      text: "Which sentence means 'it was impossible in the past'?",
+      choices: [
+        "He must have finished the exam.",
+        "He can’t have been there yesterday.",
+        "He should have stayed longer."
+      ],
+      answer: "He can’t have been there yesterday."
     },
     {
       type: "match",
-      text: "Match the modal to its past form 👇",
+      text: "Match the modal with its meaning 👇",
       pairs: [
-        ["can", "could"],
-        ["must", "had to"],
-        ["should", "should have"],
-        ["may", "was allowed to"],
-        ["might", "might have"]
+        ["must have", "strong certainty"],
+        ["could have", "missed possibility"],
+        ["should have", "regret/advice"],
+        ["can’t have", "impossibility"]
       ]
     },
     {
       type: "write",
-      text: "Write 4 sentences using past modals. Example: 'I should have called my friend yesterday.'"
+      text: "Write 5 sentences using past modals (must have, could have, should have, can’t have, might have). Each with a different meaning: certainty, possibility, regret, and doubt."
+    },
+    {
+      type: "rewrite",
+      text: "Rewrite: 'I didn’t see him, but maybe he was here.' → Use 'might have'.",
+      answer: "He might have been here."
     }
   ]
 },
@@ -2738,36 +3472,56 @@ Prepositions — заттың, іс-әрекеттің **орнын, уақыт�
 🔵 “at” – дәл сол жерде<br><br>
 `,
 
-  tasks: [
-    {
-      type: "tts",
-      text: "Repeat after me: The cat is under the table. I go to school at 8 o’clock. She is walking to the park."
-    },
+tasks: [
     {
       type: "choice",
-      text: "Choose the correct preposition: 'The book is ___ the desk.'",
-      choices: ["in", "on", "under"],
+      text: "Choose the correct preposition: 'He arrived ___ time for the meeting.'",
+      choices: ["on", "in", "at"],
       answer: "on"
     },
     {
+      type: "choice",
+      text: "Which sentence uses 'in' in an abstract sense?",
+      choices: [
+        "She is in the room.",
+        "She is in love.",
+        "She is in the box."
+      ],
+      answer: "She is in love."
+    },
+    {
       type: "fill",
-      text: "Complete: 'We go to school ___ the morning.' (in / on / at)",
-      answer: "in"
+      text: "Complete: 'He walked ___ the bridge to the other side.' (across / under / into)",
+      answer: "across"
+    },
+    {
+      type: "choice",
+      text: "Find the idiomatic use of preposition:",
+      choices: [
+        "The cat is on the roof.",
+        "He did it on purpose.",
+        "The book is on the shelf."
+      ],
+      answer: "He did it on purpose."
     },
     {
       type: "match",
-      text: "Match the prepositions to their type 👇",
+      text: "Match the phrase to its meaning 👇",
       pairs: [
-        ["in", "time / place"],
-        ["on", "time / surface"],
-        ["under", "place (below something)"],
-        ["to", "direction (toward)"],
-        ["with", "together / company"]
+        ["in a hurry", "quickly, with little time"],
+        ["on time", "punctually"],
+        ["under pressure", "in a stressful situation"],
+        ["by chance", "unexpectedly"]
       ]
     },
     {
       type: "write",
-      text: "Write 5 short sentences using different prepositions. Example: 'My bag is on the chair.'"
+      text: "Write 5 sentences using idiomatic prepositional phrases (e.g., in a hurry, under pressure, on purpose)."
+    },
+    {
+      type: "rewrite",
+      text: "Rewrite: 'He was nervous because of stress.' → Use 'under pressure'.",
+      answer: "He was under pressure."
     }
   ]
 },
@@ -2856,36 +3610,57 @@ Prepositions кейде <b>сын есімдермен</b>, <b>зат есімд
 🔵 <b>Verb + preposition</b> → depend on, talk about, wait for<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: I’m interested in music. She’s afraid of spiders. We talked about our plans."
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "I’m interested on history.",
+        "I’m interested in history.",
+        "I’m interested about history."
+      ],
+      answer: "I’m interested in history."
     },
     {
       type: "choice",
-      text: "Choose the correct option: 'She is afraid ___ dogs.'",
-      choices: ["on", "for", "of"],
-      answer: "of"
+      text: "Find the correct dependent preposition: 'We complained ___ the noise.'",
+      choices: ["for", "about", "on"],
+      answer: "about"
     },
     {
       type: "fill",
-      text: "Complete: 'I am proud ___ my country.' (of / in / for)",
-      answer: "of"
+      text: "Complete: 'He is responsible ___ the project.' (for / to / of)",
+      answer: "for"
+    },
+    {
+      type: "choice",
+      text: "Which is correct?",
+      choices: [
+        "She applied on the job.",
+        "She applied for the job.",
+        "She applied to job."
+      ],
+      answer: "She applied for the job."
     },
     {
       type: "match",
-      text: "Match the word with its correct preposition 👇",
+      text: "Match the word with its preposition 👇",
       pairs: [
-        ["interested", "in"],
         ["afraid", "of"],
-        ["depend", "on"],
-        ["listen", "to"],
-        ["good", "at"]
+        ["good", "at"],
+        ["reason", "for"],
+        ["answer", "to"],
+        ["depend", "on"]
       ]
     },
     {
       type: "write",
-      text: "Write 5 sentences using adjective + preposition and verb + preposition combinations. Example: 'I’m good at swimming.'"
+      text: "Write 5 sentences using adjective + preposition, verb + preposition, and noun + preposition combinations. Try to mix them all together!"
+    },
+    {
+      type: "rewrite",
+      text: "Rewrite: 'He talked the problem.' → Use the correct dependent preposition.",
+      answer: "He talked about the problem."
     }
   ]
 },
@@ -2967,36 +3742,57 @@ Infinitive = <b>to + verb</b><br><br>
 🟣 Infinitive — сөйлемде етістіктің “атауы” сияқты жұмыс істейді.<br><br>
 `,
 
-  tasks: [
-    {
-      type: "tts",
-      text: "Repeat after me: I want to learn English. She decided to travel. We can swim. He’s happy to see you."
-    },
+tasks: [
     {
       type: "choice",
-      text: "Choose the correct form: 'I want ___ a doctor.'",
-      choices: ["to be", "be", "being"],
+      text: "Choose the correct form: 'He seems ___ very tired today.'",
+      choices: ["be", "to be", "being"],
       answer: "to be"
     },
     {
+      type: "choice",
+      text: "Which sentence is correct?",
+      choices: [
+        "I want learning English.",
+        "I want to learn English.",
+        "I want learn English."
+      ],
+      answer: "I want to learn English."
+    },
+    {
       type: "fill",
-      text: "Complete: 'She decided ___ abroad next year.' (to travel / travel / traveling)",
-      answer: "to travel"
+      text: "Complete: 'She promised ___ me tomorrow.' (to call / calling / call)",
+      answer: "to call"
+    },
+    {
+      type: "choice",
+      text: "Find the sentence with a bare infinitive (without 'to'):",
+      choices: [
+        "He decided to go.",
+        "We can play outside.",
+        "I hope to visit London."
+      ],
+      answer: "We can play outside."
     },
     {
       type: "match",
-      text: "Match the word to its correct infinitive example 👇",
+      text: "Match the adjective or verb to its infinitive phrase 👇",
       pairs: [
-        ["want", "to go"],
-        ["decide", "to study"],
-        ["happy", "to help"],
-        ["can", "swim"],
-        ["afraid", "to fly"]
+        ["afraid", "to fly ✈️"],
+        ["decide", "to travel 🌍"],
+        ["happy", "to see you 😊"],
+        ["plan", "to visit London 🏙️"],
+        ["need", "to rest 😴"]
       ]
     },
     {
+      type: "rewrite",
+      text: "Rewrite using an infinitive: 'I study because I want to learn English better.' → Begin with 'I study to...'",
+      answer: "I study to learn English better."
+    },
+    {
       type: "write",
-      text: "Write 5 sentences using infinitives. Example: 'I need to finish my homework.'"
+      text: "Write 5 sentences using infinitives in different functions: purpose, emotion, after verb, after noun, and after adjective. Example: 'It’s nice to meet you.' / 'I plan to study abroad.'"
     }
   ]
 },
@@ -3094,36 +3890,61 @@ Phrasal verbs-ті әрдайым тұтас жатта — олар жеке м
 🔹 Phrasal verb — жаңа мағыналы тіркес! 🌟<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Listen and repeat: I’m happy to help you. I decided to travel. I enjoy reading. Don’t forget to turn off the light."
+      type: "choice",
+      text: "Choose the correct sentence:",
+      choices: [
+        "She enjoys to read books.",
+        "She enjoys reading books.",
+        "She enjoy reading books."
+      ],
+      answer: "She enjoys reading books."
     },
     {
       type: "choice",
-      text: "Choose the correct form: 'She enjoys ___ TV.'",
-      choices: ["to watch", "watch", "watching"],
-      answer: "watching"
+      text: "Find the sentence with an infinitive used after an adjective:",
+      choices: [
+        "I’m afraid to drive at night.",
+        "I finished reading my book.",
+        "She enjoys cooking Italian food."
+      ],
+      answer: "I’m afraid to drive at night."
     },
     {
       type: "fill",
-      text: "Complete: 'I’m ready ___ my homework now.' (to start / starting / start)",
-      answer: "to start"
+      text: "Complete: 'Don’t forget ___ off the lights before bed.' (turn / turning / to turn)",
+      answer: "to turn"
+    },
+    {
+      type: "choice",
+      text: "Which sentence correctly uses a phrasal verb?",
+      choices: [
+        "He looked after his little sister.",
+        "He looked the after sister.",
+        "He looked for his little after sister."
+      ],
+      answer: "He looked after his little sister."
     },
     {
       type: "match",
-      text: "Match the words to their meanings 👇",
+      text: "Match each phrasal verb with its meaning 👇",
       pairs: [
-        ["look after", "to take care of someone 👶"],
-        ["turn on", "to start a machine or light 💡"],
         ["give up", "to stop doing something 🚭"],
-        ["enjoy", "to get pleasure from doing something 😊"],
-        ["decide", "to make a choice about something 🧠"]
+        ["turn off", "to stop a machine or light 🔌"],
+        ["look after", "to take care of someone 👩‍👧"],
+        ["get up", "to rise from bed 🛏️"],
+        ["look for", "to search for something 🔍"]
       ]
     },
     {
+      type: "rewrite",
+      text: "Rewrite: 'I like to read books.' → Use gerund instead of infinitive.",
+      answer: "I like reading books."
+    },
+    {
       type: "write",
-      text: "Write 5 sentences using infinitives, gerunds, or phrasal verbs. For example: 'I need to study.' / 'He enjoys cooking.' / 'She turned off the TV.'"
+      text: "Write 6 sentences: 2 with infinitives, 2 with gerunds, and 2 with phrasal verbs. Try to mix emotional adjectives and real-life situations."
     }
   ]
 },
@@ -3202,35 +4023,56 @@ She wanted to finish <b>so that</b> she could rest early. 😴<br><br>
 💡 <i>Мораль:</i> Жалғаулықтар сөйлемдерді әдемі байланыстырады! 💖<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: so that, although, while, whereas."
+      type: "choice",
+      text: "Choose the best option: '___ he was sick, he went to work.'",
+      choices: ["Although", "While", "Whereas"],
+      answer: "Although"
     },
     {
       type: "choice",
-      text: "Choose the correct word: '___ it was raining, they played outside.'",
-      choices: ["so that", "although", "whereas"],
-      answer: "although"
+      text: "Find the sentence showing contrast (қарсы мағына):",
+      choices: [
+        "She worked hard so that she could buy a car.",
+        "Although he is rich, he lives simply.",
+        "He sang while I played the piano."
+      ],
+      answer: "Although he is rich, he lives simply."
     },
     {
       type: "fill",
-      text: "Complete: 'He studied hard ___ he could pass the exam.' (although / so that / whereas)",
-      answer: "so that"
+      text: "Complete: 'I’ll call you later ___ I finish my homework.' (although / so that / while)",
+      answer: "while"
+    },
+    {
+      type: "choice",
+      text: "Choose the correct use of 'whereas':",
+      choices: [
+        "He studied hard, whereas his brother played games all day.",
+        "He studied hard whereas his brother played games all day.",
+        "He studied hard whereas his brother plays all day."
+      ],
+      answer: "He studied hard, whereas his brother played games all day."
     },
     {
       type: "match",
-      text: "Match each conjunction to its meaning 👇",
+      text: "Match each conjunction to its function 👇",
       pairs: [
-        ["so that", "shows purpose or result 🎯"],
-        ["although", "shows contrast or opposite meaning ⚡"],
+        ["so that", "shows purpose (for a goal 🎯)"],
+        ["although", "shows contrast (opposite ideas ⚡)"],
         ["while", "shows simultaneous actions ⏳"],
-        ["whereas", "shows difference or comparison 🔍"]
+        ["whereas", "shows difference / comparison 🔍"]
       ]
     },
     {
+      type: "rewrite",
+      text: "Rewrite using 'although': 'It was cold. We went swimming.'",
+      answer: "Although it was cold, we went swimming."
+    },
+    {
       type: "write",
-      text: "Write 4 sentences using each conjunction (so that, although, while, whereas). Make them funny or real-life!"
+      text: "Write 4 complex sentences using each conjunction (so that, although, while, whereas). Make them sound natural and connected to your life or imagination."
     }
   ]
 },
@@ -3281,35 +4123,50 @@ My friend <b>who studies online</b> is very smart.
 We learn grammar <b>so that we can speak better</b>! 😄<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: main clause, subordinate clause, relative clause, adverbial clause."
+      type: "choice",
+      text: "Choose the correct sentence with a subordinate clause:",
+      choices: [
+        "She dances every day.",
+        "She went home because she was tired.",
+        "He is tall and strong."
+      ],
+      answer: "She went home because she was tired."
     },
     {
       type: "choice",
-      text: "Which clause gives a reason? 'I stayed home because it was raining.'",
-      choices: ["main clause", "adverbial clause", "relative clause"],
-      answer: "adverbial clause"
+      text: "Which sentence contains a relative clause?",
+      choices: [
+        "The dog barked loudly.",
+        "The man who lives next door is a doctor.",
+        "We played football in the park."
+      ],
+      answer: "The man who lives next door is a doctor."
     },
     {
       type: "fill",
-      text: "Complete: 'This is the boy ___ won the race.' (who / which / where)",
-      answer: "who"
+      text: "Complete: 'I won’t go out ___ it stops raining.' (because / if / who)",
+      answer: "if"
     },
     {
       type: "match",
-      text: "Match the clause type to its function 👇",
+      text: "Match each clause type to its example 👇",
       pairs: [
-        ["Main clause", "expresses a complete idea"],
-        ["Subordinate clause", "depends on another clause"],
-        ["Relative clause", "describes a noun or person"],
-        ["Adverbial clause", "shows time, reason, or condition"]
+        ["Main clause", "She went home."],
+        ["Subordinate clause", "because she was tired."],
+        ["Relative clause", "who lives next door."],
+        ["Adverbial clause", "if it rains tomorrow."]
       ]
     },
     {
+      type: "rewrite",
+      text: "Combine into one sentence using a clause: 'I met a woman. She teaches English.'",
+      answer: "I met a woman who teaches English."
+    },
+    {
       type: "write",
-      text: "Write 3 complex sentences combining main and subordinate clauses. For example: 'I went out because it was sunny.'"
+      text: "Write 5 complex sentences using a mix of main + subordinate + relative clauses. Example: 'The boy who won the race was happy because he trained hard.'"
     }
   ]
 },
@@ -3361,36 +4218,47 @@ They test new devices <b>which connect to the Internet</b>. 🌐
 That’s the future <b>where everything is smart!</b> 🤩<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: who, which, that, where, whose."
+      type: "choice",
+      text: "Choose the correct option: 'The phone ___ I bought yesterday is amazing.'",
+      choices: ["who", "that", "where"],
+      answer: "that"
     },
     {
       type: "choice",
-      text: "Choose the correct option: 'The scientist ___ invented the robot is famous.'",
-      choices: ["which", "who", "where"],
-      answer: "who"
+      text: "Which sentence uses 'whose' correctly?",
+      choices: [
+        "That’s the man whose car was stolen.",
+        "That’s the man who car was stolen.",
+        "That’s the man that car was stolen."
+      ],
+      answer: "That’s the man whose car was stolen."
     },
     {
       type: "fill",
-      text: "Complete: 'This is the lab ___ we test our AI system.' (where / who / whose)",
-      answer: "where"
+      text: "Complete: 'This is the company ___ develops AI systems.' (who / which / where)",
+      answer: "which"
     },
     {
       type: "match",
-      text: "Match the relative pronoun to its meaning 👇",
+      text: "Match the relative pronoun to the correct example 👇",
       pairs: [
-        ["who", "refers to people 👩‍🔬"],
-        ["which", "refers to things 💻"],
-        ["that", "refers to both people and things 🔗"],
-        ["where", "refers to a place 📍"],
-        ["whose", "shows possession 🧠"]
+        ["who", "The scientist who created the robot."],
+        ["which", "The device which connects to Wi-Fi."],
+        ["where", "The lab where we test new apps."],
+        ["whose", "The student whose idea changed the world."],
+        ["that", "The car that drives itself."]
       ]
     },
     {
+      type: "rewrite",
+      text: "Join using a relative clause: 'I bought a laptop. It has a very strong battery.'",
+      answer: "I bought a laptop which has a very strong battery."
+    },
+    {
       type: "write",
-      text: "Write 4 sentences about modern technologies using relative clauses (who, which, that, where, whose)."
+      text: "Write 5 sentences about technologies using relative clauses. Include each: who, which, where, that, whose. Example: 'This is the engineer who invented the new robot.'"
     }
   ]
 },
@@ -3442,35 +4310,50 @@ If only I knew the engineer 👨‍🔧 <b>who designed this app!</b><br>
 That’s the friend 🙋‍♀️ <b>with whom</b> I share my ideas.<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Repeat after me: I wish I knew, If only it were sunny, The person to whom I spoke."
+      type: "choice",
+      text: "Choose the correct sentence expressing a past regret:",
+      choices: [
+        "I wish I had studied harder.",
+        "I wish I study harder.",
+        "I wish I will study harder."
+      ],
+      answer: "I wish I had studied harder."
     },
     {
       type: "choice",
-      text: "Choose the correct option: 'I wish I ___ harder for the test.'",
-      choices: ["study", "studied", "had studied"],
-      answer: "had studied"
+      text: "Which sentence uses a relative clause with a preposition correctly?",
+      choices: [
+        "The person whom I talked to was kind.",
+        "The person to whom I talked was kind.",
+        "Both are correct."
+      ],
+      answer: "Both are correct."
     },
     {
       type: "fill",
-      text: "Complete: 'If only it ___ raining today!' (isn't / wasn't / hadn't been)",
-      answer: "wasn't"
+      text: "Complete: 'If only I ___ more confident when I was younger.' (am / was / had been)",
+      answer: "had been"
     },
     {
       type: "match",
-      text: "Match each structure to its meaning 👇",
+      text: "Match each clause to its function 👇",
       pairs: [
-        ["I wish + Past Simple", "Present wish or regret"],
+        ["I wish + Past Simple", "Present wish (unreal now)"],
         ["I wish + Past Perfect", "Past regret"],
-        ["If only + Past Simple", "Unreal present situation"],
-        ["If only + Past Perfect", "Unreal past situation"]
+        ["If only + Past Simple", "Present unreal wish"],
+        ["If only + Past Perfect", "Past unreal situation"]
       ]
     },
     {
+      type: "rewrite",
+      text: "Rewrite: 'I don’t know the woman. I spoke with her yesterday.' (use a relative clause)",
+      answer: "I don’t know the woman with whom I spoke yesterday."
+    },
+    {
       type: "write",
-      text: "Write 3 sentences using 'wish' and 2 sentences using 'if only' about your life or school."
+      text: "Write 2 sentences using 'wish', 2 with 'if only', and 2 using relative clauses with prepositions (to whom, with which, about whom)."
     }
   ]
 },
@@ -3518,39 +4401,50 @@ The snowman who could talk wanted to travel the world! ☃️✈️<br><br>
 ✨ Practice makes perfect — сондықтан әр түрлі тақырыптан грамматикалық және сөздік жаттығулар орында!<br><br>
 `,
 
-  tasks: [
+tasks: [
     {
-      type: "tts",
-      text: "Let's practice! Say aloud: I have studied English for years. If only I could travel more. The teacher who smiles a lot."
+      type: "choice",
+      text: "Which sentence combines grammar correctly?",
+      choices: [
+        "If only I had a car which can fly.",
+        "If only I had a car that could fly.",
+        "If only I have a car could fly."
+      ],
+      answer: "If only I had a car that could fly."
+    },
+    {
+      type: "fill",
+      text: "Complete: 'The project ___ was finished yesterday was a success.' (who / which / where)",
+      answer: "which"
     },
     {
       type: "match",
-      text: "Match the grammar structure with its example 👇",
+      text: "Match grammar form to its description 👇",
       pairs: [
-        ["Present Perfect", "I have finished my homework."],
-        ["Passive Voice", "The book was written by J.K. Rowling."],
-        ["Modal Verb", "You should study for the exam."],
-        ["Relative Clause", "The boy who plays guitar is my friend."]
+        ["Modal Verb", "expresses ability, obligation, or possibility"],
+        ["Relative Clause", "adds information about a noun"],
+        ["Wish Clause", "expresses regret or desire"],
+        ["Perfect Tense", "connects past with present"]
       ]
     },
     {
       type: "choice",
-      text: "Which sentence is in the passive voice?",
+      text: "Which sentence is NOT correct?",
       choices: [
-        "The cat chased the mouse.",
-        "The mouse was chased by the cat.",
-        "The cat is chasing."
+        "The teacher who teaches us English is kind.",
+        "I wish I didn’t lose my keys yesterday.",
+        "The book which I read was interesting."
       ],
-      answer: "The mouse was chased by the cat."
+      answer: "I wish I didn’t lose my keys yesterday." // should be “I wish I hadn’t lost my keys.”
     },
     {
-      type: "fill",
-      text: "Complete the sentence: 'If only I ___ a superhero!' (am / were / was)",
-      answer: "were"
+      type: "rewrite",
+      text: "Combine ideas: 'I met a man. He designs software that helps disabled people.'",
+      answer: "I met a man who designs software that helps disabled people."
     },
     {
       type: "write",
-      text: "Write a short paragraph (5–7 sentences) using at least 3 grammar forms: a modal, a perfect tense, and a clause."
+      text: "Write a 7–8 sentence mini-story that uses: 1 wish-clause, 1 relative clause, 1 modal verb, and 1 perfect tense. Example: 'I wish I had met the scientist who invented that robot. It must have taken years to build!'"
     }
   ]
 },
@@ -3902,10 +4796,7 @@ function checkFill(btn, answer){
   alert(val === (answer+'').toLowerCase() ? '✅ Good!' : `❌ Try again. Expected: ${answer}`);
 }
 
-/* small share: show basic site tips */
-function siteTips(){
-  alert('Сақтау: карточка ашып, Save my notes басыңыз. Daуыстап оқу үшін Read → Play батырмасын қолданыңыз.');
-}
+
 
 /* On load tip */
 setTimeout(()=>siteTips(), 900);

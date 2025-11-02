@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>9-сынып — English Fun Grammar</title>
+<title>Collection of grammar tasks for the 9th grade</title>
 <style>
   :root{
     --bg:#fffaf6;
@@ -34,12 +34,11 @@
     gap:18px;
     margin-bottom:22px;
   }
-  .logo{
-    width:64px;height:64px;border-radius:14px;
-    background:linear-gradient(135deg,var(--accent),#ffb4c8);
-    box-shadow: var(--shadow);
-    display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;
-  }
+  .logo img {
+  width: 120px; /* қалаған өлшеміңе қарай */
+  height: auto;
+}
+
   h1{margin:0;font-size:20px}
   p.lead{margin:0;color:var(--muted);font-size:14px}
 
@@ -132,10 +131,13 @@
 </head>
 <body>
   <header>
-    <div class="logo">EFG</div>
+    <div class="logo">
+      <img src="logo.png" alt="EFG Logo">
+    </div>
+    
     <div>
-      <h1>English Fun Grammar — 9 сынып</h1>
-      <p class="lead">34 тақырып — әрқайсысы карточкада.</p>
+      <h1>Collection of grammar tasks for the 9th grade</h1>
+      <p class="lead">33 тақырып — әрқайсысы карточкада.</p>
     </div>
   </header>
 
@@ -4361,94 +4363,1045 @@ tasks: [
   desc: `
 🎯 <b>Perform Grammar and Vocabulary Exercises</b><br><br>
 
-Бұл бөлім — алдыңғы барлық грамматикалық тақырыптарды қайталау және лексикалық дағдыларды бекітуге арналған практикалық жаттығулар жиынтығы.<br><br>
-
-🌟 <b>Мақсаты:</b><br>
-- Грамматикалық құрылымдарды нақты сөйлемдерде қолдану;<br>
-- Сөздік қорды (vocabulary) тақырыптар бойынша кеңейту;<br>
-- Шығармашылық ойлау мен сөйлеу дағдыларын дамыту.<br><br>
+Бұл бөлім — барлық 33 тақырыпты қамтитын грамматика мен сөздік қорды бекітуге арналған қайталау жаттығулары.  
+Тапсырмалар жеңілден қиынға қарай беріледі. 💪<br><br>
 
 ---
 
-💫 <b>1️⃣ Grammar Revision</b><br>
-Қайталайық! 💪<br>
-Present, Past, Perfect, Passive, Modals, Clauses — барлығын араластырып сөйлем құрастыр.<br><br>
-
-📘 <b>Мысал:</b><br>
-- I have been studying English for 5 years. 📚<br>
-- The cake was made by my mom. 🎂<br>
-- If only I had more free time! ⏰<br>
-- The teacher who helped me is kind. 👩‍🏫<br><br>
-
----
-
-💫 <b>2️⃣ Vocabulary Practice</b><br>
-Төмендегі сөздерден сөйлем құр: <b>adventure, success, creativity, friendship, challenge</b><br><br>
-
-📘 <b>Мысал:</b><br>
-- Friendship is something that makes life better. ❤️<br>
-- Creativity helps me solve problems. 🎨<br><br>
-
----
-
-🌈 <b>Mini Game:</b> “Grammar Mixer” 🎲<br>
-Try to write a funny story using:<br>
-1 compound noun, 1 adjective clause, 1 modal verb, and 1 past tense verb!<br><br>
-
-📘 <b>Example:</b><br>
-The snowman who could talk wanted to travel the world! ☃️✈️<br><br>
-
-✨ Practice makes perfect — сондықтан әр түрлі тақырыптан грамматикалық және сөздік жаттығулар орында!<br><br>
+💫 <b>Grammar & Vocabulary Revision Tasks</b><br>
+Present, Past, Perfect, Passive, Modals, Clauses және басқа тақырыптар бойынша қайталау жаттығулары.<br><br>
 `,
 
 tasks: [
+  {
+    type: "choice",
+    text: "Choose the correct verb form: 'She ___ to school every day.'",
+    choices: ["go", "goes", "going"],
+    answer: "goes"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'They ___ football on Sundays.' (play / plays / played)",
+    answer: "play"
+  },
+  {
+    type: "match",
+    text: "Match subject and correct verb form 👇",
+    pairs: [
+      ["He", "works"],
+      ["They", "study"],
+      ["I", "read"],
+      ["She", "likes"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "He don’t like apples.",
+      "He doesn’t like apples.",
+      "He not like apples."
+    ],
+    answer: "He doesn’t like apples."
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences in the Present Simple tense using daily routines. Example: 'I eat breakfast at 8 a.m.'"
+  },
+  {
+    type: "choice",
+    text: "Choose the correct question: '___ you like ice cream?'",
+    choices: ["Do", "Does", "Did"],
+    answer: "Do"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'She ___ not watch TV every day.' (does / do / did)",
+    answer: "does"
+  },
+  {
+    type: "match",
+    text: "Match question words to meanings 👇",
+    pairs: [
+      ["What", "thing"],
+      ["Where", "place"],
+      ["When", "time"],
+      ["Who", "person"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which is the correct short answer to 'Do you play tennis?'",
+    choices: ["Yes, I do.", "Yes, I am.", "Yes, I does."],
+    answer: "Yes, I do."
+  },
+  {
+    type: "write",
+    text: "Write 4 questions in the Present Simple tense using 'Do' or 'Does'."
+  },
+  {
+    type: "choice",
+    text: "Choose the correct past form: 'He ___ to the park yesterday.'",
+    choices: ["go", "goes", "went"],
+    answer: "went"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'They ___ a movie last night.' (watch / watched / watching)",
+    answer: "watched"
+  },
+  {
+    type: "match",
+    text: "Match verbs to their past forms 👇",
+    pairs: [
+      ["go", "went"],
+      ["see", "saw"],
+      ["eat", "ate"],
+      ["buy", "bought"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "I didn’t went there.",
+      "I didn’t go there.",
+      "I don’t go there."
+    ],
+    answer: "I didn’t go there."
+  },
+  {
+    type: "write",
+    text: "Write 5 sentences in the Past Simple tense about what you did yesterday."
+  },
+  {
+    type: "choice",
+    text: "Choose the correct continuous form: 'She ___ reading now.'",
+    choices: ["is", "are", "was"],
+    answer: "is"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'They ___ playing football at the moment.' (is / are / were)",
+    answer: "are"
+  },
+  {
+    type: "match",
+    text: "Match sentences with their meanings 👇",
+    pairs: [
+      ["She is studying.", "Action happening now"],
+      ["They were talking.", "Action happening in the past"],
+      ["I am reading.", "Present Continuous"],
+      ["He was sleeping.", "Past Continuous"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "He is study English.",
+      "He studying English.",
+      "He is studying English."
+    ],
+    answer: "He is studying English."
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences using the Present Continuous and 2 using the Past Continuous."
+  },
+  {
+    type: "choice",
+    text: "Choose the correct passive voice form: 'The cake ___ made by my mom.'",
+    choices: ["is", "was", "are"],
+    answer: "is"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'The house ___ being painted now.' (is / was / were)",
+    answer: "is"
+  },
+  {
+    type: "match",
+    text: "Match active to passive 👇",
+    pairs: [
+      ["They clean the room.", "The room is cleaned."],
+      ["They built the bridge.", "The bridge was built."],
+      ["They are repairing the car.", "The car is being repaired."],
+      ["They were fixing the door.", "The door was being fixed."]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is passive?",
+    choices: [
+      "The teacher helps the students.",
+      "The students are helped by the teacher.",
+      "The students help the teacher."
+    ],
+    answer: "The students are helped by the teacher."
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences in the passive voice — 2 in Present and 2 in Past Continuous."
+  },
+  {
+    type: "choice",
+    text: "Choose the correct modal verb: 'You ___ study hard for the exam.'",
+    choices: ["must", "may", "could"],
+    answer: "must"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'It ___ rain tomorrow.' (may / must / will)",
+    answer: "may"
+  },
+  {
+    type: "match",
+    text: "Match modal verbs to meaning 👇",
+    pairs: [
+      ["can", "ability"],
+      ["may", "possibility"],
+      ["must", "obligation"],
+      ["should", "advice"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "I can to swim.",
+      "I can swim.",
+      "I am can swim."
+    ],
+    answer: "I can swim."
+  },
+  {
+    type: "write",
+    text: "Write 5 sentences using modals: can, must, may, should, will."
+  }, {
+    type: "choice",
+    text: "Choose the correct form: 'I ___ already finished my homework.'",
+    choices: ["have", "has", "had"],
+    answer: "have"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'She ___ never been to London.' (has / have / had)",
+    answer: "has"
+  },
+  {
+    type: "match",
+    text: "Match sentence to tense meaning 👇",
+    pairs: [
+      ["I have eaten.", "Present Perfect – result now"],
+      ["I ate.", "Past Simple – finished action"],
+      ["I am eating.", "Present Continuous – now"],
+      ["I will eat.", "Future – later"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "He have just arrived.",
+      "He has just arrived.",
+      "He just has arrived."
+    ],
+    answer: "He has just arrived."
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences in Present Perfect about your experiences. Example: 'I have visited Astana.'"
+  },
+
+  // 7️⃣ Present Perfect Continuous
+  {
+    type: "choice",
+    text: "Choose the correct sentence:",
+    choices: [
+      "I have been study for two hours.",
+      "I have been studying for two hours.",
+      "I have studying for two hours."
+    ],
+    answer: "I have been studying for two hours."
+  },
+  {
+    type: "fill",
+    text: "Complete: 'They ___ been working all day.' (has / have / had)",
+    answer: "have"
+  },
+  {
+    type: "match",
+    text: "Match sentence to situation 👇",
+    pairs: [
+      ["I have been reading.", "Action started in past and still continues"],
+      ["I read yesterday.", "Finished action in the past"],
+      ["I have read the book.", "Completed action with result now"],
+      ["I was reading.", "Action in progress in the past"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which time expression fits Present Perfect Continuous?",
+    choices: ["for two hours", "yesterday", "last week"],
+    answer: "for two hours"
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences using Present Perfect Continuous. Example: 'I have been learning English since 2020.'"
+  },
+
+  // 8️⃣ Future Forms
+  {
+    type: "choice",
+    text: "Choose the correct sentence:",
+    choices: [
+      "I will going to study.",
+      "I am going to study.",
+      "I go to study tomorrow."
+    ],
+    answer: "I am going to study."
+  },
+  {
+    type: "fill",
+    text: "Complete: 'We ___ meet our friends tomorrow.' (will / are going to / have)",
+    answer: "will"
+  },
+  {
+    type: "match",
+    text: "Match expressions with future forms 👇",
+    pairs: [
+      ["will", "decisions made now"],
+      ["be going to", "plans or intentions"],
+      ["Present Continuous", "fixed future arrangements"],
+      ["Present Simple", "timetables or schedules"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence shows a plan?",
+    choices: [
+      "I will help you!",
+      "I am going to visit grandma.",
+      "The bus leaves at 8."
+    ],
+    answer: "I am going to visit grandma."
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences about your future plans using 'will' and 'be going to'."
+  },
+
+  // 9️⃣ Comparative and Superlative Adjectives
+  {
+    type: "choice",
+    text: "Choose the correct form: 'This car is ___ than that one.'",
+    choices: ["fast", "faster", "fastest"],
+    answer: "faster"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'Mount Everest is the ___ mountain in the world.' (tall / taller / tallest)",
+    answer: "tallest"
+  },
+  {
+    type: "match",
+    text: "Match adjective to comparative/superlative 👇",
+    pairs: [
+      ["big", "bigger / biggest"],
+      ["good", "better / best"],
+      ["bad", "worse / worst"],
+      ["happy", "happier / happiest"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "My phone is more modern than yours.",
+      "My phone is moderner than yours.",
+      "My phone is modernest than yours."
+    ],
+    answer: "My phone is more modern than yours."
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences comparing things or people using 'than' and superlatives."
+  },
+
+  // 🔟 Adverbs and Adjectives
+  {
+    type: "choice",
+    text: "Choose the correct form: 'She sings very ___.'",
+    choices: ["beautiful", "beautifully", "beauty"],
+    answer: "beautifully"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'He is a ___ driver.' (careful / carefully)",
+    answer: "careful"
+  },
+  {
+    type: "match",
+    text: "Match adjective and adverb forms 👇",
+    pairs: [
+      ["slow", "slowly"],
+      ["happy", "happily"],
+      ["quiet", "quietly"],
+      ["angry", "angrily"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence uses an adverb?",
+    choices: [
+      "She runs quick.",
+      "She runs quickly.",
+      "She quick runs."
+    ],
+    answer: "She runs quickly."
+  },
+  {
+    type: "write",
+    text: "Write 5 sentences using adjectives and adverbs correctly. Example: 'He works hard. She speaks softly.'"
+  },
+
+  // 11️⃣ Countable & Uncountable Nouns
+  {
+    type: "choice",
+    text: "Choose the correct word: 'There isn’t ___ milk in the fridge.'",
+    choices: ["many", "much", "a few"],
+    answer: "much"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'I have ___ apples but not much juice.' (a few / a little)",
+    answer: "a few"
+  },
+  {
+    type: "match",
+    text: "Match quantifiers 👇",
+    pairs: [
+      ["many", "countable nouns"],
+      ["much", "uncountable nouns"],
+      ["a few", "small number"],
+      ["a little", "small amount"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "There are much people here.",
+      "There are many people here.",
+      "There is many people here."
+    ],
+    answer: "There are many people here."
+  },
+  {
+    type: "write",
+    text: "Write 5 sentences using 'many', 'much', 'a few', 'a little'."
+  },
+
+  // 12️⃣ Quantifiers & Articles
+  {
+    type: "choice",
+    text: "Choose the correct article: '___ sun is shining.'",
+    choices: ["A", "An", "The"],
+    answer: "The"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'She has ___ idea about this topic.' (a / an / the)",
+    answer: "an"
+  },
+  {
+    type: "match",
+    text: "Match quantifiers 👇",
+    pairs: [
+      ["some", "positive statements"],
+      ["any", "negative/questions"],
+      ["few", "small number (negative feeling)"],
+      ["a few", "small number (positive feeling)"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "I have a few money.",
+      "I have a little money.",
+      "I have few money."
+    ],
+    answer: "I have a little money."
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences using articles and quantifiers correctly."
+  },
+
+  // 13️⃣ There is / There are
+  {
+    type: "choice",
+    text: "Choose the correct sentence:",
+    choices: [
+      "There is two cats.",
+      "There are two cats.",
+      "There be two cats."
+    ],
+    answer: "There are two cats."
+  },
+  {
+    type: "fill",
+    text: "Complete: '___ a park near my house.' (There is / There are)",
+    answer: "There is"
+  },
+  {
+    type: "match",
+    text: "Match singular/plural 👇",
+    pairs: [
+      ["There is", "one thing"],
+      ["There are", "many things"],
+      ["Is there?", "question singular"],
+      ["Are there?", "question plural"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "There’s some books on the table.",
+      "There are some books on the table.",
+      "There is some books on the table."
+    ],
+    answer: "There are some books on the table."
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences using 'There is' and 3 sentences using 'There are'."
+  },
+
+  // 14️⃣ Prepositions of Time and Place
+  {
+    type: "choice",
+    text: "Choose the correct preposition: 'The meeting is ___ Monday.'",
+    choices: ["in", "on", "at"],
+    answer: "on"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'He lives ___ Almaty.' (in / on / at)",
+    answer: "in"
+  },
+  {
+    type: "match",
+    text: "Match prepositions to meaning 👇",
+    pairs: [
+      ["in", "months, cities, years"],
+      ["on", "days, dates"],
+      ["at", "specific time/place"],
+      ["under", "below something"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "We’ll meet in Friday.",
+      "We’ll meet at Friday.",
+      "We’ll meet on Friday."
+    ],
+    answer: "We’ll meet on Friday."
+  },
+  {
+    type: "write",
+    text: "Write 5 sentences using 'in', 'on', 'at', and 'under'."
+  },
+
+  // 15️⃣ Question Tags
+  {
+    type: "choice",
+    text: "Choose the correct question tag: 'You like pizza, ___?'",
+    choices: ["don’t you", "do you", "didn’t you"],
+    answer: "don’t you"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'She isn’t late, ___?' (is she / isn’t she)",
+    answer: "is she"
+  },
+  {
+    type: "match",
+    text: "Match sentence and correct tag 👇",
+    pairs: [
+      ["You’re a student,", "aren’t you?"],
+      ["He can swim,", "can’t he?"],
+      ["They didn’t go,", "did they?"],
+      ["It’s cold,", "isn’t it?"]
+    ]
+  },
+  {
+    type: "choice",
+    text: "Which sentence is correct?",
+    choices: [
+      "She’s your teacher, is she?",
+      "She’s your teacher, isn’t she?",
+      "She’s your teacher, doesn’t she?"
+    ],
+    answer: "She’s your teacher, isn’t she?"
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences using question tags. Example: 'You’re tired, aren’t you?'"
+  },{
+    type: "choice",
+    text: "Choose the correct passive: 'The room ___ being cleaned now.'",
+    choices: ["is", "is being", "was being"],
+    answer: "is being"
+  },
+  {
+    type: "fill",
+    text: "Complete: 'The house ___ being painted yesterday.' (was / is / were)",
+    answer: "was"
+  },
+  {
+    type: "match",
+    text: "Match tense to form 👇",
+    pairs: [
+      ["Present Continuous Passive", "is being + V3"],
+      ["Past Continuous Passive", "was being + V3"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 passive continuous sentences. Example: 'The car is being washed.'"
+  },
+
+  // 17️⃣ Reported Speech
+  {
+    type: "choice",
+    text: "Choose the correct: She said she ___ tired.",
+    choices: ["is", "was", "were"],
+    answer: "was"
+  },
+  {
+    type: "fill",
+    text: "Complete: He said he ___ go. (can / could / may)",
+    answer: "could"
+  },
+  {
+    type: "match",
+    text: "Match direct to reported 👇",
+    pairs: [
+      ["'I am hungry,' he said.", "He said he was hungry."],
+      ["'We will come,' they said.", "They said they would come."]
+    ]
+  },
+  {
+    type: "write",
+    text: "Report these: 1) 'I like apples.' 2) 'We are studying English.'"
+  },
+
+  // 18️⃣ Modals (possibility, ability, necessity)
+  {
+    type: "choice",
+    text: "Choose: You ___ see a doctor. (should / can / may)",
+    answer: "should"
+  },
+  {
+    type: "fill",
+    text: "Complete: I ___ play the guitar. (can / must / might)",
+    answer: "can"
+  },
+  {
+    type: "match",
+    text: "Match modal to function 👇",
+    pairs: [
+      ["can", "ability"],
+      ["must", "necessity"],
+      ["may", "possibility"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 modal sentences. Example: 'You must study.'"
+  },
+
+  // 19️⃣ Prepositions
+  {
+    type: "choice",
+    text: "Choose: The book is ___ the table. (on / at / in)",
+    answer: "on"
+  },
+  {
+    type: "fill",
+    text: "Complete: He’s interested ___ science. (in / on / about)",
+    answer: "in"
+  },
+  {
+    type: "match",
+    text: "Match prepositions 👇",
+    pairs: [
+      ["afraid", "of"],
+      ["good", "at"],
+      ["depend", "on"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences using prepositions before adjectives or nouns."
+  },
+
+  // 20️⃣ Infinitive & Gerund
+  {
+    type: "choice",
+    text: "Choose: She decided ___ go home. (to / for / at)",
+    answer: "to"
+  },
+  {
+    type: "fill",
+    text: "Complete: I enjoy ___ movies. (to watch / watching)",
+    answer: "watching"
+  },
     {
-      type: "choice",
-      text: "Which sentence combines grammar correctly?",
-      choices: [
-        "If only I had a car which can fly.",
-        "If only I had a car that could fly.",
-        "If only I have a car could fly."
-      ],
-      answer: "If only I had a car that could fly."
-    },
+    type: "match",
+    text: "Match verbs 👇",
+    pairs: [
+      ["want", "to + verb"],
+      ["enjoy", "verb + ing"],
+      ["plan", "to + verb"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 infinitive and 3 gerund sentences."
+  },
+
+  // 21️⃣ Conjunctions
+  {
+    type: "choice",
+    text: "Choose: ___ it rained, we went out. (Although / So that / Whereas)",
+    answer: "Although"
+  },
+  {
+    type: "fill",
+    text: "Complete: I study hard ___ I can pass. (so that / although)",
+    answer: "so that"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["so that", "purpose"],
+      ["although", "contrast"],
+      ["whereas", "comparison"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences using each: although, while, whereas."
+  },
+
+  // 22️⃣ Clauses
+  {
+    type: "choice",
+    text: "Choose: 'I stayed home because it was cold.' → which clause gives reason?",
+    choices: ["main", "adverbial", "relative"],
+    answer: "adverbial"
+  },
+  {
+    type: "fill",
+    text: "Complete: The boy ___ won the race is my friend. (who / which)",
+    answer: "who"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["Main clause", "complete idea"],
+      ["Subordinate", "depends on main"],
+      ["Relative", "describes noun"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 complex sentences with main + subordinate clause."
+  },
+
+  // 23️⃣ Relative Clauses & Tech
+  {
+    type: "choice",
+    text: "Choose: The robot ___ cleans the floor is useful.",
+    choices: ["which", "who", "where"],
+    answer: "which"
+  },
+  {
+    type: "fill",
+    text: "Complete: The lab ___ we test ideas is modern. (where / which)",
+    answer: "where"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["who", "people"],
+      ["which", "things"],
+      ["where", "places"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Describe 3 technologies using relative clauses."
+  },
+
+  // 24️⃣ Wish / If only
+  {
+    type: "choice",
+    text: "Choose: I wish I ___ harder. (study / studied / had studied)",
+    answer: "had studied"
+  },
+  {
+    type: "fill",
+    text: "Complete: If only it ___ sunny! (was / were / is)",
+    answer: "were"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["I wish + Past Simple", "present wish"],
+      ["I wish + Past Perfect", "past regret"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 2 wish and 2 if only sentences."
+  },
+
+  // 25️⃣ Review — Mixed Grammar
+  {
+    type: "choice",
+    text: "Choose: The book ___ was written by Tolstoy is famous.",
+    choices: ["who", "that", "where"],
+    answer: "that"
+  },
+  {
+    type: "fill",
+    text: "Complete: I ___ been learning English since 2019. (have / had / am)",
+    answer: "have"
+  },
+  {
+    type: "match",
+    text: "Match grammar 👇",
+    pairs: [
+      ["Present Perfect", "I have done it."],
+      ["Passive", "It was made yesterday."],
+      ["Modal", "You should rest."]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 5 mixed-grammar sentences using different tenses and modals."
+  },  {
+    type: "choice",
+    text: "Choose: She is afraid ___ spiders. (of / on / at)",
+    answer: "of"
+  },
+  {
+    type: "fill",
+    text: "Complete: I’m proud ___ my school. (of / with)",
+    answer: "of"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["interested", "in"],
+      ["good", "at"],
+      ["depend", "on"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences using adjective + preposition (good at, afraid of)."
+  },
+
+  // 27️⃣ Infinitive
+  {
+    type: "choice",
+    text: "Choose: I want ___ be a doctor. (to / for / on)",
+    answer: "to"
+  },
+  {
+    type: "fill",
+    text: "Complete: She decided ___ travel abroad. (to / for / about)",
+    answer: "to"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["want", "to + verb"],
+      ["can", "bare infinitive"],
+      ["happy", "to + verb"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences with infinitive and 2 with bare infinitive."
+  },
+
+  // 28️⃣ Infinitive + Gerund + Phrasal Verbs
+  {
+    type: "choice",
+    text: "Choose: He enjoys ___ football. (to play / playing)",
+    answer: "playing"
+  },
+  {
+    type: "fill",
+    text: "Complete: Don’t forget ___ turn off the lights. (to / for)",
+    answer: "to"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["look after", "take care of"],
+      ["give up", "stop doing"],
+      ["turn on", "start a machine"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences using phrasal verbs (look after, give up)."
+  },
+
+  // 29️⃣ Conjunctions (so that, although, while, whereas)
+  {
+    type: "choice",
+    text: "Choose: ___ it rained, we went out. (Although / So that)",
+    answer: "Although"
+  },
+  {
+    type: "fill",
+    text: "Complete: I worked hard ___ I could pass the test. (so that / whereas)",
+    answer: "so that"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["although", "contrast"],
+      ["while", "same time"],
+      ["whereas", "comparison"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 4 sentences using these conjunctions."
+  },
+
+  // 30️⃣ Clauses
+  {
+    type: "choice",
+    text: "Choose: 'because it rained' is what clause?",
+    choices: ["main", "adverbial", "relative"],
+    answer: "adverbial"
+  },
+  {
+    type: "fill",
+    text: "Complete: The girl ___ sings well is my friend. (who / which)",
+    answer: "who"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["Main clause", "full idea"],
+      ["Relative clause", "adds info about noun"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 2 complex sentences using clauses."
+  },
+
+  // 31️⃣ Talking about Technology + Relative Clauses
+  {
+    type: "choice",
+    text: "Choose: The robot ___ cleans the room is new. (that / who)",
+    answer: "that"
+  },
+  {
+    type: "fill",
+    text: "Complete: This is the lab ___ we test robots. (where / who)",
+    answer: "where"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["who", "people"],
+      ["which", "things"],
+      ["where", "places"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 3 sentences about technology using relative clauses."
+  },
+
+  // 32️⃣ Wish / If only + Prepositional Relative Clauses
+  {
+    type: "choice",
+    text: "Choose: I wish I ___ more time. (have / had / has)",
+    answer: "had"
+  },
+  {
+    type: "fill",
+    text: "Complete: If only it ___ sunny today! (was / were)",
+    answer: "were"
+  },
     {
-      type: "fill",
-      text: "Complete: 'The project ___ was finished yesterday was a success.' (who / which / where)",
-      answer: "which"
-    },
-    {
-      type: "match",
-      text: "Match grammar form to its description 👇",
-      pairs: [
-        ["Modal Verb", "expresses ability, obligation, or possibility"],
-        ["Relative Clause", "adds information about a noun"],
-        ["Wish Clause", "expresses regret or desire"],
-        ["Perfect Tense", "connects past with present"]
-      ]
-    },
-    {
-      type: "choice",
-      text: "Which sentence is NOT correct?",
-      choices: [
-        "The teacher who teaches us English is kind.",
-        "I wish I didn’t lose my keys yesterday.",
-        "The book which I read was interesting."
-      ],
-      answer: "I wish I didn’t lose my keys yesterday." // should be “I wish I hadn’t lost my keys.”
-    },
-    {
-      type: "rewrite",
-      text: "Combine ideas: 'I met a man. He designs software that helps disabled people.'",
-      answer: "I met a man who designs software that helps disabled people."
-    },
-    {
-      type: "write",
-      text: "Write a 7–8 sentence mini-story that uses: 1 wish-clause, 1 relative clause, 1 modal verb, and 1 perfect tense. Example: 'I wish I had met the scientist who invented that robot. It must have taken years to build!'"
-    }
-  ]
-},
-};
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["I wish + past simple", "present wish"],
+      ["If only + past perfect", "past regret"]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 2 'wish' and 2 'if only' sentences about your life."
+  },
+
+  // 33️⃣ Review (All Grammar & Vocabulary)
+  {
+    type: "choice",
+    text: "Choose correct: 'The book ___ I read was great.' (which / who / where)",
+    answer: "which"
+  },
+  {
+    type: "fill",
+    text: "Complete: I ___ been studying English since 2020. (have / had / am)",
+    answer: "have"
+  },
+  {
+    type: "match",
+    text: "Match 👇",
+    pairs: [
+      ["Modal", "can, must, should"],
+      ["Relative Clause", "who, which, that"],
+      ["Wish Clause", "I wish I had..."]
+    ]
+  },
+  {
+    type: "write",
+    text: "Write 5 review sentences using modals, relative clauses, and wish forms."
+  }
+]
+}
+}
 
 function createCard(i, title){
   const el = document.createElement('div');
